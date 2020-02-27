@@ -1447,7 +1447,7 @@ library(ggplot2)
 a <- filter(df, year==2008)
 b <- group_by(a, cyl)
 c <- summarize(b,
-               Avg=mean(hwy)))
+               Avg=mean(hwy))
 d <- arrange(c, desc(Avg))
 print(d)
 ```
@@ -1604,7 +1604,7 @@ Visualizing data in R
 
 Visualizing data in R
 
- * Let's explore visualizing data in R, using **ggplot2** - another Tidyverse package.
+ * Let's explore visualizing data in R, using **ggplot2** - a Tidyverse package.
 
 --
 
@@ -1744,18 +1744,6 @@ Visualizing data in R
 Visualizing data in R
 
 <center><img src="./images/p4.png" alt="ggplot"</></center>
-
----
-#### Topic 6: Plotting
-
-Visualizing data in R
-
- * We can also add additional layers [geoms](<https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf>).
-```{r comment=NA, eval=FALSE}
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
- geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
-```
 
 ---
 #### Topic 6: Plotting
