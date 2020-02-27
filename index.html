@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Programming in R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jeremy Mack" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse, title-slide
+
+# Programming in R: a brief introduction
+### Alex Pacheco and Jeremy Mack
+### February 28, 2020
+
+---
+
+### About this presentation
+
+ * This course is a **brief introduction** into R.
+ 
+ * It is targeted at people that have little to no experience
+   progamming.
+   
+ * It could be useful for people who learned R some time ago and
+   forgot it, or who are not familiar with modern R programming
+   (`tidyverse`).
+   
+ * It focuses on a bit of history, an introduction to the R 
+   environment, and some hands experience with **data wrangling**.
+   
+---
+
+### Structure of the presentation
+
+The presentation is split into five topics:
+
+ * **Topic 1:** What is R? Why use it?
+ 
+ * **Topic 2:** What is RStudio? Why use it?
+ 
+ * **Topic 3:** Getting started with R and RStudio
+ 
+ * **Topic 4:** Programming in R
+ 
+ * **Topic 5:** Data and data wrangling
+ 
+ * **Topic 6:** Plotting
+ 
+ * **Topic 7:** Other things to do with R
+
+---
+class: center, middle, inverse
+
+#### Topic 1: What is R? Why use it?
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+- R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
+]
+   
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+- R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
+   
+- Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
+]
+   
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+- R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
+   
+- Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
+
+- Dialect of the S language (S-Plus)
+]
+   
+--
+
+&lt;img src="./images/timeline.png" align="center" alt="R timeline" /&gt;
+
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+- **Free!**
+]
+
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+- **Free!**
+
+- Rich data analysis and visualization options
+]
+
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+- **Free!**
+
+- Rich data analysis and visualization options
+
+- Available on most platforms/OS
+]
+
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+* **Free!**
+
+* Rich data analysis and visualization options
+
+* Available on most platforms/OS
+
+* *Very* active development community
+    + CRAN: The Comprehensive R Archive Network
+    + User contributed packages (&gt; 15,000)
+]
+
+---
+
+#### Topic 1: What is R? Why use it?
+
+.pull-left[
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+* **Free!**
+
+* Rich data analysis and visualization options
+
+* Available on most platforms/OS
+
+* *Very* active development community
+  + CRAN: The Comprehensive R Archive Network
+  + User contributed packages (&gt; 15,000)
+
+* Reproducibility
+]
+
+---
+class: center, middle, inverse
+
+#### Topic 2: What is RStudio? Why use it?
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+---
+
+#### Topic 2: What is RStudio? Why use it?
+
+.pull-left[
+![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
+]
+
+.pull-right[
+* RStudio is an *Integrated Development Environment* (IDE), or a front end platform
+to work with R.
+]
+
+---
+
+#### Topic 2: What is RStudio? Why use it?
+
+.pull-left[
+![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
+]
+
+.pull-right[
+* RStudio is an *Integrated Development Environment* (IDE), or a front end platform
+to work with R.
+   
+* Why would you use RStudio?
+
+  + Like R, it's free!
+  + It can reduce the learning curve of R.
+  + Integrates nicely with other things (version control, ShinyApps, R Markdown, etc.)
+]
+
+---
+
+#### Topic 2: What is RStudio? Why use it?
+
+How do R and RStudio work together? Consider a car analogy.
+
+--
+
+.pull-left[
+![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
+![The R logo](./images/R_logo.png)
+]
+
+.pull-right[
+* **RStudio - the frame**
+ + RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
+
+* **R - the engine**
+ + R runs things under the hood - it's the enginge that allows the car to drive.
+
+]
+
+---
+class: inverse
+
+#### Review - R and RStudio:
+* R is a programming language built for statistical computing.
+
+* It's open source and it's free.
+
+* RStudio is an integrated development envrionment that makes working with R easier.
+
+* It's developed by a company, but it's also free.
+
+---
+
+class: center, middle, inverse
+
+#### Topic 3: Getting started with R and RStudio
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+* How do I get R, or RStudio?
+
+ + You can download R on its own through the [R Project website](https://www.r-project.org).
+   
+ + You can download RStudio, including R,
+   at the [RStudio website](https://rstudio.com/products/rstudio/download/).
+   
+---
+
+#### Topic 3: Getting started with R and RStudio
+   
+* R and RStudio at Lehigh
+
+ + Both R and RStudio are available on [LUapps](https://luapps.lehigh.edu), a virtualized software system that allows users to use software programs, without having to download them to their machine.
+ 
+ + LUapps can be accessed both on campus and off-campus (over VPN).
+
+&lt;img src="./images/luapps.png" align="center" alt="LUApps website"/&gt;
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+First, lets explore RStudio.
+
+[&lt;img src="./images/rstudio.png" align="center" alt="RStudio" height=500/&gt;](https://luapps.lehigh.edu)
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+First, let's explore RStudio.
+
+&lt;img src="./images/rstudio2.png" align="center" alt="RStudio" height=500/&gt;
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+Next, let's explore R - the engine under the hood.
+
+In true computer science fashion, let's first try typing:
+
+
+```r
+print("Hello world!")
+```
+
+What happend?
+
+--
+
+
+```
+[1] "Hello world!"
+```
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+Two things to note:
+
+- We didn't just get "Hello world!", we also got `[1]`. This is R's way
+of printing to the screen; it's telling us the position we're at.
+
+- We didn't need to put anything at the end of the line, we just hit return.
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+Now, let's try three things...
+
+Try capitalizing `Print(...)`:
+ 
+
+```r
+Print("Hello world!")
+```
+
+Try putting a space between `print` and `("Hello world!")`:
+
+
+```r
+print ("Hello world!")
+```
+
+Try just entering `"Hello world!"`:
+
+
+```r
+"Hello world!"
+```
+
+What happened?
+
+--
+ 
+
+```
+Error in Print("Hello world!"): could not find function "Print"
+```
+
+
+```
+[1] "Hello world!"
+```
+
+
+```
+[1] "Hello world!"
+```
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+Three things you just learned:
+
+ - R is **case-sensitive**.
+ 
+ - R does not care about **whitespace**.
+ 
+ - R will **print** results by default.
+
+---
+
+#### Topic 3: Getting started with R and RStudio
+
+You can also use R as a calculator. Let's try the following:
+
+
+```r
+2 + 2
+```
+--
+
+```
+[1] 4
+```
+--
+
+```r
+4 * 2
+```
+--
+
+```
+[1] 8
+```
+--
+
+```r
+8 / 3
+```
+--
+
+```
+[1] 2.666667
+```
+--
+
+```r
+exp(log(8)-log(3))
+```
+--
+
+```
+[1] 2.666667
+```
+
+---
+#### Topic 3: Getting started with R and RStudio
+#### Assignments
+
+We often want to save the results of our calculations, rather than print them to the screen. To do so, 
+we'll use the **assignment operator**, `&lt;-`
+
+Here's an example:
+
+
+```r
+x &lt;- log(8)
+y &lt;- log(3)
+```
+--
+Now we can redo our last calculation using the assignments:
+
+
+```r
+exp(x-y)
+```
+
+```
+[1] 2.666667
+```
+
+---
+#### Topic 3: Getting started with R and RStudio
+#### Concatenation
+
+We will often want to work on sequences of values, rather than specific values. 
+
+To do so, we'll use the **concatenation operator**, `c(...)`
+
+Here's an example:
+
+
+```r
+n &lt;- c(2, 3, 5, 8, 13, 21, 34, 55)
+```
+
+--
+
+We can now apply opertions across the entire vector.
+
+For example:
+
+
+```r
+n * 2
+```
+
+```
+[1]   4   6  10  16  26  42  68 110
+```
+
+---
+#### Topic 3: Getting started with R and RStudio
+#### Logicals
+
+It can be useful to know whether our values meet certain conditions. 
+
+In addition to **character values** (which we saw when we called `print("Hello world!")`), R also allows **logical values**, or `TRUE` and `FALSE`.
+
+For example, we can check which numbers in our "n" vector are double digit:
+
+
+```r
+n
+```
+
+```
+[1]  2  3  5  8 13 21 34 55
+```
+
+```r
+is_double_digit &lt;- n &gt; 9
+is_double_digit
+```
+
+```
+[1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+```
+
+---
+class: inverse
+
+#### Review - Getting started with R and RStudio:
+* RStudio has four main windows to keep things organized.
+
+* R is **case-sensitive**.
+
+* R is a calculator.
+
+* R can be used to store objects that can be compared to other objects, or used with other functions.
+
+---
+class: center, middle, inverse
+
+#### Topic 4: Objects and Functions
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+---
+
+#### Topic 4: Objects and Functions
+
+R revolves around two things: **objects** and **functions**. Almost everything in R is either an object or a function.
+
+&lt;center&gt;&lt;b&gt;Define objects &gt; Apply functions &gt; Repeat!&lt;/b&gt;&lt;/center&gt;
+
+--
+
+For example, we can define a simple object called "n":
+
+
+```r
+n &lt;- c(2, 3, 5, 8, 13, 21, 34, 55)
+```
+
+--
+
+We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the mean function:
+
+
+```r
+mean(n)
+```
+
+```
+[1] 17.625
+```
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R:
+* Objects come in many different shapes and sizes - like a number, a dataset, a summary statistic, or the results of a statistical test.
+
+--
+
+* Objects have different **attributes** - properties that explain what an object represents and how it should be interpreted.
+
+--
+
+* Objects are essentially *data* that have a particular **type** and **structure**.
+
+--
+
+* There are five basic types in R:
+ 1. Numeric
+ 2. Integer
+ 3. Complex
+ 4. Logical
+ 5. Character
+ 
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Numeric - a number; default data type in R
+ 
+
+```r
+x &lt;- 10.5               # Define object x
+x                       # Print x
+```
+
+```
+[1] 10.5
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "numeric"
+```
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Integer - whole numbers; a number that is not a fraction
+
+
+```r
+x &lt;- 10                 # Define object x
+x                       # Print x
+```
+
+```
+[1] 10
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "numeric"
+```
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Integer - whole numbers; a number that is not a fraction
+
+
+```r
+x &lt;- as.integer(10)     # Convert to integer
+x                       # Print x
+```
+
+```
+[1] 10
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "integer"
+```
+--
+
+```r
+x &lt;- 10L                # Declare as integer by appending with "L"
+x                       # Print x
+```
+
+```
+[1] 10
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "integer"
+```
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Complex - any number that can be written as a + bi, where *i* is the imaginary unit and a and b
+are real numbers.
+
+
+```r
+x &lt;- 1 + 2i             # create a complex number x
+x                       # print the value of x 
+```
+
+```
+[1] 1+2i
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "complex"
+```
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Logical - created via comparison(s) between variables.
+
+
+```r
+x &lt;- 1; y &lt;- 2          # create sample values x and y
+z &lt;- x &gt; y              # is x larger than y? 
+z                       # print the logical value 
+```
+
+```
+[1] FALSE
+```
+
+```r
+class(z)                # Print the class name of z
+```
+
+```
+[1] "logical"
+```
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Character - used to represent string values in R.
+
+
+```r
+x &lt;- as.character(3.14) # Convert to character
+x                       # print the character string 
+```
+
+```
+[1] "3.14"
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "character"
+```
+--
+
+```r
+x &lt;- "3.14"             # Can declare as character with " "
+x                       # Print x
+```
+
+```
+[1] "3.14"
+```
+
+```r
+class(x)                # Print the class name of x
+```
+
+```
+[1] "character"
+```
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects.png)
+]
+
+.pull-right[
+There are four types of data structures:
+* Scalar
+   
+* Vector
+
+* Matrix
+
+* Data frame
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects2.png)
+]
+
+.pull-right[
+**Scalar objects:**
+1. Hold only one value at a time.
+ 
+2. Can be either numeric or character (but not both!).
+ 
+3. Can be used to build more complex objects.
+
+]
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects2.png)
+]
+
+.pull-right[
+**Scalar objects:**
+
+```r
+x &lt;- 10.5 
+x
+```
+
+```
+[1] 10.5
+```
+
+```r
+str(x)
+```
+
+```
+ num 10.5
+```
+
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects3.png)
+]
+
+.pull-right[
+**Vector objects:**
+1. Hold several values stored as a single object.
+ 
+2. Can be either numeric or character (but not both!).
+
+]
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects3.png)
+]
+
+.pull-right[
+**Vector objects:**
+
+```r
+n &lt;- c(2,3,5,8,13,21,34,55) 
+n
+```
+
+```
+[1]  2  3  5  8 13 21 34 55
+```
+
+```r
+str(n)
+```
+
+```
+ num [1:8] 2 3 5 8 13 21 34 55
+```
+
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects3.png)
+]
+
+.pull-right[
+**Vector objects:**
+
+```r
+n &lt;- c(2,3,5,8,13,21,34,"55") 
+n[1:6]
+```
+
+```
+[1] "2"  "3"  "5"  "8"  "13" "21"
+```
+
+```r
+class(n)
+```
+
+```
+[1] "character"
+```
+
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects4.png)
+]
+
+.pull-right[
+**Matrix objects:**
+1. Large data structures.
+ 
+2. Has 2-dimensions, representing its width and height.
+ 
+3. Can be either numeric or character (but not both!).
+
+] 
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects4.png)
+]
+
+.pull-right[
+**Matrix objects:**
+
+```r
+x &lt;- 1:3
+y &lt;- 4:6
+z &lt;- 7:9
+cbind(x,y,z)
+```
+
+```
+     x y z
+[1,] 1 4 7
+[2,] 2 5 8
+[3,] 3 6 9
+```
+
+```r
+rbind(x,y,z)
+```
+
+```
+  [,1] [,2] [,3]
+x    1    2    3
+y    4    5    6
+z    7    8    9
+```
+
+] 
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects4.png)
+]
+
+.pull-right[
+**Data frame objects:**
+1. Large data structures.
+ 
+2. Has 2-dimensions, representing its width and height.
+ 
+3. Can be a mix of data types.
+
+] 
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+.pull-left[
+![R objects](./images/objects4.png)
+]
+
+.pull-right[
+**Data frame objects:**
+
+```r
+survey &lt;- data.frame(
+"index" = c(1,2,3,4,5),
+"sex" = c("m","m","m","f","f"),
+"age" = c(99,46,23,54,23))
+```
+
+
+```r
+survey
+```
+
+```
+  index sex age
+1     1   m  99
+2     2   m  46
+3     3   m  23
+4     4   f  54
+5     5   f  23
+```
+]
+---
+class: inverse
+
+#### Review - Objects:
+* Define objects &gt; Apply functions &gt; Repeat!
+
+* Objects are defined by data, which there are five main types.
+
+* Objects come in different sizes and shapes, from a single, scalar, object, to a data frame that contains multiple vectors of different data types.
+
+---
+#### Topic 4: Objects and Functions
+
+R revolves around two things: **objects** and **functions**. Almost everything in R is either an object or a function.
+
+&lt;center&gt;&lt;b&gt;Define objects &gt; Apply functions &gt; Repeat!&lt;/b&gt;&lt;/center&gt;
+
+---
+#### Topic 4: Objects and Functions
+
+Functions in R:
+
+* Functions are procedures that typically take one or more objects as **arguments** (i.e., inputs), does something with them, then returns a new object (i.e., result).
+
+--
+
+* Functions vary in complexity - like computing a mean, to a statistical test.
+
+--
+
+* How do we get functions loaded into R?
+ 1. Write your own.
+
+ 2. Community development (**Packages**)!
+
+---
+#### Topic 4: Objects and Functions
+
+Packages in R:
+
+* R packages are collections of functions developed by the [R community](&lt;https://cran.case.edu&gt;).
+
+--
+
+* Packages also include data sets, help documentation, and how-to examples (i.e., vignette).
+
+--
+
+* When you download and install R for the first time, you are installing the **base R** - only functions written by the original authors of the R language.
+
+--
+
+* How de we get ~~functions~~ packages loaded into R?
+
+---
+#### Topic 4: Objects and Functions
+
+Packages in R:
+
+* How de we get packages loaded into R?
+
+ + Programmatically
+  
+  ```r
+   install.packages("ggplot2")
+  ```
+--
+ + RStudio Explorer window
+ 
+  &lt;img src="./images/rstudio3.png" alt="R timeline" height=300 &lt;/&gt;
+ 
+---
+class: inverse
+
+#### Review - Functions and Packages:
+* Define objects &gt; Apply functions &gt; Repeat!
+
+* Functions are used to work with objects in R and are loaded via packages.
+
+* Standard functions are a part of base R, a series of packages that load automatically when R is opened.
+
+* There is a large community of users that develop packages for R.
+
+* Packages can be loaded with install.packages(...), or in the Explorer window in RStudio.
+
+---
+class: center, middle, inverse
+
+#### Topic 5: Data and Data Wrangling
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+--
+
+ * Check and/or set a working directory.
+
+--
+  + What is my working directory?
+   
+   ```r
+   getwd()         # Prints current working directory
+   ```
+   
+   ```
+   [1] "/Users/jeremymack/Documents/GitHub/rprogramming/rprog"
+   ```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
+ 
+  + How do I set my working directory?
+   
+   ```r
+   setwd("h:/R")   # Sets path to working directory
+   getwd()         # Prints current working directory
+   ```
+   ```
+   [1] "h:/R"
+   ```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
+ 
+  + How do I set my working directory?
+   
+   ```r
+   setwd("h:/R")   # Sets path to working directory
+   getwd()         # Prints current working directory
+   ```
+   ```
+   [1] "h:/R"
+   ```
+   + Can also set working directory in RStudio
+   
+     1. Session &gt; Set Working Directory &gt; Choose Directory...
+     
+     2. Explorer window &gt; More &gt; Set As Working Directory
+   
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
+
+ * Load data.
+
+--
+ 
+  + Programmatically:
+  
+  ```r
+   read.table()   # base R
+   read.csv()     # base R
+   read.delim()   # base R
+   read_xlsx()    # Available with readxl package
+  ```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
+
+ * Load data.
+ 
+  + Programmatically:
+  
+  ```r
+   read.table()   # base R
+   read.csv()     # base R
+   read.delim()   # base R
+   read_xlsx()    # Available with readxl package
+  ```
+   
+   + Can also load data in RStudio
+   
+     1. File &gt; Import Dataset
+     
+     2. Workspace window &gt; Import Dataset
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
+
+ * Load data.
+ 
+ * Explore data!
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+ * Let's explore data in R.
+ 
+--
+ 
+ * We'll use a dataset from the web to practice saving to and loading from a working directory.
+ 
+--
+
+ * Basic steps:
+  
+   1. Set working directory.
+   
+   2. Load data.
+   
+   3. Explore data!
+ 
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+ * First, using the Explorer window in RStudio, create a folder called "R".
+
+--
+
+ * Next, we'll set our working directory and download our dataset:
+
+```r
+   # Set working directory
+   setwd("h:/R")
+   
+   # Set url link for data download
+   url &lt;- "https://wordpress.lehigh.edu/jsm4/files/2020/02/mpg.txt"
+   
+   # Download file to working directory
+   download.file(url, "mpg.txt")
+```
+   
+--
+
+ * Now, let's load our data:
+
+```r
+   df &lt;- read.table("mpg.txt", header=TRUE, sep=",")
+```
+   
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+ * Let's check to make sure our data loaded correctly:
+
+```r
+   head(df)
+```
+
+```
+  manufacturer model displ year cyl      trans drv cty hwy fl   class
+1         audi    a4   1.8 1999   4   auto(l5)   f  18  29  p compact
+2         audi    a4   1.8 1999   4 manual(m5)   f  21  29  p compact
+3         audi    a4   2.0 2008   4 manual(m6)   f  20  31  p compact
+4         audi    a4   2.0 2008   4   auto(av)   f  21  30  p compact
+5         audi    a4   2.8 1999   6   auto(l5)   f  16  26  p compact
+6         audi    a4   2.8 1999   6 manual(m5)   f  18  26  p compact
+```
+   
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+ * Next, we'll check our data structure:
+
+```r
+   str(df)
+```
+
+```
+'data.frame':	234 obs. of  11 variables:
+ $ manufacturer: Factor w/ 15 levels "audi","chevrolet",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ model       : Factor w/ 38 levels "4runner 4wd",..: 2 2 2 2 2 2 2 3 3 3 ...
+ $ displ       : num  1.8 1.8 2 2 2.8 2.8 3.1 1.8 1.8 2 ...
+ $ year        : int  1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 ...
+ $ cyl         : int  4 4 4 4 6 6 6 4 4 4 ...
+ $ trans       : Factor w/ 10 levels "auto(av)","auto(l3)",..: 4 9 10 1 4 9 1 9 4 10 ...
+ $ drv         : Factor w/ 3 levels "4","f","r": 2 2 2 2 2 2 2 1 1 1 ...
+ $ cty         : int  18 21 20 21 16 18 18 18 16 20 ...
+ $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...
+ $ fl          : Factor w/ 5 levels "c","d","e","p",..: 4 4 4 4 4 4 4 4 4 4 ...
+ $ class       : Factor w/ 7 levels "2seater","compact",..: 2 2 2 2 2 2 2 2 2 2 ...
+```
+
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+ 
+ * Helpful functions for exploring data in R:
+ 
+
+```r
+  View(df)      # View the dataset in a spreadsheet
+  
+  head(df)      # Print the first few rows
+  
+  tail(df)      # Print the last few rows
+  
+  nrow(df)      # Print the number of rows
+  
+  ncol(df)      # Print the number of columns
+  
+  dim(df)       # Print the dimensions (rows x columns)
+  
+  rownames(df)  # Print row names
+  
+  colnames(df)  # Print column names
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+  * Selecting specific data in R:
+  
+   + R reads data as row x column, using brackets [ ]
+  
+
+```r
+  df[1,1]  # Print value in row 1, column 1
+```
+
+```
+[1] audi
+15 Levels: audi chevrolet dodge ford honda hyundai jeep ... volkswagen
+```
+
+```r
+  df[6,10] # Print value in row 6, column 10
+```
+
+```
+[1] p
+Levels: c d e p r
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+  * Selecting specific data in R:
+  
+   + What if we wanted to print just row 1?
+   
+
+```r
+  df[1,]
+```
+
+```
+  manufacturer model displ year cyl    trans drv cty hwy fl   class
+1         audi    a4   1.8 1999   4 auto(l5)   f  18  29  p compact
+```
+ 
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+  * Selecting specific data in R:
+  
+   + What if we wanted to print just column 1?
+   
+
+```r
+  df[,1]   # Print column 1 (as a vector)
+```
+
+   
+
+```
+ [1] audi      audi      audi      audi      audi      audi      audi     
+ [8] audi      audi      audi      audi      audi      audi      audi     
+[15] audi      audi      audi      audi      chevrolet chevrolet chevrolet
+[22] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
+[29] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
+[36] chevrolet chevrolet dodge     dodge     dodge     dodge     dodge    
+[43] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[50] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[57] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[64] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[71] dodge     dodge     dodge     dodge     ford      ford      ford     
+[78] ford      ford      ford      ford      ford      ford      ford     
+[85] ford      ford      ford      ford      ford      ford      ford     
+[92] ford      ford      ford      ford      ford      ford      ford     
+15 Levels: audi chevrolet dodge ford honda hyundai jeep ... volkswagen
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+  * Selecting specific data in R:
+  
+   + What if we wanted to print just column 1?
+
+
+```r
+  df$manufacturer  # Print hwy column (as a vector)
+```
+
+
+```
+ [1] audi      audi      audi      audi      audi      audi      audi     
+ [8] audi      audi      audi      audi      audi      audi      audi     
+[15] audi      audi      audi      audi      chevrolet chevrolet chevrolet
+[22] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
+[29] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
+[36] chevrolet chevrolet dodge     dodge     dodge     dodge     dodge    
+[43] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[50] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[57] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[64] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
+[71] dodge     dodge     dodge     dodge     ford      ford      ford     
+[78] ford      ford      ford      ford      ford      ford      ford     
+[85] ford      ford      ford      ford      ford      ford      ford     
+[92] ford      ford      ford      ford      ford      ford      ford     
+15 Levels: audi chevrolet dodge ford honda hyundai jeep ... volkswagen
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Summarizing Data in R
+
+ * Helpful functions for summarizing data in R:
+ 
+  + What if we wanted to summarize the mpg data in mtcars dataset?
+ 
+
+```r
+mean(df$hwy)  # Average value for hwy
+```
+
+```
+[1] 23.44017
+```
+--
+
+```r
+max(df$hwy)   # Maximum value for hwy
+```
+
+```
+[1] 44
+```
+--
+
+```r
+min(df$hwy)   # Minimum value for hwy
+```
+
+```
+[1] 12
+```
+--
+
+```r
+sd(df$hwy)    # Standard deviation for hwy
+```
+
+```
+[1] 5.954643
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Summarizing Data in R
+
+ * Helpful functions for summarizing data in R:
+ 
+  + What happens if there are missing data?
+
+
+```r
+df[1,9] &lt;- NA
+df[1,]
+```
+
+```
+  manufacturer model displ year cyl    trans drv cty hwy fl   class
+1         audi    a4   1.8 1999   4 auto(l5)   f  18  NA  p compact
+```
+--
+
+```r
+mean(df$hwy)  # Average value for mpg
+```
+
+```
+[1] NA
+```
+--
+
+```r
+# Need to pay attention to additional arguments
+mean(df$hwy, na.rm=TRUE)
+```
+
+```
+[1] 23.41631
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Adding Data in R
+
+ * What if we wanted to add a new variable (i.e., column)?
+ 
+
+```r
+# Let's add a new column of with row sum
+df$avg  &lt;- rowMeans(df[,8:9], na.rm=TRUE)
+```
+
+
+```
+  manufacturer model displ year cyl    trans drv cty hwy fl   class avg
+1         audi    a4   1.8 1999   4 auto(l5)   f  18  NA  p compact  18
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Adding Data in R
+
+ * What if we wanted to add more data (i.e., row)?
+ 
+
+```r
+# Let's add a new row of data with the average for each column
+newrow &lt;- df[1,]
+```
+
+
+```r
+df &lt;- rbind(df, newrow)
+```
+
+
+```
+    manufacturer  model displ year cyl    trans drv cty hwy fl   class
+234   volkswagen passat   3.6 2008   6 auto(s6)   f  17  26  p midsize
+235         audi     a4   1.8 1999   4 auto(l5)   f  18  NA  p compact
+     avg
+234 21.5
+235 18.0
+```
+
+
+---
+class: inverse
+
+#### Exercise - Summarizing Data:
+ * The *USArrests* dataset provides data on the number of arrests per 100,000 residents for violent crimes (assault, murder, and rape) in each of the 50 US states in 1973.
+
+--
+
+ * Using that data, try the following:
+  1. Calculate average number of arrests for assault.
+  
+  2. Identify maximum number of arrests for assault.
+  
+  3. Print the statistics for Pennsylvania.
+  
+  4. Add a column of data with the average arrests for violent crime in each state.
+    
+--
+
+ * How did you do?
+
+---
+#### Review - Summarizing Data:
+ * How did you do?
+
+
+```r
+mean(USArrests$Assault)
+```
+
+```
+[1] 170.76
+```
+
+```r
+max(USArrests$Assault)
+```
+
+```
+[1] 337
+```
+
+```r
+USArrests["Pennsylvania",]
+```
+
+```
+             Murder Assault UrbanPop Rape
+Pennsylvania    6.3     106       72 14.9
+```
+
+```r
+USArrests$Average &lt;- rowMeans(USArrests)
+```
+
+
+```
+        Murder Assault UrbanPop Rape Average
+Alabama   13.2     236       58 21.2    82.1
+```
+
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
+  * So far, we've used base R commands and functions to explore and summarize data.
+  
+--
+
+* Let's take a look at the [(Tidyverse)](&lt;https://www.tidyverse.org)!
+ 
+.pull-right[
+&lt;center&gt;&lt;img src="./images/tidyverse.png" alt="Tidyverse" height=300 &lt;/&gt;&lt;/center&gt;
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
+&lt;center&gt;&lt;img src="./images/tidyverse3.png" alt="Tidyverse" height=400 &lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
+&lt;center&gt;&lt;img src="./images/tidyverse4.png" alt="Tidyverse" height=400 &lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
+ * Helpful functions - **dplyr**
+ 
+  + *filter()* picks cases based on their values.
+  
+  + *select()* picks variables based on their names.
+  
+  + *arrange()* changes the ordering of rows.
+  
+  + *group_by()* allows operations by groups.
+  
+  + *mutate()* adds new variables to a dataset.
+  
+  + *summarise()* reduces multiple values down to a summary value.
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
+ * Helpful functions - **dplyr**
+ 
+  + *filter()* picks cases based on their values.
+
+
+
+```r
+ford &lt;- mpg %&gt;% filter(hwy&gt;=25)
+head(ford, 5)
+```
+
+```
+# A tibble: 5 x 11
+  manufacturer model displ  year   cyl trans  drv     cty   hwy fl    class
+  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+1 audi         a4      1.8  1999     4 auto(… f        18    29 p     comp…
+2 audi         a4      1.8  1999     4 manua… f        21    29 p     comp…
+3 audi         a4      2    2008     4 manua… f        20    31 p     comp…
+4 audi         a4      2    2008     4 auto(… f        21    30 p     comp…
+5 audi         a4      2.8  1999     6 auto(… f        16    26 p     comp…
+```
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
+ * Helpful functions - **dplyr**
+ 
+  + *select()* picks cases based on their values.
+
+```r
+hwy &lt;- mpg %&gt;% select(hwy)
+head(hwy, 5)
+```
+
+```
+# A tibble: 5 x 1
+    hwy
+  &lt;int&gt;
+1    29
+2    29
+3    31
+4    30
+5    26
+```
+
+---
+class: inverse
+
+#### Review - Data and Data Wrangling:
+* 
+
+* 
+
+* 
+
+* 
+
+* 
+
+
+---
+class: center, middle, inverse
+
+#### Topic 6: Plotting
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;b&gt;“The simple graph has brought more information to the data analyst’s mind than any other device.” - John Tukey&lt;/b&gt;&lt;/center&gt;
+
+--
+
+ * Let's explore visualizing data in R, using **ggplot2** - another Tidyverse package.
+
+--
+
+ * Basic steps:
+  
+   1. Set working directory.
+   
+   2. Load data.
+   
+   3. Explore data!
+   
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;b&gt;“The simple graph has brought more information to the data analyst’s mind than any other device.” - John Tukey&lt;/b&gt;&lt;/center&gt;
+
+ * Let's explore visualizing data in R, using **ggplot2** - a Tidyverse package.
+
+ * Basic steps:
+  
+   1. Set working directory.
+   
+   2. Load data.
+   
+   3. ~~Explore data!~~ Visualize data!
+ 
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * Before start plotting, let's get to know **ggplot2**.
+ 
+--
+ 
+ * Follows a basic template:
+  
+&lt;img src="./images/ggplot.png" alt="ggplot" &lt;/&gt;
+
+--
+
+ * *ggplot()* function - creates a "blank canvas". The first argument is your dataset.
+ 
+--
+
+ * *geom_()* function - adds a layer. For example, *geom_point* creates a scatterplot. 
+  + There are many geom functions!
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * Let's try the first function by itself. What happened?
+
+
+
+```r
+ ggplot(data=df)
+```
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;img src="./images/p1.png" alt="ggplot"&lt;/&gt;&lt;/center&gt;
+ 
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * Let's try the first function by itself. What happened?
+
+```r
+ ggplot(data=df)
+```
+
+ * Now lets add some layers, with the second function.
+
+```r
+ ggplot(data=df) +
+ geom_point(mapping=aes(x=displ,y=hwy))
+```
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;img src="./images/p2.png" alt="ggplot"&lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * Let's try the first function by itself. What happened?
+
+```r
+ ggplot(data=df)
+```
+
+ * Now lets add some layers, with the second function.
+
+```r
+ ggplot(data=df) +
+ geom_point(mapping=aes(x=displ,y=hwy))
+```
+
+ * Now lets add an additional **aesthetic**.
+
+```r
+ ggplot(data=df) +
+ geom_point(mapping=aes(x=displ, y=hwy, color=class))
+```
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;img src="./images/p3.png" alt="ggplot"&lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * We can also add additional layers [geoms](&lt;https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf&gt;).
+
+```r
+ ggplot(data=df) +
+ geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+ geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+```
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;img src="./images/p4.png" alt="ggplot"&lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * We can also add additional layers [geoms](&lt;https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf&gt;).
+
+```r
+ ggplot(data=df) +
+ geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+ geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+```
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * Now, let's clean the plot up a bit.
+
+```r
+ ggplot(mpg, aes(x=displ, y=hwy)) +
+  theme(plot.background=element_blank(),
+        panel.border=element_blank(),
+        axis.ticks=element_line(size=0.25),
+        axis.text=element_text(size = 7),
+        axis.line=element_line(size=0.25),
+        axis.title=element_text(size = 7),
+        legend.text=element_text(size = 7),
+        legend.title=element_text(size = 7),
+        legend.key=element_blank(),
+        plot.title=element_text(hjust=.5, size=8)) +
+    geom_point(aes(color=class),size=0.25) +
+    geom_smooth(method="lm", size=0.25) +
+    labs(title="Highway mileage by engine displacement",
+         x="Engine displacement (L)",
+         y="Highway miles per gallon",
+         color="Vehicle class")
+```
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+&lt;center&gt;&lt;img src="./images/p5.png" alt="ggplot"&lt;/&gt;&lt;/center&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
