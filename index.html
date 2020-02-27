@@ -1111,10 +1111,10 @@ Packages in R:
 * How de we get packages loaded into R?
 
  + Programmatically
-  
-  ```r
-   install.packages("ggplot2")
-  ```
+
+```r
+ install.packages("ggplot2")
+```
 --
  + RStudio Explorer window
  
@@ -1154,15 +1154,16 @@ Basic steps to working with data in R:
  * Check and/or set a working directory.
 
 --
+
   + What is my working directory?
-   
-   ```r
+
+```r
    getwd()         # Prints current working directory
-   ```
-   
-   ```
-   [1] "/Users/jeremymack/Documents/GitHub/rprogramming/rprog"
-   ```
+```
+
+```
+[1] "/Users/jeremymack/Documents/GitHub/rprogramming/rprog"
+```
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1172,14 +1173,15 @@ Basic steps to working with data in R:
  * Check and/or set a working directory.
  
   + How do I set my working directory?
-   
-   ```r
+
+```r
    setwd("h:/R")   # Sets path to working directory
    getwd()         # Prints current working directory
-   ```
-   ```
+```
+
+```
    [1] "h:/R"
-   ```
+```
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1189,15 +1191,17 @@ Basic steps to working with data in R:
  * Check and/or set a working directory.
  
   + How do I set my working directory?
-   
-   ```r
+
+```r
    setwd("h:/R")   # Sets path to working directory
    getwd()         # Prints current working directory
-   ```
-   ```
+```
+
+```
    [1] "h:/R"
-   ```
-   + Can also set working directory in RStudio
+```
+
+  + Can also set working directory in RStudio
    
      1. Session &gt; Set Working Directory &gt; Choose Directory...
      
@@ -1215,13 +1219,13 @@ Basic steps to working with data in R:
 --
  
   + Programmatically:
-  
-  ```r
+
+```r
    read.table()   # base R
    read.csv()     # base R
    read.delim()   # base R
    read_xlsx()    # Available with readxl package
-  ```
+```
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1233,13 +1237,13 @@ Basic steps to working with data in R:
  * Load data.
  
   + Programmatically:
-  
-  ```r
+
+```r
    read.table()   # base R
    read.csv()     # base R
    read.delim()   # base R
    read_xlsx()    # Available with readxl package
-  ```
+```
    
    + Can also load data in RStudio
    
@@ -1553,8 +1557,9 @@ Summarizing Data in R
 
 
 ```r
-df[1,9] &lt;- NA
-df[1,]
+df2 &lt;- df
+df2[1,9] &lt;- NA
+df2[1,]
 ```
 
 ```
@@ -1564,7 +1569,7 @@ df[1,]
 --
 
 ```r
-mean(df$hwy)  # Average value for mpg
+mean(df2$hwy)  # Average value for mpg
 ```
 
 ```
@@ -1574,7 +1579,7 @@ mean(df$hwy)  # Average value for mpg
 
 ```r
 # Need to pay attention to additional arguments
-mean(df$hwy, na.rm=TRUE)
+mean(df2$hwy, na.rm=TRUE)
 ```
 
 ```
@@ -1596,38 +1601,9 @@ df$avg  &lt;- rowMeans(df[,8:9], na.rm=TRUE)
 
 
 ```
-  manufacturer model displ year cyl    trans drv cty hwy fl   class avg
-1         audi    a4   1.8 1999   4 auto(l5)   f  18  NA  p compact  18
+  manufacturer model displ year cyl    trans drv cty hwy fl   class  avg
+1         audi    a4   1.8 1999   4 auto(l5)   f  18  29  p compact 23.5
 ```
-
----
-#### Topic 5: Data and Data Wrangling
-
-Adding Data in R
-
- * What if we wanted to add more data (i.e., row)?
- 
-
-```r
-# Let's add a new row of data with the average for each column
-newrow &lt;- df[1,]
-```
-
-
-```r
-df &lt;- rbind(df, newrow)
-```
-
-
-```
-    manufacturer  model displ year cyl    trans drv cty hwy fl   class
-234   volkswagen passat   3.6 2008   6 auto(s6)   f  17  26  p midsize
-235         audi     a4   1.8 1999   4 auto(l5)   f  18  NA  p compact
-     avg
-234 21.5
-235 18.0
-```
-
 
 ---
 class: inverse
@@ -1652,7 +1628,10 @@ class: inverse
 
 ---
 #### Review - Summarizing Data:
- * How did you do?
+
+ * Calculate average number of arrests for assault.
+
+--
 
 
 ```r
@@ -1663,6 +1642,14 @@ mean(USArrests$Assault)
 [1] 170.76
 ```
 
+---
+#### Review - Summarizing Data:
+
+ * Identify maximum number of arrests for assault.
+
+--
+ 
+
 ```r
 max(USArrests$Assault)
 ```
@@ -1671,14 +1658,30 @@ max(USArrests$Assault)
 [1] 337
 ```
 
+---
+#### Review - Summarizing Data:
+
+ * Print the statistics for Pennsylvania.
+
+--
+
+
 ```r
 USArrests["Pennsylvania",]
 ```
 
 ```
-             Murder Assault UrbanPop Rape
-Pennsylvania    6.3     106       72 14.9
+             Murder Assault UrbanPop Rape Average
+Pennsylvania    6.3     106       72 14.9    49.8
 ```
+
+---
+#### Review - Summarizing Data:
+
+ * Add a column of data with the average arrests for violent crime in each state.
+
+--
+
 
 ```r
 USArrests$Average &lt;- rowMeans(USArrests)
@@ -1686,8 +1689,12 @@ USArrests$Average &lt;- rowMeans(USArrests)
 
 
 ```
-        Murder Assault UrbanPop Rape Average
-Alabama   13.2     236       58 21.2    82.1
+           Murder Assault UrbanPop Rape Average
+Alabama      13.2     236       58 21.2  82.100
+Alaska       10.0     263       48 44.5  91.375
+Arizona       8.1     294       80 31.0 103.275
+Arkansas      8.8     190       50 19.5  67.075
+California    9.0     276       91 40.6 104.150
 ```
 
 
@@ -1721,6 +1728,130 @@ Exploring and Summarizing Data in R
 #### Topic 5: Data and Data Wrangling
 Exploring and Summarizing Data in R
 
+ * Working with the pipe operator (%&gt;%) - **magrittr**
+ 
+--
+ 
+  + This operator forwards an object, into the next function.
+  
+--
+  
+  + Perform multiple functions, without nesting, or looping.
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R  
+  
+ * For example, in our *mpg* dataset, let's say we're interested in the average highway mpg in cars in 2008, based on their number of cylinders.
+
+--
+ 
+  + Nesting approach:
+  
+.pull-left[
+
+
+
+```r
+arrange(
+   summarize(
+       group_by(
+        filter(df,year==2008),
+        cyl
+          ),
+       Avg = mean(hwy)
+      ),
+   desc(Avg)
+ )
+```
+]
+
+.pull-right[
+
+```
+# A tibble: 4 x 2
+    cyl   Avg
+  &lt;int&gt; &lt;dbl&gt;
+1     4  29.3
+2     5  28.8
+3     6  23.5
+4     8  18  
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R  
+  
+ * For example, in our *mpg* dataset, let's say we're interested in the average highway mpg in cars in 2008, based on their number of cylinders.
+ 
+  + Multiple objects approach:
+  
+.pull-left[
+
+
+
+```r
+a &lt;- filter(df, year==2008)
+b &lt;- group_by(a, cyl)
+c &lt;- summarize(b,
+               Avg=mean(hwy)))
+d &lt;- arrange(c, desc(Avg))
+print(d)
+```
+]
+
+.pull-right[
+
+```
+# A tibble: 4 x 2
+    cyl   Avg
+  &lt;int&gt; &lt;dbl&gt;
+1     4  29.3
+2     5  28.8
+3     6  23.5
+4     8  18  
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R  
+  
+ * For example, in our *mpg* dataset, let's say we're interested in the average highway mpg in cars in 2008, based on their number of cylinders.
+ 
+  + Piping approach:
+  
+.pull-left[
+
+
+
+```r
+df %&gt;%
+   filter(year==2008) %&gt;%
+   group_by(cyl) %&gt;%
+   summarize(Avg=mean(hwy)) %&gt;%
+   arrange(desc(Avg))
+```
+]
+
+.pull-right[
+
+```
+# A tibble: 4 x 2
+    cyl   Avg
+  &lt;int&gt; &lt;dbl&gt;
+1     4  29.3
+2     5  28.8
+3     6  23.5
+4     8  18  
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+Exploring and Summarizing Data in R
+
  * Helpful functions - **dplyr**
  
   + *filter()* picks cases based on their values.
@@ -1734,70 +1865,99 @@ Exploring and Summarizing Data in R
   + *mutate()* adds new variables to a dataset.
   
   + *summarise()* reduces multiple values down to a summary value.
-
+  
 ---
-#### Topic 5: Data and Data Wrangling
-Exploring and Summarizing Data in R
+class: inverse
 
- * Helpful functions - **dplyr**
+#### Exercise - Summarizing Data:
+ * The *mpg* dataset provides data on fuel efficiency for a variety of vehicles in 1999 and 2008.
+
+--
+
+ * Using that data and the piping method:
+  1. What manufacturer had the highest highway mpg in 1999? Was it the same one in 2008?
+  
+  2. Based on number of cylinders, calculate the average highway and city mpg, in both 1999 and 2008, as well as the difference bewteen highway and city mpg.
+    
+--
+
+ * How did you do?
  
-  + *filter()* picks cases based on their values.
+---
+#### Exercise - Summarizing Data:
 
+ * What manufacturer had the highest highway mpg in 1999? Was it the same one in 2008?
+
+--
 
 
 ```r
-ford &lt;- mpg %&gt;% filter(hwy&gt;=25)
-head(ford, 5)
+df %&gt;% filter(year==1999) %&gt;% 
+   arrange(desc(hwy)) %&gt;% 
+   head(1)
 ```
 
 ```
-# A tibble: 5 x 11
-  manufacturer model displ  year   cyl trans  drv     cty   hwy fl    class
-  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
-1 audi         a4      1.8  1999     4 auto(… f        18    29 p     comp…
-2 audi         a4      1.8  1999     4 manua… f        21    29 p     comp…
-3 audi         a4      2    2008     4 manua… f        20    31 p     comp…
-4 audi         a4      2    2008     4 auto(… f        21    30 p     comp…
-5 audi         a4      2.8  1999     6 auto(… f        16    26 p     comp…
+  manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
+1   volkswagen jetta   1.9 1999   4 manual(m5)   f  33  44  d compact 38.5
 ```
-
----
-#### Topic 5: Data and Data Wrangling
-Exploring and Summarizing Data in R
-
- * Helpful functions - **dplyr**
- 
-  + *select()* picks cases based on their values.
 
 ```r
-hwy &lt;- mpg %&gt;% select(hwy)
-head(hwy, 5)
+df %&gt;% filter(year==2008) %&gt;% 
+   arrange(desc(hwy)) %&gt;% 
+   head(1)
 ```
 
 ```
-# A tibble: 5 x 1
-    hwy
-  &lt;int&gt;
-1    29
-2    29
-3    31
-4    30
-5    26
+  manufacturer   model displ year cyl      trans drv cty hwy fl   class
+1       toyota corolla   1.8 2008   4 manual(m5)   f  28  37  r compact
+   avg
+1 32.5
 ```
+
+
+---
+#### Exercise - Summarizing Data:
+
+ * Based on number of cylinders, calculate the average highway and city mpg, in both 1999 and 2008, as well as the difference bewteen highway and city mpg.
+
+--
+
+
+```r
+df %&gt;%
+   group_by(cyl,year) %&gt;%
+   summarize(Avg_hwy=mean(hwy, na.rm=TRUE),
+             Avg_cty=mean(cty, na.rm=TRUE)) %&gt;%
+   mutate(Diff=Avg_hwy-Avg_cty)
+```
+
+```
+# A tibble: 7 x 5
+# Groups:   cyl [4]
+    cyl  year Avg_hwy Avg_cty  Diff
+  &lt;int&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+1     4  1999    28.4    20.8  7.53
+2     4  2008    29.3    21.2  8.11
+3     5  2008    28.8    20.5  8.25
+4     6  1999    22.3    16.1  6.24
+5     6  2008    23.5    16.4  7.09
+6     8  1999    17.0    12.2  4.81
+7     8  2008    18      12.8  5.21
+```
+
 
 ---
 class: inverse
 
 #### Review - Data and Data Wrangling:
-* 
+* Working directories and data can be loaded both programmatically and using the RStudio interface.
 
-* 
+* R reads data within brackets as row x column.
 
-* 
+* Pay attendtion to function arguments - missing values can cause problems.
 
-* 
-
-* 
+* Tidyverse packages provide a programming grammar that simplifies applying multiple functions.
 
 
 ---
@@ -1819,6 +1979,13 @@ Visualizing data in R
 
 --
 
+&lt;center&gt;&lt;img src="./images/dinosaur.gif" alt="gif" height=400&lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
  * Let's explore visualizing data in R, using **ggplot2** - another Tidyverse package.
 
 --
@@ -1835,8 +2002,6 @@ Visualizing data in R
 #### Topic 6: Plotting
 
 Visualizing data in R
-
-&lt;center&gt;&lt;b&gt;“The simple graph has brought more information to the data analyst’s mind than any other device.” - John Tukey&lt;/b&gt;&lt;/center&gt;
 
  * Let's explore visualizing data in R, using **ggplot2** - a Tidyverse package.
 
@@ -1867,7 +2032,7 @@ Visualizing data in R
  
 --
 
- * *geom_()* function - adds a layer. For example, *geom_point* creates a scatterplot. 
+ * *geom()* function - adds a layer. For example, *geom_point* creates a scatterplot. 
   + There are many geom functions!
 
 ---
@@ -2020,6 +2185,34 @@ Visualizing data in R
 Visualizing data in R
 
 &lt;center&gt;&lt;img src="./images/dinosaur.gif" alt="gif" height=500&lt;/&gt;&lt;/center&gt;
+
+---
+class: inverse
+
+#### Review - Plotting:
+* Data can look quantitatively the same, but qualitatively different.
+
+* **ggplot2** package in R uses a multi-function approach to plotting.
+
+* More on visualizing data in a few weeks...
+
+---
+class: center, middle, inverse
+
+#### Topic 7: Other things to do with R
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+---
+
+#### Topic 7: Other things to do with R
+
+* [R Markdown documents](&lt;https://rmarkdown.rstudio.com&gt;)
+
+* [Shiny Apps](&lt;https://shiny.cc.lehigh.edu/jsm4/climate/&gt;)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
