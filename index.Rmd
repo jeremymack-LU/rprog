@@ -1621,3 +1621,10 @@ Visualizing data in R
 Visualizing data in R
 
 <center><img src="./images/p5.png" alt="ggplot"</></center>
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+<center><img src="./images/dinosaur.gif" alt="gif" height=500</></center>
