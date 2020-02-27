@@ -1,0 +1,9 @@
+name: "rprog"
+output_dir: "."
+navbar:
+  title: "Programming in R"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About Me"
+      href: about.html
