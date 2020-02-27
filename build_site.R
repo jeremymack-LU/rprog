@@ -2,7 +2,7 @@
 #This helps avoid confusion if our working directory is 
 #not our site because of other projects we were 
 #working on at the time. 
-setwd("/Users/jeremymack/Documents/GitHub/rprogramming/rprog"
+setwd("/Users/jeremymack/Documents/GitHub/rprogramming/rprog")
 
 #render your sweet site. 
 rmarkdown::render_site()
