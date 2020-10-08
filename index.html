@@ -4,17 +4,19 @@
     <title>Programming in R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jeremy Mack" />
-    <link href="site_libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="site_libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+    <link rel="stylesheet" href="default-fonts.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 
 class: center, middle, inverse, title-slide
 
-# Programming in R: a brief introduction
-### Alex Pacheco and Jeremy Mack
-### February 28, 2020
+## Programming in R: a brief introduction
+#### Jeremy Mack
+#### Lehigh University - Digital Scholarship Team
+&lt;img src="./images/rlang.png" alt="RStudio" height=150/&gt; &lt;img src="./images/rstudio5.png" alt="RStudio" height=150/&gt; &lt;img src="./images/tidyverse5.png" alt="RStudio" height=150/&gt;
+&lt;br/&gt;&lt;br/&gt;
 
 ---
 
@@ -36,7 +38,7 @@ class: center, middle, inverse, title-slide
 
 ### Structure of the presentation
 
-The presentation is split into five topics:
+The presentation is split into seven topics:
 
  * **Topic 1:** What is R? Why use it?
  
@@ -67,33 +69,30 @@ class: center, middle, inverse
 #### Topic 1: What is R? Why use it?
 
 .pull-left[
-![The R logo](./images/R_logo.png)
+&lt;center&gt;&lt;img src="./images/R_logo.png" alt="R logo" height=230&lt;/&gt;&lt;/center&gt;
 ]
 
 .pull-right[
 - R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
-]
-   
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
+{{content}}
 ]
 
-.pull-right[
-- R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
-   
+--
+
 - Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
-]
+{{content}}
+
+--
+
+- Dialect of the S language (S-Plus)
+{{content}}
    
 ---
 
 #### Topic 1: What is R? Why use it?
 
 .pull-left[
-![The R logo](./images/R_logo.png)
+&lt;center&gt;&lt;img src="./images/R_logo.png" alt="R logo" height=230&lt;/&gt;&lt;/center&gt;
 ]
 
 .pull-right[
@@ -103,8 +102,6 @@ class: center, middle, inverse
 
 - Dialect of the S language (S-Plus)
 ]
-   
---
 
 &lt;img src="./images/timeline.png" align="center" alt="R timeline" /&gt;
 
@@ -113,84 +110,43 @@ class: center, middle, inverse
 #### Topic 1: What is R? Why use it?
 
 .pull-left[
-![The R logo](./images/R_logo.png)
+&lt;center&gt;&lt;img src="./images/R_logo.png" alt="R logo" height=230&lt;/&gt;&lt;/center&gt;
 ]
 
 .pull-right[
 - **Free!**
+{{content}}
 ]
 
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
-
-.pull-right[
-- **Free!**
+--
 
 - Rich data analysis and visualization options
-]
+{{content}}
 
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
-
-.pull-right[
-- **Free!**
-
-- Rich data analysis and visualization options
+--
 
 - Available on most platforms/OS
-]
+{{content}}
+--
 
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
-
-.pull-right[
-* **Free!**
-
-* Rich data analysis and visualization options
-
-* Available on most platforms/OS
-
-* *Very* active development community
+- *Very* active development community
     + CRAN: The Comprehensive R Archive Network
-    + User contributed packages (&gt; 15,000)
-]
+    + User contributed packages &lt;br/&gt; (&gt; 15,000)
+    {{content}}
+
+--
+
+- **Reproducibility**
 
 ---
 
 #### Topic 1: What is R? Why use it?
 
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
 
-.pull-right[
-* **Free!**
-
-* Rich data analysis and visualization options
-
-* Available on most platforms/OS
-
-* *Very* active development community
-  + CRAN: The Comprehensive R Archive Network
-  + User contributed packages (&gt; 15,000)
-
-* Reproducibility
-]
+&lt;img src="./images/reproducibility.png" alt="R logo" height=265&lt;/&gt; &lt;img src="./images/reproducibility2.png" alt="R logo" height=265&lt;/&gt;
+&lt;br/&gt;&lt;br/&gt;
+--
+&lt;img src="./images/reproducibility3.png" alt="R logo" height=265&lt;/&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;img src="./images/reproducibility4b.png" alt="R logo" height=265&lt;/&gt;
 
 ---
 class: center, middle, inverse
@@ -211,9 +167,15 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-* RStudio is an *Integrated Development Environment* (IDE), or a front end platform
-to work with R.
+* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
+{{content}}
 ]
+
+--
+
+* *Integrated Development Environment* (IDE), or a front end platform
+to run R.
+{{content}}
 
 ---
 
@@ -224,15 +186,38 @@ to work with R.
 ]
 
 .pull-right[
-* RStudio is an *Integrated Development Environment* (IDE), or a front end platform
-to work with R.
-   
-* Why would you use RStudio?
+* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
 
-  + Like R, it's free!
-  + It can reduce the learning curve of R.
-  + Integrates nicely with other things (version control, ShinyApps, R Markdown, etc.)
+* *Integrated Development Environment* (IDE), or a front end platform
+to run R.
 ]
+
+&lt;img src="./images/rstudio4.png" align="center" alt="Rstudio timeline" /&gt;
+
+---
+
+#### Topic 2: What is RStudio? Why use it?
+
+.pull-left[
+![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
+]
+
+.pull-right[
+* Like R, it's **free**!
+{{content}}
+]
+
+--
+
+* It can reduce the learning curve of R, by creating organization.
+{{content}}
+
+--
+
+* Integrates nicely with other R functions:
+    + Version control
+    + R Markdown
+    + ShinyApps
 
 ---
 
@@ -243,16 +228,14 @@ How do R and RStudio work together? Consider a car analogy.
 --
 
 .pull-left[
-![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
-![The R logo](./images/R_logo.png)
+**RStudio - the frame**
+ - RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
+
+**R - the engine**
+ - R runs things under the hood - it's the enginge that allows the car to drive.
 ]
 
 .pull-right[
-* **RStudio - the frame**
- + RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
-
-* **R - the engine**
- + R runs things under the hood - it's the enginge that allows the car to drive.
 
 ]
 
@@ -260,13 +243,18 @@ How do R and RStudio work together? Consider a car analogy.
 class: inverse
 
 #### Review - R and RStudio:
-* R is a programming language built for statistical computing.
 
-* It's open source and it's free.
+--
 
-* RStudio is an integrated development envrionment that makes working with R easier.
+* **R** is a programming language built for statistical computing.
 
-* It's developed by a company, but it's also free.
+ + It's open source and it's free.
+
+--
+
+* **RStudio** is an integrated development envrionment that makes working with R easier.
+
+ + It's developed by a company, but it's also free.
 
 ---
 
@@ -283,12 +271,26 @@ class: center, middle, inverse
 
 #### Topic 3: Getting started with R and RStudio
 
-* How do I get R, or RStudio?
+How do I get R and RStudio?
+
+--
+
+* Download and local install:
 
  + You can download R on its own through the [R Project website](https://www.r-project.org).
    
  + You can download RStudio, including R,
    at the [RStudio website](https://rstudio.com/products/rstudio/download/).
+   
+--
+
+* R and RStudio at Lehigh:
+
+ + Both R and RStudio are available on [LUapps](https://luapps.lehigh.edu).
+ 
+ + LUapps can be accessed both on campus and off-campus (over VPN).
+ 
+&lt;center&gt;&lt;img src="./images/luapps.png" alt="LUApps website" height=200/&gt;&lt;/center&gt;
    
 ---
 
@@ -1403,7 +1405,7 @@ Exploring Data in R
 
 ```
 [1] audi
-15 Levels: audi chevrolet dodge ford honda hyundai jeep ... volkswagen
+15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
 ```
 
 ```r
@@ -1465,7 +1467,7 @@ Exploring Data in R
 [78] ford      ford      ford      ford      ford      ford      ford     
 [85] ford      ford      ford      ford      ford      ford      ford     
 [92] ford      ford      ford      ford      ford      ford      ford     
-15 Levels: audi chevrolet dodge ford honda hyundai jeep ... volkswagen
+15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
 ```
 
 ---
@@ -1498,7 +1500,7 @@ Exploring Data in R
 [78] ford      ford      ford      ford      ford      ford      ford     
 [85] ford      ford      ford      ford      ford      ford      ford     
 [92] ford      ford      ford      ford      ford      ford      ford     
-15 Levels: audi chevrolet dodge ford honda hyundai jeep ... volkswagen
+15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
 ```
 
 ---
@@ -1671,8 +1673,8 @@ USArrests["Pennsylvania",]
 ```
 
 ```
-             Murder Assault UrbanPop Rape Average
-Pennsylvania    6.3     106       72 14.9    49.8
+             Murder Assault UrbanPop Rape
+Pennsylvania    6.3     106       72 14.9
 ```
 
 ---
@@ -1909,10 +1911,8 @@ df %&gt;% filter(year==2008) %&gt;%
 ```
 
 ```
-  manufacturer   model displ year cyl      trans drv cty hwy fl   class
-1       toyota corolla   1.8 2008   4 manual(m5)   f  28  37  r compact
-   avg
-1 32.5
+  manufacturer   model displ year cyl      trans drv cty hwy fl   class  avg
+1       toyota corolla   1.8 2008   4 manual(m5)   f  28  37  r compact 32.5
 ```
 
 
@@ -1930,6 +1930,10 @@ df %&gt;%
    summarize(Avg_hwy=mean(hwy, na.rm=TRUE),
              Avg_cty=mean(cty, na.rm=TRUE)) %&gt;%
    mutate(Diff=Avg_hwy-Avg_cty)
+```
+
+```
+`summarise()` regrouping output by 'cyl' (override with `.groups` argument)
 ```
 
 ```
@@ -1970,6 +1974,7 @@ class: center, middle, inverse
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
+
 ---
 #### Topic 6: Plotting
 

@@ -6,6 +6,7 @@ institute: "Lehigh University"
 date: "2020/02/28"
 output:
   xaringan::moon_reader:
+    css: ["custom.css", "default-fonts.css"]
     seal: false
     lib_dir: libs
     nature:
@@ -16,9 +17,11 @@ output:
 ---
 class: center, middle, inverse, title-slide
 
-# Programming in R: a brief introduction
-### Alex Pacheco and Jeremy Mack
-### February 28, 2020
+## Programming in R: a brief introduction
+#### Jeremy Mack
+#### Lehigh University - Digital Scholarship Team
+<img src="./images/rlang.png" alt="RStudio" height=150/> <img src="./images/rstudio5.png" alt="RStudio" height=150/> <img src="./images/tidyverse5.png" alt="RStudio" height=150/>
+<br/><br/>
 
 ---
 
@@ -40,7 +43,7 @@ class: center, middle, inverse, title-slide
 
 ### Structure of the presentation
 
-The presentation is split into five topics:
+The presentation is split into seven topics:
 
  * **Topic 1:** What is R? Why use it?
  
@@ -71,33 +74,30 @@ class: center, middle, inverse
 #### Topic 1: What is R? Why use it?
 
 .pull-left[
-![The R logo](./images/R_logo.png)
+<center><img src="./images/R_logo.png" alt="R logo" height=230</></center>
 ]
 
 .pull-right[
 - R is a *programming language* [(one of many)](<https://www.tiobe.com/tiobe-index/>) and an *environment* for statistical computing.
-]
-   
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
+{{content}}
 ]
 
-.pull-right[
-- R is a *programming language* [(one of many)](<https://www.tiobe.com/tiobe-index/>) and an *environment* for statistical computing.
-   
+--
+
 - Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
-]
+{{content}}
+
+--
+
+- Dialect of the S language (S-Plus)
+{{content}}
    
 ---
 
 #### Topic 1: What is R? Why use it?
 
 .pull-left[
-![The R logo](./images/R_logo.png)
+<center><img src="./images/R_logo.png" alt="R logo" height=230</></center>
 ]
 
 .pull-right[
@@ -107,8 +107,6 @@ class: center, middle, inverse
 
 - Dialect of the S language (S-Plus)
 ]
-   
---
 
 <img src="./images/timeline.png" align="center" alt="R timeline" />
 
@@ -117,84 +115,43 @@ class: center, middle, inverse
 #### Topic 1: What is R? Why use it?
 
 .pull-left[
-![The R logo](./images/R_logo.png)
+<center><img src="./images/R_logo.png" alt="R logo" height=230</></center>
 ]
 
 .pull-right[
 - **Free!**
+{{content}}
 ]
 
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
-
-.pull-right[
-- **Free!**
+--
 
 - Rich data analysis and visualization options
-]
+{{content}}
 
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
-
-.pull-right[
-- **Free!**
-
-- Rich data analysis and visualization options
+--
 
 - Available on most platforms/OS
-]
+{{content}}
+--
 
----
-
-#### Topic 1: What is R? Why use it?
-
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
-
-.pull-right[
-* **Free!**
-
-* Rich data analysis and visualization options
-
-* Available on most platforms/OS
-
-* *Very* active development community
+- *Very* active development community
     + CRAN: The Comprehensive R Archive Network
-    + User contributed packages (> 15,000)
-]
+    + User contributed packages <br/> (> 15,000)
+    {{content}}
+
+--
+
+- **Reproducibility**
 
 ---
 
 #### Topic 1: What is R? Why use it?
 
-.pull-left[
-![The R logo](./images/R_logo.png)
-]
 
-.pull-right[
-* **Free!**
-
-* Rich data analysis and visualization options
-
-* Available on most platforms/OS
-
-* *Very* active development community
-  + CRAN: The Comprehensive R Archive Network
-  + User contributed packages (> 15,000)
-
-* Reproducibility
-]
+<img src="./images/reproducibility.png" alt="R logo" height=265</> <img src="./images/reproducibility2.png" alt="R logo" height=265</>
+<br/><br/>
+--
+<img src="./images/reproducibility3.png" alt="R logo" height=265</> &nbsp; &nbsp; &nbsp; <img src="./images/reproducibility4b.png" alt="R logo" height=265</>
 
 ---
 class: center, middle, inverse
@@ -215,9 +172,15 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-* RStudio is an *Integrated Development Environment* (IDE), or a front end platform
-to work with R.
+* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
+{{content}}
 ]
+
+--
+
+* *Integrated Development Environment* (IDE), or a front end platform
+to run R.
+{{content}}
 
 ---
 
@@ -228,15 +191,38 @@ to work with R.
 ]
 
 .pull-right[
-* RStudio is an *Integrated Development Environment* (IDE), or a front end platform
-to work with R.
-   
-* Why would you use RStudio?
+* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
 
-  + Like R, it's free!
-  + It can reduce the learning curve of R.
-  + Integrates nicely with other things (version control, ShinyApps, R Markdown, etc.)
+* *Integrated Development Environment* (IDE), or a front end platform
+to run R.
 ]
+
+<img src="./images/rstudio4.png" align="center" alt="Rstudio timeline" />
+
+---
+
+#### Topic 2: What is RStudio? Why use it?
+
+.pull-left[
+![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
+]
+
+.pull-right[
+* Like R, it's **free**!
+{{content}}
+]
+
+--
+
+* It can reduce the learning curve of R, by creating organization.
+{{content}}
+
+--
+
+* Integrates nicely with other R functions:
+    + Version control
+    + R Markdown
+    + ShinyApps
 
 ---
 
@@ -247,16 +233,14 @@ How do R and RStudio work together? Consider a car analogy.
 --
 
 .pull-left[
-![RStudio logo](https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo.png)
-![The R logo](./images/R_logo.png)
+**RStudio - the frame**
+ - RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
+
+**R - the engine**
+ - R runs things under the hood - it's the enginge that allows the car to drive.
 ]
 
 .pull-right[
-* **RStudio - the frame**
- + RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
-
-* **R - the engine**
- + R runs things under the hood - it's the enginge that allows the car to drive.
 
 ]
 
@@ -264,13 +248,18 @@ How do R and RStudio work together? Consider a car analogy.
 class: inverse
 
 #### Review - R and RStudio:
-* R is a programming language built for statistical computing.
 
-* It's open source and it's free.
+--
 
-* RStudio is an integrated development envrionment that makes working with R easier.
+* **R** is a programming language built for statistical computing.
 
-* It's developed by a company, but it's also free.
+ + It's open source and it's free.
+
+--
+
+* **RStudio** is an integrated development envrionment that makes working with R easier.
+
+ + It's developed by a company, but it's also free.
 
 ---
 
@@ -287,24 +276,26 @@ class: center, middle, inverse
 
 #### Topic 3: Getting started with R and RStudio
 
-* How do I get R, or RStudio?
+How do I get R and RStudio?
+
+--
+
+* Download and local install:
 
  + You can download R on its own through the [R Project website](https://www.r-project.org).
    
  + You can download RStudio, including R,
    at the [RStudio website](https://rstudio.com/products/rstudio/download/).
    
----
+--
 
-#### Topic 3: Getting started with R and RStudio
-   
-* R and RStudio at Lehigh
+* R and RStudio at Lehigh:
 
- + Both R and RStudio are available on [LUapps](https://luapps.lehigh.edu), a virtualized software system that allows users to use software programs, without having to download them to their machine.
+ + Both R and RStudio are available on [LUapps](https://luapps.lehigh.edu).
  
  + LUapps can be accessed both on campus and off-campus (over VPN).
-
-<img src="./images/luapps.png" align="center" alt="LUApps website"/>
+ 
+<center><img src="./images/luapps.png" alt="LUApps website" height=200/></center>
 
 ---
 
@@ -1395,7 +1386,7 @@ Exploring and Summarizing Data in R
   + Nesting approach:
   
 .pull-left[
-```{r comment=NA, echo=FALSE, message=FALSE}
+```{r comment=NA, echo=FALSE, message=FALSE, include=FALSE}
 library(dplyr)
 library(ggplot2)
 ```
@@ -1588,6 +1579,7 @@ class: center, middle, inverse
 <br/><br/>
 <br/><br/>
 <br/><br/>
+
 ---
 #### Topic 6: Plotting
 
