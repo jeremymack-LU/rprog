@@ -40,19 +40,19 @@ class: center, middle, inverse, title-slide
 
 The presentation is split into seven topics:
 
- * **Topic 1:** What is R? Why use it?
+ * [**Topic 1:**](&lt;https://jeremymack-lu.github.io/rprog/#4&gt;) What is R? Why use it?
  
- * **Topic 2:** What is RStudio? Why use it?
+ * [**Topic 2:**](&lt;https://jeremymack-lu.github.io/rprog/#16&gt;) What is RStudio? Why use it?
  
- * **Topic 3:** Getting started with R and RStudio
+ * [**Topic 3:**](&lt;https://jeremymack-lu.github.io/rprog/#28&gt;) Getting started with R and RStudio
  
- * **Topic 4:** Programming in R
+ * [**Topic 4:**](&lt;https://jeremymack-lu.github.io/rprog/#55&gt;) Programming in R
  
- * **Topic 5:** Data and data wrangling
+ * [**Topic 5:**](&lt;https://jeremymack-lu.github.io/rprog/#93&gt;) Data and data wrangling
  
- * **Topic 6:** Plotting
+ * [**Topic 6:**](&lt;https://jeremymack-lu.github.io/rprog/#155&gt;) Plotting
  
- * **Topic 7:** Other things to do with R
+ * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#177&gt;) Other things to do with R
 
 ---
 class: center, middle, inverse
@@ -142,11 +142,15 @@ class: center, middle, inverse
 
 #### Topic 1: What is R? Why use it?
 
-
 &lt;img src="./images/reproducibility.png" alt="R logo" height=265&lt;/&gt; &lt;img src="./images/reproducibility2.png" alt="R logo" height=265&lt;/&gt;
-&lt;br/&gt;&lt;br/&gt;
---
+##### - 2019 report by The National Academies of Sciences, Engineering, and Medicine
+
+---
+
+#### Topic 1: What is R? Why use it?
+
 &lt;img src="./images/reproducibility3.png" alt="R logo" height=265&lt;/&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;img src="./images/reproducibility4b.png" alt="R logo" height=265&lt;/&gt;
+##### - 2018 series featured in Nature
 
 ---
 class: center, middle, inverse
@@ -539,7 +543,7 @@ class: inverse
 
 * R is a calculator.
 
-* R can be used to store objects that can be compared to other objects, or used with other functions.
+* R can be used to store objects (**assignments**) that can be compared to other objects, or used with other functions.
 
 ---
 class: center, middle, inverse
@@ -785,6 +789,20 @@ class(x)                # Print the class name of x
 ```
 [1] "character"
 ```
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+
+```r
+x &lt;- 10       # Numeric (default)
+x &lt;- 10L      # Integer
+x &lt;- 10 + 1i  # Complex
+x &lt;- x == 10  # Logical
+x &lt;- "10"     # Character
+```
+
 ---
 #### Topic 4: Objects and Functions
 
@@ -1045,7 +1063,12 @@ class: inverse
 #### Review - Objects:
 * Define objects &gt; Apply functions &gt; Repeat!
 
-* Objects are defined by data, which there are five main types.
+* Objects are defined by data. There are five main types of data:
+   1. Numeric
+   2. Integer
+   3. Complex
+   4. Logical
+   5. Character
 
 * Objects come in different sizes and shapes, from a single, scalar, object, to a data frame that contains multiple vectors of different data types.
 
