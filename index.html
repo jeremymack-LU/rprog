@@ -250,13 +250,13 @@ class: inverse
 
 --
 
-* **R** is a programming language built for statistical computing.
+* **R** is a programming language built for statistical computing ("Engine").
 
  + It's open source and it's free.
 
 --
 
-* **RStudio** is an integrated development envrionment that makes working with R easier.
+* **RStudio** is an integrated development envrionment that makes working with R easier ("Frame").
 
  + It's developed by a company, but it's also free.
 
@@ -315,6 +315,13 @@ First, let's explore RStudio.
 ---
 
 #### Topic 3: Getting started with R and RStudio
+&lt;style&gt;
+  pre {
+    background-color: lightyellow;
+    white-space: pre-wrap;
+    line-height: 100%;
+  }
+&lt;/style&gt;
 
 Next, let's explore R - the engine under the hood.
 
@@ -793,15 +800,35 @@ class(x)                # Print the class name of x
 ---
 #### Topic 4: Objects and Functions
 
-Objects in R - data types:
+Objects in R:
+* Objects come in many different shapes and sizes - like a number, a dataset, a summary statistic, or the results of a statistical test.
 
-```r
-x &lt;- 10       # Numeric (default)
-x &lt;- 10L      # Integer
-x &lt;- 10 + 1i  # Complex
-x &lt;- x == 10  # Logical
-x &lt;- "10"     # Character
-```
+* Objects have different **attributes** - properties that explain what an object represents and how it should be interpreted.
+
+* Objects are essentially *data* that have a particular **type** and **structure**.
+
+* There are five basic **types** in R:
+ 1. Numeric
+ 2. Integer
+ 3. Complex
+ 4. Logical
+ 5. Character
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R:
+* Objects come in many different shapes and sizes - like a number, a dataset, a summary statistic, or the results of a statistical test.
+
+* Objects have different **attributes** - properties that explain what an object represents and how it should be interpreted.
+
+* Objects are essentially *data* that have a particular **type** and **structure**.
+
+* There are four basic **structures** in R:
+ 1. Scalar
+ 2. Vector
+ 3. Matrix
+ 4. Data frame
 
 ---
 #### Topic 4: Objects and Functions
@@ -1071,6 +1098,10 @@ class: inverse
    5. Character
 
 * Objects come in different sizes and shapes, from a single, scalar, object, to a data frame that contains multiple vectors of different data types.
+   1. Scalar - single value
+   2. Vector - string of values, same data type
+   3. Matrix - multiple strings, same data type
+   4. Data frame - multiple strings, different data types
 
 ---
 #### Topic 4: Objects and Functions
@@ -1325,7 +1356,35 @@ Exploring Data in R
 ```r
    df &lt;- read.table("mpg.txt", header=TRUE, sep=",")
 ```
-   
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+ 
+ * Helpful functions for exploring data in R:
+ 
+
+```r
+  View(df)      # View the dataset in a spreadsheet
+
+  str(df)       # Print the structure of the data frame
+  
+  head(df)      # Print the first few rows
+  
+  tail(df)      # Print the last few rows
+  
+  nrow(df)      # Print the number of rows
+  
+  ncol(df)      # Print the number of columns
+  
+  dim(df)       # Print the dimensions (rows x columns)
+  
+  rownames(df)  # Print row names
+  
+  colnames(df)  # Print column names
+```
+ 
 ---
 #### Topic 5: Data and Data Wrangling
 
@@ -1346,13 +1405,13 @@ Exploring Data in R
 5         audi    a4   2.8 1999   6   auto(l5)   f  16  26  p compact
 6         audi    a4   2.8 1999   6 manual(m5)   f  18  26  p compact
 ```
-   
+  
 ---
 #### Topic 5: Data and Data Wrangling
 
 Exploring Data in R
 
- * Next, we'll check our data structure:
+.tiny[ * Next, we'll check our data structure:
 
 ```r
    str(df)
@@ -1372,33 +1431,7 @@ Exploring Data in R
  $ fl          : Factor w/ 5 levels "c","d","e","p",..: 4 4 4 4 4 4 4 4 4 4 ...
  $ class       : Factor w/ 7 levels "2seater","compact",..: 2 2 2 2 2 2 2 2 2 2 ...
 ```
-
-
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring Data in R
- 
- * Helpful functions for exploring data in R:
- 
-
-```r
-  View(df)      # View the dataset in a spreadsheet
-  
-  head(df)      # Print the first few rows
-  
-  tail(df)      # Print the last few rows
-  
-  nrow(df)      # Print the number of rows
-  
-  ncol(df)      # Print the number of columns
-  
-  dim(df)       # Print the dimensions (rows x columns)
-  
-  rownames(df)  # Print row names
-  
-  colnames(df)  # Print column names
-```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1461,7 +1494,7 @@ Exploring Data in R
   df[,1]   # Print column 1 (as a vector)
 ```
 
-   
+.tiny[   
 
 ```
  [1] audi      audi      audi      audi      audi      audi      audi     
@@ -1480,6 +1513,7 @@ Exploring Data in R
 [92] ford      ford      ford      ford      ford      ford      ford     
 15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1495,6 +1529,7 @@ Exploring Data in R
   df$manufacturer  # Print hwy column (as a vector)
 ```
 
+.tiny[
 
 ```
  [1] audi      audi      audi      audi      audi      audi      audi     
@@ -1512,6 +1547,27 @@ Exploring Data in R
 [85] ford      ford      ford      ford      ford      ford      ford     
 [92] ford      ford      ford      ford      ford      ford      ford     
 15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Summarizing Data in R
+ 
+ * Helpful functions for summarizing data in R:
+ 
+
+```r
+  mean(x)        # View the dataset in a spreadsheet
+
+  max(x)         # Print the structure of the data frame
+  
+  min(x)         # Print the first few rows
+  
+  sd(x)          # Print the last few rows
+  
+  length(x)      # Print the number of rows
 ```
 
 ---
@@ -1570,7 +1626,7 @@ Summarizing Data in R
 
 
 ```r
-df2 &lt;- df
+df2      &lt;- df
 df2[1,9] &lt;- NA
 df2[1,]
 ```
@@ -1608,15 +1664,17 @@ Adding Data in R
  
 
 ```r
-# Let's add a new column of with row sum
+# Let's add a new column of the average mpg
 df$avg  &lt;- rowMeans(df[,8:9], na.rm=TRUE)
 ```
 
+.tiny3[
 
 ```
   manufacturer model displ year cyl    trans drv cty hwy fl   class  avg
 1         audi    a4   1.8 1999   4 auto(l5)   f  18  29  p compact 23.5
 ```
+]
 
 ---
 class: inverse
@@ -1655,6 +1713,28 @@ mean(USArrests$Assault)
 [1] 170.76
 ```
 
+--
+
+
+```r
+mean(USArrests[,2])
+```
+
+```
+[1] 170.76
+```
+
+--
+
+
+```r
+sum(USArrests$Assault)/length(USArrests$Assault)
+```
+
+```
+[1] 170.76
+```
+
 ---
 #### Review - Summarizing Data:
 
@@ -1671,6 +1751,30 @@ max(USArrests$Assault)
 [1] 337
 ```
 
+--
+
+
+```r
+x &lt;- sort(USArrests$Assault, decreasing=TRUE)
+x[1]
+```
+
+```
+[1] 337
+```
+
+--
+
+
+```r
+x &lt;- sort(USArrests$Assault)
+x[50]
+```
+
+```
+[1] 337
+```
+
 ---
 #### Review - Summarizing Data:
 
@@ -1681,6 +1785,18 @@ max(USArrests$Assault)
 
 ```r
 USArrests["Pennsylvania",]
+```
+
+```
+             Murder Assault UrbanPop Rape
+Pennsylvania    6.3     106       72 14.9
+```
+
+--
+
+
+```r
+USArrests[38,]
 ```
 
 ```
@@ -1863,21 +1979,27 @@ df %&gt;%
 
 ---
 #### Topic 5: Data and Data Wrangling
-Exploring and Summarizing Data in R
 
- * Helpful functions - **dplyr**
+Exploring and Summarizing Data in R
  
-  + *filter()* picks cases based on their values.
+ * Helpful functions - **Tidyverse**:
+ 
+
+```r
+  filter(x)      # picks cases based on their values.
+
+  select(x)      # picks variables based on their names
   
-  + *select()* picks variables based on their names.
+  arrange(x)     # changes the ordering of rows
   
-  + *arrange()* changes the ordering of rows.
+  group_by(x)    # allows operations by groups
   
-  + *group_by()* allows operations by groups.
+  mutate(x)      # adds new variables to a dataset
   
-  + *mutate()* adds new variables to a dataset.
+  summarise(x)   # reduces multiple values down to a summary value
   
-  + *summarise()* reduces multiple values down to a summary value.
+  add_row(x)     # add a row of data to a data frame
+```
   
 ---
 class: inverse
@@ -1910,10 +2032,14 @@ df %&gt;% filter(year==1999) %&gt;%
    head(1)
 ```
 
+.tiny4[
+
 ```
   manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
 1   volkswagen jetta   1.9 1999   4 manual(m5)   f  33  44  d compact 38.5
 ```
+]
+
 
 ```r
 df %&gt;% filter(year==2008) %&gt;% 
@@ -1921,11 +2047,37 @@ df %&gt;% filter(year==2008) %&gt;%
    head(1)
 ```
 
+.tiny4[
+
 ```
   manufacturer   model displ year cyl      trans drv cty hwy fl   class  avg
 1       toyota corolla   1.8 2008   4 manual(m5)   f  28  37  r compact 32.5
 ```
+]
 
+---
+#### Exercise - Summarizing Data:
+
+ * What manufacturer had the highest highway mpg in 1999? Was it the same one in 2008?
+ 
+
+```r
+df %&gt;% group_by(year) %&gt;%
+   filter(hwy == max(hwy))
+```
+
+.tiny4[
+
+```
+# A tibble: 3 x 12
+# Groups:   year [2]
+  manufacturer model displ  year   cyl trans drv     cty   hwy fl    class   avg
+  &lt;fct&gt;        &lt;fct&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt;
+1 toyota       coro…   1.8  2008     4 manu… f        28    37 r     comp…  32.5
+2 volkswagen   jetta   1.9  1999     4 manu… f        33    44 d     comp…  38.5
+3 volkswagen   new …   1.9  1999     4 manu… f        35    44 d     subc…  39.5
+```
+]
 
 ---
 #### Exercise - Summarizing Data:
@@ -1941,10 +2093,6 @@ df %&gt;%
    summarize(Avg_hwy=mean(hwy, na.rm=TRUE),
              Avg_cty=mean(cty, na.rm=TRUE)) %&gt;%
    mutate(Diff=Avg_hwy-Avg_cty)
-```
-
-```
-`summarise()` regrouping output by 'cyl' (override with `.groups` argument)
 ```
 
 ```
@@ -2028,28 +2176,72 @@ Visualizing data in R
    2. Load data.
    
    3. ~~Explore data!~~ Visualize data!
- 
+
 ---
 #### Topic 6: Plotting
+Visualizing data in R
+.pull-left2[
+* Tidyverse - **ggplot2**
+]
 
+.pull-right2[
+&lt;center&gt;&lt;img src="./images/ggplot2a.png" alt="RStudio" height=500/&gt;&lt;/center&gt;]
+
+---
+#### Topic 6: Plotting
 Visualizing data in R
 
- * Before start plotting, let's get to know **ggplot2**.
+.pull-left2[
+* Tidyverse - **ggplot2**
+
+* Layered approach to building graphics
+]
+
+.pull-right2[
+&lt;center&gt;&lt;img src="./images/ggplot2_1.png" alt="RStudio" width=500/&gt;&lt;/center&gt;]
+
+---
+#### Topic 6: Plotting
+Visualizing data in R
+
+.pull-left2[
+* Tidyverse - **ggplot2**
+
+* Layered approach to building graphics
+ + Required arguments
  
---
+ + Sensible defaults
+]
+
+.pull-right2[
+&lt;center&gt;&lt;img src="./images/ggplot2_2.png" alt="RStudio" width=500/&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="./images/ggplot.png" alt="RStudio" width=500/&gt;&lt;/center&gt;
+]
+
+---
+#### Topic 6: Plotting
+Visualizing data in R
+
+.pull-left2[
+* Tidyverse - **ggplot2**
+
+* Layered approach to building graphics
+ + Required arguments
  
- * Follows a basic template:
+ + Sensible defaults
+ 
+* Basic template has three functions:
+  + **ggplot** - creates a blank canvas
   
-&lt;img src="./images/ggplot.png" alt="ggplot" &lt;/&gt;
+  + **geom** - adds a layer
+  
+  + **aes** - visual properties of an object
+]
 
---
-
- * *ggplot()* function - creates a "blank canvas". The first argument is your dataset.
- 
---
-
- * *geom()* function - adds a layer. For example, *geom_point* creates a scatterplot. 
-  + There are many geom functions!
+.pull-right2[
+&lt;center&gt;&lt;img src="./images/ggplot2_2.png" alt="RStudio" width=500/&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="./images/ggplot.png" alt="RStudio" width=500/&gt;&lt;/center&gt;
+]
 
 ---
 #### Topic 6: Plotting
@@ -2086,7 +2278,7 @@ Visualizing data in R
 
 ```r
  ggplot(data=df) +
- geom_point(mapping=aes(x=displ,y=hwy))
+ geom_point(mapping=aes(x=displ, y=hwy))
 ```
 
 ---
@@ -2111,7 +2303,7 @@ Visualizing data in R
 
 ```r
  ggplot(data=df) +
- geom_point(mapping=aes(x=displ,y=hwy))
+ geom_point(mapping=aes(x=displ, y=hwy))
 ```
 
  * Now lets add an additional **aesthetic**.
@@ -2147,6 +2339,23 @@ Visualizing data in R
 Visualizing data in R
 
 &lt;center&gt;&lt;img src="./images/p4.png" alt="ggplot"&lt;/&gt;&lt;/center&gt;
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
+ * We can also add additional layers [geoms](&lt;https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf&gt;).
+
+```r
+ ggplot(data=df) +
+ geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+ geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+```
+
+.pull-right2[
+&lt;center&gt;&lt;img src="./images/ggplot2_1.png" alt="RStudio" width=500/&gt;&lt;/center&gt;
+]
 
 ---
 #### Topic 6: Plotting
@@ -2195,9 +2404,9 @@ class: inverse
 #### Review - Plotting:
 * Data can look quantitatively the same, but qualitatively different.
 
-* **ggplot2** package in R uses a multi-function approach to plotting.
+* **ggplot2** package in R uses a layered approach to plotting.
 
-* More on visualizing data in a few weeks...
+* More on visualizing data next week...
 
 ---
 class: center, middle, inverse
@@ -2213,9 +2422,25 @@ class: center, middle, inverse
 
 #### Topic 7: Other things to do with R
 
-* [R Markdown documents](&lt;https://rmarkdown.rstudio.com&gt;)
+.right-column2[
+&lt;center&gt;&lt;img src="./images/rmarkdown.png" height=200 alt="RStudio" &lt;/center&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;center&gt;&lt;img src="./images/shiny.png" height=200 alt="RStudio" &lt;/center&gt;
+]
 
-* [Shiny Apps](&lt;https://shiny.cc.lehigh.edu/jsm4/climate/&gt;)
+.left-column2[
+* [R Markdown documents](&lt;https://rmarkdown.rstudio.com&gt;)
+ - Documents
+ - Websites
+ - Books
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+* [Shiny Apps](&lt;https://jeremymack.shinyapps.io/covid19/&gt;)
+ - Web applications
+ - Websites
+ - Dashboards 
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
