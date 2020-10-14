@@ -327,19 +327,23 @@ Next, let's explore R - the engine under the hood.
 
 In true computer science fashion, let's first try typing:
 
+.tiny[
 
 ```r
 print("Hello world!")
 ```
+]
 
 What happend?
 
 --
 
+.tiny[
 
 ```
 [1] "Hello world!"
 ```
+]
 
 ---
 
@@ -360,29 +364,36 @@ Now, let's try three things...
 
 Try capitalizing `Print(...)`:
  
+.tiny[
 
 ```r
 Print("Hello world!")
 ```
+]
 
 Try putting a space between `print` and `("Hello world!")`:
 
+.tiny[
 
 ```r
 print ("Hello world!")
 ```
+]
 
 Try just entering `"Hello world!"`:
 
+.tiny[
 
 ```r
 "Hello world!"
 ```
+]
 
 What happened?
 
 --
  
+.tiny[
 
 ```
 Error in Print("Hello world!"): could not find function "Print"
@@ -397,6 +408,7 @@ Error in Print("Hello world!"): could not find function "Print"
 ```
 [1] "Hello world!"
 ```
+]
 
 ---
 
@@ -416,45 +428,61 @@ Three things you just learned:
 
 You can also use R as a calculator. Let's try the following:
 
+.tiny[
 
 ```r
 2 + 2
 ```
+]
 --
+.tiny[
 
 ```
 [1] 4
 ```
+]
 --
+.tiny[
 
 ```r
 4 * 2
 ```
+]
 --
+.tiny[
 
 ```
 [1] 8
 ```
+]
 --
+.tiny[
 
 ```r
 8 / 3
 ```
+]
 --
+.tiny[
 
 ```
 [1] 2.666667
 ```
+]
 --
+.tiny[
 
 ```r
 exp(log(8)-log(3))
 ```
+]
 --
+.tiny[
 
 ```
 [1] 2.666667
 ```
+]
 
 ---
 #### Topic 3: Getting started with R and RStudio
@@ -465,14 +493,18 @@ we'll use the **assignment operator**, `&lt;-`
 
 Here's an example:
 
+.tiny[
 
 ```r
 x &lt;- log(8)
 y &lt;- log(3)
 ```
+]
+
 --
 Now we can redo our last calculation using the assignments:
 
+.tiny[
 
 ```r
 exp(x-y)
@@ -481,6 +513,7 @@ exp(x-y)
 ```
 [1] 2.666667
 ```
+]
 
 ---
 #### Topic 3: Getting started with R and RStudio
@@ -492,10 +525,12 @@ To do so, we'll use the **concatenation operator**, `c(...)`
 
 Here's an example:
 
+.tiny[
 
 ```r
 n &lt;- c(2, 3, 5, 8, 13, 21, 34, 55)
 ```
+]
 
 --
 
@@ -503,6 +538,7 @@ We can now apply opertions across the entire vector.
 
 For example:
 
+.tiny[
 
 ```r
 n * 2
@@ -511,6 +547,7 @@ n * 2
 ```
 [1]   4   6  10  16  26  42  68 110
 ```
+]
 
 ---
 #### Topic 3: Getting started with R and RStudio
@@ -522,6 +559,7 @@ In addition to **character values** (which we saw when we called `print("Hello w
 
 For example, we can check which numbers in our "n" vector are double digit:
 
+.tiny[
 
 ```r
 n
@@ -539,6 +577,7 @@ is_double_digit
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
+]
 
 ---
 class: inverse
@@ -575,15 +614,18 @@ R revolves around two things: **objects** and **functions**. Almost everything i
 
 For example, we can define a simple object called "n":
 
+.tiny[
 
 ```r
 n &lt;- c(2, 3, 5, 8, 13, 21, 34, 55)
 ```
+]
 
 --
 
 We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the mean function:
 
+.tiny[
 
 ```r
 mean(n)
@@ -592,6 +634,7 @@ mean(n)
 ```
 [1] 17.625
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -622,6 +665,7 @@ Objects in R:
 Objects in R - data types:
 * Numeric - a number; default data type in R
  
+.tiny[
 
 ```r
 x &lt;- 10.5               # Define object x
@@ -639,6 +683,7 @@ class(x)                # Print the class name of x
 ```
 [1] "numeric"
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -646,6 +691,7 @@ class(x)                # Print the class name of x
 Objects in R - data types:
 * Integer - whole numbers; a number that is not a fraction
 
+.tiny[
 
 ```r
 x &lt;- 10                 # Define object x
@@ -663,12 +709,15 @@ class(x)                # Print the class name of x
 ```
 [1] "numeric"
 ```
+]
+
 ---
 #### Topic 4: Objects and Functions
 
 Objects in R - data types:
 * Integer - whole numbers; a number that is not a fraction
 
+.tiny[
 
 ```r
 x &lt;- as.integer(10)     # Convert to integer
@@ -686,7 +735,11 @@ class(x)                # Print the class name of x
 ```
 [1] "integer"
 ```
+]
+
 --
+
+.tiny[
 
 ```r
 x &lt;- 10L                # Declare as integer by appending with "L"
@@ -704,6 +757,7 @@ class(x)                # Print the class name of x
 ```
 [1] "integer"
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -712,6 +766,7 @@ Objects in R - data types:
 * Complex - any number that can be written as a + bi, where *i* is the imaginary unit and a and b
 are real numbers.
 
+.tiny[
 
 ```r
 x &lt;- 1 + 2i             # create a complex number x
@@ -729,6 +784,7 @@ class(x)                # Print the class name of x
 ```
 [1] "complex"
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -736,6 +792,7 @@ class(x)                # Print the class name of x
 Objects in R - data types:
 * Logical - created via comparison(s) between variables.
 
+.tiny[
 
 ```r
 x &lt;- 1; y &lt;- 2          # create sample values x and y
@@ -754,6 +811,7 @@ class(z)                # Print the class name of z
 ```
 [1] "logical"
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -761,6 +819,7 @@ class(z)                # Print the class name of z
 Objects in R - data types:
 * Character - used to represent string values in R.
 
+.tiny[
 
 ```r
 x &lt;- as.character(3.14) # Convert to character
@@ -778,7 +837,11 @@ class(x)                # Print the class name of x
 ```
 [1] "character"
 ```
+]
+
 --
+
+.tiny[
 
 ```r
 x &lt;- "3.14"             # Can declare as character with " "
@@ -796,6 +859,7 @@ class(x)                # Print the class name of x
 ```
 [1] "character"
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -877,7 +941,7 @@ Objects in R - data structure:
 ![R objects](./images/objects2.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Scalar objects:**
 
 ```r
@@ -924,7 +988,7 @@ Objects in R - data structure:
 ![R objects](./images/objects3.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Vector objects:**
 
 ```r
@@ -955,7 +1019,7 @@ Objects in R - data structure:
 ![R objects](./images/objects3.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Vector objects:**
 
 ```r
@@ -1004,7 +1068,7 @@ Objects in R - data structure:
 ![R objects](./images/objects4.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Matrix objects:**
 
 ```r
@@ -1155,10 +1219,12 @@ Packages in R:
 * How de we get packages loaded into R?
 
  + Programmatically
+.tiny[
 
 ```r
- install.packages("ggplot2")
+install.packages("ggplot2")
 ```
+]
 --
  + RStudio Explorer window
  
@@ -1200,14 +1266,16 @@ Basic steps to working with data in R:
 --
 
   + What is my working directory?
+.tiny[
 
 ```r
-   getwd()         # Prints current working directory
+getwd()         # Prints current working directory
 ```
 
 ```
 [1] "/Users/jeremymack/Documents/GitHub/rprogramming/rprog"
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1217,15 +1285,17 @@ Basic steps to working with data in R:
  * Check and/or set a working directory.
  
   + How do I set my working directory?
+.tiny[
 
 ```r
-   setwd("h:/R")   # Sets path to working directory
-   getwd()         # Prints current working directory
+setwd("h:/R")   # Sets path to working directory
+getwd()         # Prints current working directory
 ```
 
 ```
    [1] "h:/R"
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1235,15 +1305,17 @@ Basic steps to working with data in R:
  * Check and/or set a working directory.
  
   + How do I set my working directory?
+.tiny[
 
 ```r
-   setwd("h:/R")   # Sets path to working directory
-   getwd()         # Prints current working directory
+setwd("h:/R")   # Sets path to working directory
+getwd()         # Prints current working directory
 ```
 
 ```
    [1] "h:/R"
 ```
+]
 
   + Can also set working directory in RStudio
    
@@ -1263,6 +1335,7 @@ Basic steps to working with data in R:
 --
  
   + Programmatically:
+.tiny[
 
 ```r
    read.table()   # base R
@@ -1270,6 +1343,7 @@ Basic steps to working with data in R:
    read.delim()   # base R
    read_xlsx()    # Available with readxl package
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1281,6 +1355,7 @@ Basic steps to working with data in R:
  * Load data.
  
   + Programmatically:
+.tiny[
 
 ```r
    read.table()   # base R
@@ -1288,6 +1363,7 @@ Basic steps to working with data in R:
    read.delim()   # base R
    read_xlsx()    # Available with readxl package
 ```
+]
    
    + Can also load data in RStudio
    
@@ -1337,6 +1413,7 @@ Exploring Data in R
 --
 
  * Next, we'll set our working directory and download our dataset:
+.tiny[
 
 ```r
    # Set working directory
@@ -1348,14 +1425,17 @@ Exploring Data in R
    # Download file to working directory
    download.file(url, "mpg.txt")
 ```
+]
    
 --
 
  * Now, let's load our data:
+.tiny[
 
 ```r
    df &lt;- read.table("mpg.txt", header=TRUE, sep=",")
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1364,6 +1444,7 @@ Exploring Data in R
  
  * Helpful functions for exploring data in R:
  
+.tiny[
 
 ```r
   View(df)      # View the dataset in a spreadsheet
@@ -1384,6 +1465,7 @@ Exploring Data in R
   
   colnames(df)  # Print column names
 ```
+]
  
 ---
 #### Topic 5: Data and Data Wrangling
