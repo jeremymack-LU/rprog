@@ -102,10 +102,26 @@ th, td { padding: 5px; }
   width: 47%;
   float: right;
 }
+.left-column4 {
+  width: 20%;
+  float: left;
+}
+.right-column4 {
+  width: 74%;
+  float: left;
+}
 .tiny .remark-code { /*Change made here*/
   font-size: 65% !important;
 }
 
 .tiny2 .remark-code { /*Change made here*/
   font-size: 55% !important;
+}
+
+.tiny3 .remark-code { /*Change made here*/
+  font-size: 85% !important;
+}
+
+.tiny4 .remark-code { /*Change made here*/
+  font-size: 75% !important;
 }

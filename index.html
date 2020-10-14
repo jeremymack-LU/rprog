@@ -1060,7 +1060,7 @@ Objects in R - data structure:
 ![R objects](./images/objects4.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Data frame objects:**
 
 ```r
@@ -1390,7 +1390,7 @@ Exploring Data in R
 
 Exploring Data in R
 
- * Let's check to make sure our data loaded correctly:
+.tiny[  * Let's check to make sure our data loaded correctly:
 
 ```r
    head(df)
@@ -1405,7 +1405,8 @@ Exploring Data in R
 5         audi    a4   2.8 1999   6   auto(l5)   f  16  26  p compact
 6         audi    a4   2.8 1999   6 manual(m5)   f  18  26  p compact
 ```
-  
+]
+
 ---
 #### Topic 5: Data and Data Wrangling
 
@@ -1438,7 +1439,7 @@ Exploring Data in R
 
 Exploring Data in R
 
-  * Selecting specific data in R:
+.tiny[  * Selecting specific data in R:
   
    + R reads data as row x column, using brackets [ ]
   
@@ -1460,13 +1461,14 @@ Exploring Data in R
 [1] p
 Levels: c d e p r
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
 
 Exploring Data in R
 
-  * Selecting specific data in R:
+.tiny[  * Selecting specific data in R:
   
    + What if we wanted to print just row 1?
    
@@ -1479,7 +1481,8 @@ Exploring Data in R
   manufacturer model displ year cyl    trans drv cty hwy fl   class
 1         audi    a4   1.8 1999   4 auto(l5)   f  18  29  p compact
 ```
- 
+]
+
 ---
 #### Topic 5: Data and Data Wrangling
 
@@ -1489,11 +1492,12 @@ Exploring Data in R
   
    + What if we wanted to print just column 1?
    
+.tiny[
 
 ```r
-  df[,1]   # Print column 1 (as a vector)
+  df[,1]   # Print column 1 by number (as a vector)
 ```
-
+]
 .tiny[   
 
 ```
@@ -1524,10 +1528,12 @@ Exploring Data in R
   
    + What if we wanted to print just column 1?
 
+.tiny[
 
 ```r
-  df$manufacturer  # Print hwy column (as a vector)
+  df$manufacturer  # Print column 1 by name (as a vector)
 ```
+]
 
 .tiny[
 
@@ -1557,6 +1563,7 @@ Summarizing Data in R
  
  * Helpful functions for summarizing data in R:
  
+.tiny[
 
 ```r
   mean(x)        # View the dataset in a spreadsheet
@@ -1569,6 +1576,7 @@ Summarizing Data in R
   
   length(x)      # Print the number of rows
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1579,6 +1587,7 @@ Summarizing Data in R
  
   + What if we wanted to summarize the mpg data in mtcars dataset?
  
+.tiny[
 
 ```r
 mean(df$hwy)  # Average value for hwy
@@ -1587,7 +1596,9 @@ mean(df$hwy)  # Average value for hwy
 ```
 [1] 23.44017
 ```
+]
 --
+.tiny[
 
 ```r
 max(df$hwy)   # Maximum value for hwy
@@ -1596,7 +1607,9 @@ max(df$hwy)   # Maximum value for hwy
 ```
 [1] 44
 ```
+]
 --
+.tiny[
 
 ```r
 min(df$hwy)   # Minimum value for hwy
@@ -1605,7 +1618,9 @@ min(df$hwy)   # Minimum value for hwy
 ```
 [1] 12
 ```
+]
 --
+.tiny[
 
 ```r
 sd(df$hwy)    # Standard deviation for hwy
@@ -1614,6 +1629,7 @@ sd(df$hwy)    # Standard deviation for hwy
 ```
 [1] 5.954643
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1624,6 +1640,7 @@ Summarizing Data in R
  
   + What happens if there are missing data?
 
+.tiny[
 
 ```r
 df2      &lt;- df
@@ -1635,7 +1652,9 @@ df2[1,]
   manufacturer model displ year cyl    trans drv cty hwy fl   class
 1         audi    a4   1.8 1999   4 auto(l5)   f  18  NA  p compact
 ```
+]
 --
+.tiny[
 
 ```r
 mean(df2$hwy)  # Average value for mpg
@@ -1644,7 +1663,9 @@ mean(df2$hwy)  # Average value for mpg
 ```
 [1] NA
 ```
+]
 --
+.tiny[
 
 ```r
 # Need to pay attention to additional arguments
@@ -1654,6 +1675,7 @@ mean(df2$hwy, na.rm=TRUE)
 ```
 [1] 23.41631
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1662,17 +1684,23 @@ Adding Data in R
 
  * What if we wanted to add a new variable (i.e., column)?
  
+.tiny[
 
 ```r
 # Let's add a new column of the average mpg
 df$avg  &lt;- rowMeans(df[,8:9], na.rm=TRUE)
 ```
+]
 
-.tiny3[
+.tiny[
 
 ```
-  manufacturer model displ year cyl    trans drv cty hwy fl   class  avg
-1         audi    a4   1.8 1999   4 auto(l5)   f  18  29  p compact 23.5
+  manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
+1         audi    a4   1.8 1999   4   auto(l5)   f  18  29  p compact 23.5
+2         audi    a4   1.8 1999   4 manual(m5)   f  21  29  p compact 25.0
+3         audi    a4   2.0 2008   4 manual(m6)   f  20  31  p compact 25.5
+4         audi    a4   2.0 2008   4   auto(av)   f  21  30  p compact 25.5
+5         audi    a4   2.8 1999   6   auto(l5)   f  16  26  p compact 21.0
 ```
 ]
 
@@ -1704,6 +1732,7 @@ class: inverse
 
 --
 
+.tiny[
 
 ```r
 mean(USArrests$Assault)
@@ -1712,9 +1741,11 @@ mean(USArrests$Assault)
 ```
 [1] 170.76
 ```
+]
 
 --
 
+.tiny[
 
 ```r
 mean(USArrests[,2])
@@ -1723,9 +1754,11 @@ mean(USArrests[,2])
 ```
 [1] 170.76
 ```
+]
 
 --
 
+.tiny[
 
 ```r
 sum(USArrests$Assault)/length(USArrests$Assault)
@@ -1734,6 +1767,7 @@ sum(USArrests$Assault)/length(USArrests$Assault)
 ```
 [1] 170.76
 ```
+]
 
 ---
 #### Review - Summarizing Data:
@@ -1742,6 +1776,7 @@ sum(USArrests$Assault)/length(USArrests$Assault)
 
 --
  
+.tiny[
 
 ```r
 max(USArrests$Assault)
@@ -1750,9 +1785,11 @@ max(USArrests$Assault)
 ```
 [1] 337
 ```
+]
 
 --
 
+.tiny[
 
 ```r
 x &lt;- sort(USArrests$Assault, decreasing=TRUE)
@@ -1762,9 +1799,11 @@ x[1]
 ```
 [1] 337
 ```
+]
 
 --
 
+.tiny[
 
 ```r
 x &lt;- sort(USArrests$Assault)
@@ -1774,6 +1813,7 @@ x[50]
 ```
 [1] 337
 ```
+]
 
 ---
 #### Review - Summarizing Data:
@@ -1782,6 +1822,7 @@ x[50]
 
 --
 
+.tiny[
 
 ```r
 USArrests["Pennsylvania",]
@@ -1791,9 +1832,11 @@ USArrests["Pennsylvania",]
              Murder Assault UrbanPop Rape
 Pennsylvania    6.3     106       72 14.9
 ```
+]
 
 --
 
+.tiny[
 
 ```r
 USArrests[38,]
@@ -1803,6 +1846,7 @@ USArrests[38,]
              Murder Assault UrbanPop Rape
 Pennsylvania    6.3     106       72 14.9
 ```
+]
 
 ---
 #### Review - Summarizing Data:
@@ -1811,11 +1855,14 @@ Pennsylvania    6.3     106       72 14.9
 
 --
 
+.tiny[
 
 ```r
 USArrests$Average &lt;- rowMeans(USArrests)
 ```
+]
 
+.tiny[
 
 ```
            Murder Assault UrbanPop Rape Average
@@ -1825,6 +1872,7 @@ Arizona       8.1     294       80 31.0 103.275
 Arkansas      8.8     190       50 19.5  67.075
 California    9.0     276       91 40.6 104.150
 ```
+]
 
 
 ---
