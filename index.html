@@ -73,7 +73,7 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-- R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
+- R is a **programming language** ([one of many](&lt;https://www.tiobe.com/tiobe-index/&gt;)) and an **environment** for statistical computing.
 {{content}}
 ]
 
@@ -96,7 +96,7 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-- R is a *programming language* [(one of many)](&lt;https://www.tiobe.com/tiobe-index/&gt;) and an *environment* for statistical computing.
+- R is a **programming language** ([one of many](&lt;https://www.tiobe.com/tiobe-index/&gt;)) and an **environment** for statistical computing.
    
 - Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
 
@@ -129,7 +129,7 @@ class: center, middle, inverse
 {{content}}
 --
 
-- *Very* active development community
+- **Very active development community**
     + CRAN: The Comprehensive R Archive Network
     + User contributed packages &lt;br/&gt; (&gt; 15,000)
     {{content}}
@@ -171,13 +171,13 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
+* RStudio is a company that develops **free and open tools** for R, and enterprise-ready professional products.
 {{content}}
 ]
 
 --
 
-* *Integrated Development Environment* (IDE), or a front end platform
+* **Integrated Development Environment** (IDE), or a front end platform
 to run R.
 {{content}}
 
@@ -190,9 +190,9 @@ to run R.
 ]
 
 .pull-right[
-* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
+* RStudio is a **company** that develops **free and open tools** for R, and enterprise-ready professional products.
 
-* *Integrated Development Environment* (IDE), or a front end platform
+* **Integrated Development Environment** (IDE), or a front end platform
 to run R.
 ]
 
@@ -213,7 +213,7 @@ to run R.
 
 --
 
-* It can reduce the learning curve of R, by creating organization.
+* It can reduce the learning curve of R, by creating **organization**.
 {{content}}
 
 --
@@ -769,8 +769,8 @@ are real numbers.
 .tiny[
 
 ```r
-x &lt;- 1 + 2i             # create a complex number x
-x                       # print the value of x 
+x &lt;- 1 + 2i             # Create a complex number x
+x                       # Print the value of x 
 ```
 
 ```
@@ -795,9 +795,9 @@ Objects in R - data types:
 .tiny[
 
 ```r
-x &lt;- 1; y &lt;- 2          # create sample values x and y
-z &lt;- x &gt; y              # is x larger than y? 
-z                       # print the logical value 
+x &lt;- 1; y &lt;- 2          # Create sample values x and y
+z &lt;- x &gt; y              # Is x larger than y? 
+z                       # Print the logical value 
 ```
 
 ```
@@ -823,7 +823,7 @@ Objects in R - data types:
 
 ```r
 x &lt;- as.character(3.14) # Convert to character
-x                       # print the character string 
+x                       # Print the character string 
 ```
 
 ```
@@ -1205,7 +1205,7 @@ Packages in R:
 
 --
 
-* When you download and install R for the first time, you are installing the **base R** - only functions written by the original authors of the R language.
+* When you download and install R for the first time, you are installing the [base R](&lt;https://rstudio.com/resources/cheatsheets/&gt;) - only functions written by the original authors of the R language.
 
 --
 
@@ -1216,15 +1216,16 @@ Packages in R:
 
 Packages in R:
 
-* How de we get packages loaded into R?
+* How de we get packages loaded into R? Install and load.
 
  + Programmatically
 .tiny[
 
 ```r
-install.packages("ggplot2")
+install.packages("ggplot2"); library("ggplot2")
 ```
 ]
+
 --
  + RStudio Explorer window
  
@@ -1242,7 +1243,9 @@ class: inverse
 
 * There is a large community of users that develop packages for R.
 
-* Packages can be loaded with install.packages(...), or in the Explorer window in RStudio.
+* Packages can loaded programmatically by first installing with install.packages("...") and then loading with library(...).
+
+* Packages can also be installed and loaded in the Explorer window in RStudio.
 
 ---
 class: center, middle, inverse
@@ -1277,13 +1280,8 @@ getwd()         # Prints current working directory
 ```
 ]
 
----
-#### Topic 5: Data and Data Wrangling
+--
 
-Basic steps to working with data in R:
-
- * Check and/or set a working directory.
- 
   + How do I set my working directory?
 .tiny[
 
@@ -1293,31 +1291,13 @@ getwd()         # Prints current working directory
 ```
 
 ```
-   [1] "h:/R"
+[1] "h:/R"
 ```
 ]
 
----
-#### Topic 5: Data and Data Wrangling
+--
 
-Basic steps to working with data in R:
-
- * Check and/or set a working directory.
- 
-  + How do I set my working directory?
-.tiny[
-
-```r
-setwd("h:/R")   # Sets path to working directory
-getwd()         # Prints current working directory
-```
-
-```
-   [1] "h:/R"
-```
-]
-
-  + Can also set working directory in RStudio
+  + Can also set working directory in RStudio:
    
      1. Session &gt; Set Working Directory &gt; Choose Directory...
      
@@ -1329,6 +1309,8 @@ getwd()         # Prints current working directory
 Basic steps to working with data in R:
 
  * Check and/or set a working directory.
+ 
+--
 
  * Load data.
 
@@ -1338,34 +1320,16 @@ Basic steps to working with data in R:
 .tiny[
 
 ```r
-   read.table()   # base R
-   read.csv()     # base R
-   read.delim()   # base R
-   read_xlsx()    # Available with readxl package
+read.table()   # base R
+read.csv()     # base R
+read.delim()   # base R
+read_xlsx()    # Available with readxl package
 ```
 ]
 
----
-#### Topic 5: Data and Data Wrangling
+--
 
-Basic steps to working with data in R:
-
- * Check and/or set a working directory.
-
- * Load data.
- 
-  + Programmatically:
-.tiny[
-
-```r
-   read.table()   # base R
-   read.csv()     # base R
-   read.delim()   # base R
-   read_xlsx()    # Available with readxl package
-```
-]
-   
-   + Can also load data in RStudio
+  + Can also load data in RStudio:
    
      1. File &gt; Import Dataset
      
@@ -1391,7 +1355,7 @@ Exploring Data in R
  
 --
  
- * We'll use a dataset from the web to practice saving to and loading from a working directory.
+ * R comes with **pre-loaded datasets**, but let's use a dataset from the web to practice saving to and loading from a working directory.
  
 --
 
@@ -1416,14 +1380,14 @@ Exploring Data in R
 .tiny[
 
 ```r
-   # Set working directory
-   setwd("h:/R")
+# Set working directory
+setwd("h:/R")
    
-   # Set url link for data download
-   url &lt;- "https://wordpress.lehigh.edu/jsm4/files/2020/02/mpg.txt"
+# Set url link for data download
+url &lt;- "https://wordpress.lehigh.edu/jsm4/files/2020/02/mpg.txt"
    
-   # Download file to working directory
-   download.file(url, "mpg.txt")
+# Download file to working directory
+download.file(url, "mpg.txt")
 ```
 ]
    
@@ -1433,7 +1397,7 @@ Exploring Data in R
 .tiny[
 
 ```r
-   df &lt;- read.table("mpg.txt", header=TRUE, sep=",")
+df &lt;- read.table("mpg.txt", header=TRUE, sep=",")
 ```
 ]
 
@@ -1447,23 +1411,23 @@ Exploring Data in R
 .tiny[
 
 ```r
-  View(df)      # View the dataset in a spreadsheet
+View(df)      # View the dataset in a spreadsheet
 
-  str(df)       # Print the structure of the data frame
+str(df)       # Print the structure of the data frame
   
-  head(df)      # Print the first few rows
+head(df)      # Print the first few rows
   
-  tail(df)      # Print the last few rows
+tail(df)      # Print the last few rows
   
-  nrow(df)      # Print the number of rows
+nrow(df)      # Print the number of rows
   
-  ncol(df)      # Print the number of columns
+ncol(df)      # Print the number of columns
   
-  dim(df)       # Print the dimensions (rows x columns)
+dim(df)       # Print the dimensions (rows x columns)
   
-  rownames(df)  # Print row names
+rownames(df)  # Print row names
   
-  colnames(df)  # Print column names
+colnames(df)  # Print column names
 ```
 ]
  
@@ -1475,7 +1439,7 @@ Exploring Data in R
 .tiny[  * Let's check to make sure our data loaded correctly:
 
 ```r
-   head(df)
+head(df)
 ```
 
 ```
@@ -1497,7 +1461,7 @@ Exploring Data in R
 .tiny[ * Next, we'll check our data structure:
 
 ```r
-   str(df)
+str(df)
 ```
 
 ```
@@ -1523,11 +1487,11 @@ Exploring Data in R
 
 .tiny[  * Selecting specific data in R:
   
-   + R reads data as row x column, using brackets [ ]
+   + R reads data as row x column, using brackets [r,c]
   
 
 ```r
-  df[1,1]  # Print value in row 1, column 1
+df[1,1]  # Print value in row 1, column 1
 ```
 
 ```
@@ -1536,7 +1500,7 @@ Exploring Data in R
 ```
 
 ```r
-  df[6,10] # Print value in row 6, column 10
+df[6,10] # Print value in row 6, column 10
 ```
 
 ```
@@ -1556,7 +1520,7 @@ Exploring Data in R
    
 
 ```r
-  df[1,]
+df[1,]
 ```
 
 ```
@@ -1577,7 +1541,7 @@ Exploring Data in R
 .tiny[
 
 ```r
-  df[,1]   # Print column 1 by number (as a vector)
+df[,1]   # Print column 1 by number (as a vector)
 ```
 ]
 .tiny[   
@@ -1613,7 +1577,7 @@ Exploring Data in R
 .tiny[
 
 ```r
-  df$manufacturer  # Print column 1 by name (as a vector)
+df$manufacturer  # Print column 1 by name (as a vector)
 ```
 ]
 
@@ -1648,15 +1612,15 @@ Summarizing Data in R
 .tiny[
 
 ```r
-  mean(x)        # View the dataset in a spreadsheet
+mean(x)        # Calculate and return the average of the input values
 
-  max(x)         # Print the structure of the data frame
+max(x)         # Return the maximum value of the input values
   
-  min(x)         # Print the first few rows
+min(x)         # Return the minimum value of the input values
   
-  sd(x)          # Print the last few rows
+sd(x)          # Calculate and return the standard deviation of the input values
   
-  length(x)      # Print the number of rows
+length(x)      # Print the set length of the input values
 ```
 ]
 
@@ -1667,7 +1631,7 @@ Summarizing Data in R
 
  * Helpful functions for summarizing data in R:
  
-  + What if we wanted to summarize the mpg data in mtcars dataset?
+  + What if we wanted to summarize the highway mpg data in our dataset?
  
 .tiny[
 
