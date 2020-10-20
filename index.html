@@ -171,7 +171,7 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-* RStudio is a company that develops **free and open tools** for R, and enterprise-ready professional products.
+* RStudio is a **company** that develops **free and open tools** for R, and enterprise-ready professional products.
 {{content}}
 ]
 
@@ -1377,23 +1377,25 @@ Exploring Data in R
 --
 
  * Next, we'll set our working directory and download our dataset:
+
 .tiny[
 
 ```r
 # Set working directory
 setwd("h:/R")
-   
+
 # Set url link for data download
 url &lt;- "https://wordpress.lehigh.edu/jsm4/files/2020/02/mpg.txt"
-   
+
 # Download file to working directory
 download.file(url, "mpg.txt")
 ```
 ]
-   
+
 --
 
  * Now, let's load our data:
+
 .tiny[
 
 ```r
@@ -1971,7 +1973,7 @@ Exploring and Summarizing Data in R
  
   + Nesting approach:
   
-.pull-left[
+.tiny.pull-left[
 
 
 
@@ -1989,7 +1991,7 @@ arrange(
 ```
 ]
 
-.pull-right[
+.tiny.pull-right[
 
 ```
 # A tibble: 4 x 2
@@ -2010,7 +2012,7 @@ Exploring and Summarizing Data in R
  
   + Multiple objects approach:
   
-.pull-left[
+.tiny.pull-left[
 
 
 
@@ -2024,7 +2026,7 @@ print(d)
 ```
 ]
 
-.pull-right[
+.tiny.pull-right[
 
 ```
 # A tibble: 4 x 2
@@ -2045,7 +2047,7 @@ Exploring and Summarizing Data in R
  
   + Piping approach:
   
-.pull-left[
+.tiny.pull-left[
 
 
 
@@ -2058,7 +2060,7 @@ df %&gt;%
 ```
 ]
 
-.pull-right[
+.tiny.pull-right[
 
 ```
 # A tibble: 4 x 2
@@ -2078,22 +2080,24 @@ Exploring and Summarizing Data in R
  
  * Helpful functions - **Tidyverse**:
  
+.tiny[
 
 ```r
-  filter(x)      # picks cases based on their values.
+filter(x)      # picks cases based on their values.
 
-  select(x)      # picks variables based on their names
+select(x)      # picks variables based on their names
   
-  arrange(x)     # changes the ordering of rows
+arrange(x)     # changes the ordering of rows
   
-  group_by(x)    # allows operations by groups
+group_by(x)    # allows operations by groups
   
-  mutate(x)      # adds new variables to a dataset
+mutate(x)      # adds new variables to a dataset
   
-  summarise(x)   # reduces multiple values down to a summary value
+summarise(x)   # reduces multiple values down to a summary value
   
-  add_row(x)     # add a row of data to a data frame
+add_row(x)     # add a row of data to a data frame
 ```
+]
   
 ---
 class: inverse
@@ -2126,7 +2130,7 @@ df %&gt;% filter(year==1999) %&gt;%
    head(1)
 ```
 
-.tiny4[
+.tiny[
 
 ```
   manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
@@ -2141,7 +2145,7 @@ df %&gt;% filter(year==2008) %&gt;%
    head(1)
 ```
 
-.tiny4[
+.tiny[
 
 ```
   manufacturer   model displ year cyl      trans drv cty hwy fl   class  avg
@@ -2160,7 +2164,7 @@ df %&gt;% group_by(year) %&gt;%
    filter(hwy == max(hwy))
 ```
 
-.tiny4[
+.tiny[
 
 ```
 # A tibble: 3 x 12
@@ -2180,6 +2184,7 @@ df %&gt;% group_by(year) %&gt;%
 
 --
 
+.tiny[
 
 ```r
 df %&gt;%
@@ -2202,6 +2207,7 @@ df %&gt;%
 6     8  1999    17.0    12.2  4.81
 7     8  2008    18      12.8  5.21
 ```
+]
 
 
 ---
@@ -2346,9 +2352,12 @@ Visualizing data in R
 
 
 
+.tiny[
+
 ```r
- ggplot(data=df)
+ggplot(data=df)
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -2364,16 +2373,20 @@ Visualizing data in R
 
  * Let's try the first function by itself. What happened?
 
-```r
- ggplot(data=df)
-```
-
- * Now lets add some layers, with the second function.
+.tiny[
 
 ```r
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy))
+ggplot(data=df)
 ```
+
+ * Now lets add some layers and aestechics, with the second and third functions.
+
+
+```r
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy))
+```
+]
 
 ---
 #### Topic 6: Plotting
@@ -2389,23 +2402,28 @@ Visualizing data in R
 
  * Let's try the first function by itself. What happened?
 
+.tiny[
+
 ```r
- ggplot(data=df)
+ggplot(data=df)
 ```
 
- * Now lets add some layers, with the second function.
+ * Now lets add some layers and aestechics, with the second and third functions.
+
 
 ```r
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy))
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy))
 ```
 
  * Now lets add an additional **aesthetic**.
 
+
 ```r
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy, color=class))
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy, color=class))
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -2421,11 +2439,14 @@ Visualizing data in R
 
  * We can also add additional layers [geoms](&lt;https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf&gt;).
 
+.tiny[
+
 ```r
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
- geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -2440,12 +2461,15 @@ Visualizing data in R
 Visualizing data in R
 
  * We can also add additional layers [geoms](&lt;https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf&gt;).
+ 
+.tiny[
 
 ```r
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
- geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
 ```
+]
 
 .pull-right2[
 &lt;center&gt;&lt;img src="./images/ggplot2_1.png" alt="RStudio" width=500/&gt;&lt;/center&gt;
@@ -2457,6 +2481,8 @@ Visualizing data in R
 Visualizing data in R
 
  * Now, let's clean the plot up a bit.
+
+.tiny[
 
 ```r
  ggplot(mpg, aes(x=displ, y=hwy)) +
@@ -2477,6 +2503,7 @@ Visualizing data in R
          y="Highway miles per gallon",
          color="Vehicle class")
 ```
+]
 
 ---
 #### Topic 6: Plotting
