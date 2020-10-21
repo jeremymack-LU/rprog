@@ -23,16 +23,26 @@ class: center, middle, inverse, title-slide
 ### About this presentation
 
  * This course is a **brief introduction** into R.
+
+--
  
  * It is targeted at people that have little to no experience
    progamming.
+
+--
    
  * It could be useful for people who learned R some time ago and
    forgot it, or who are not familiar with modern R programming
    (`tidyverse`).
-   
+
+--
+
  * It focuses on a bit of history, an introduction to the R 
    environment, and some hands experience with **data wrangling**.
+
+--
+
+* Slides are available on [Lehigh's Research Computing site](https://researchcomputing.lehigh.edu/training), [Wordpress](https://wordpress.lehigh.edu/jsm4/data-visualization/programming-in-r/), and [Github](https://jeremymack-lu.github.io/rprog/)
    
 ---
 
@@ -42,17 +52,17 @@ The presentation is split into seven topics:
 
  * [**Topic 1:**](&lt;https://jeremymack-lu.github.io/rprog/#4&gt;) What is R? Why use it?
  
- * [**Topic 2:**](&lt;https://jeremymack-lu.github.io/rprog/#16&gt;) What is RStudio? Why use it?
+ * [**Topic 2:**](&lt;https://jeremymack-lu.github.io/rprog/#10&gt;) What is RStudio? Why use it?
  
- * [**Topic 3:**](&lt;https://jeremymack-lu.github.io/rprog/#28&gt;) Getting started with R and RStudio
+ * [**Topic 3:**](&lt;https://jeremymack-lu.github.io/rprog/#16&gt;) Getting started with R and RStudio
  
- * [**Topic 4:**](&lt;https://jeremymack-lu.github.io/rprog/#55&gt;) Programming in R
+ * [**Topic 4:**](&lt;https://jeremymack-lu.github.io/rprog/#29&gt;) Programming in R
  
- * [**Topic 5:**](&lt;https://jeremymack-lu.github.io/rprog/#93&gt;) Data and data wrangling
+ * [**Topic 5:**](&lt;https://jeremymack-lu.github.io/rprog/#56&gt;) Data and data wrangling
  
- * [**Topic 6:**](&lt;https://jeremymack-lu.github.io/rprog/#155&gt;) Plotting
+ * [**Topic 6:**](&lt;https://jeremymack-lu.github.io/rprog/#91&gt;) Plotting
  
- * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#177&gt;) Other things to do with R
+ * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#112&gt;) Other things to do with R
 
 ---
 class: center, middle, inverse
@@ -2123,6 +2133,7 @@ class: inverse
 
 --
 
+.tiny[
 
 ```r
 df %&gt;% filter(year==1999) %&gt;% 
@@ -2130,13 +2141,11 @@ df %&gt;% filter(year==1999) %&gt;%
    head(1)
 ```
 
-.tiny[
 
 ```
   manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
 1   volkswagen jetta   1.9 1999   4 manual(m5)   f  33  44  d compact 38.5
 ```
-]
 
 
 ```r
@@ -2145,7 +2154,6 @@ df %&gt;% filter(year==2008) %&gt;%
    head(1)
 ```
 
-.tiny[
 
 ```
   manufacturer   model displ year cyl      trans drv cty hwy fl   class  avg
@@ -2158,13 +2166,13 @@ df %&gt;% filter(year==2008) %&gt;%
 
  * What manufacturer had the highest highway mpg in 1999? Was it the same one in 2008?
  
+.tiny[
 
 ```r
 df %&gt;% group_by(year) %&gt;%
    filter(hwy == max(hwy))
 ```
 
-.tiny[
 
 ```
 # A tibble: 3 x 12
