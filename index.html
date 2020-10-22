@@ -2048,6 +2048,20 @@ Pennsylvania    6.3     106       72 14.9
 .tiny[
 
 ```r
+# Quick plot of the data
+with(crime, plot(x=Assault, y=Murder))
+```
+]
+&lt;center&gt;&lt;img src="./images/Rplot3.jpeg" alt="RStudio" height=300/&gt;&lt;/center&gt;
+
+---
+#### Review - Summarizing Data:
+
+ * Was there a linear relationship between murders and assaults?
+
+.tiny[
+
+```r
 # Apply a simple linear model
 mod &lt;- lm(Murder~Assault, data=crime)
 summary(mod)
