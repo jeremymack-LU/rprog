@@ -1282,7 +1282,7 @@ Basic steps to working with data in R:
 .tiny[
 
 ```r
-getwd()         # Prints current working directory
+getwd()                  # Prints current working directory
 ```
 
 ```
@@ -1296,12 +1296,12 @@ getwd()         # Prints current working directory
 .tiny[
 
 ```r
-setwd("h:/R")   # Sets path to working directory
-getwd()         # Prints current working directory
+setwd("h:/R_workshop")   # Sets path to working directory
+getwd()                  # Prints current working directory
 ```
 
 ```
-[1] "h:/R"
+[1] "h:/R/R_workshop"
 ```
 ]
 
@@ -1532,7 +1532,7 @@ Exploring Data in R
    
 
 ```r
-df[1,]
+df[1,]  # Print the first row 
 ```
 
 ```
@@ -1738,7 +1738,7 @@ mean(df2$hwy, na.rm=TRUE)
 ---
 #### Topic 5: Data and Data Wrangling
 
-Adding Data in R
+Summarizing Data in R
 
  * What if we wanted to add a new variable (i.e., column)?
  
@@ -1763,10 +1763,120 @@ df$avg  &lt;- rowMeans(df[,8:9], na.rm=TRUE)
 ]
 
 ---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * How does highway mileage change with engine displacement?
+ 
+.tiny[
+
+```r
+# Quick plot of the data
+with(df, plot(x=displ, y=hwy))
+```
+]
+&lt;center&gt;&lt;img src="./images/Rplot.jpeg" alt="RStudio" height=300/&gt;&lt;/center&gt;
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * How does highway mileage change with engine displacement?
+ 
+.tiny[
+
+```r
+# Apply a simple linear model
+mod &lt;- lm(hwy~displ, data=df)
+summary(mod)
+```
+]
+
+.tiny2[
+
+```
+
+Call:
+lm(formula = hwy ~ displ, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.1039 -2.1646 -0.2242  2.0589 15.0105 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  35.6977     0.7204   49.55   &lt;2e-16 ***
+displ        -3.5306     0.1945  -18.15   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.836 on 232 degrees of freedom
+Multiple R-squared:  0.5868,	Adjusted R-squared:  0.585 
+F-statistic: 329.5 on 1 and 232 DF,  p-value: &lt; 2.2e-16
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * Des highway mileage significantly differ between car classes?
+ 
+.tiny[
+
+```r
+# Quick plot of the data
+with(df, plot(x=class, y=hwy))
+```
+]
+&lt;center&gt;&lt;img src="./images/Rplot2.jpeg" alt="RStudio" height=300/&gt;&lt;/center&gt;
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * Does highway mileage significantly differ between car classes?
+ 
+.tiny[
+
+```r
+# Apply a simple linear model with an ANOVA test
+mod2 &lt;- lm(hwy~class, data=df)
+aov2 &lt;- aov(mod2)
+summary(aov2)
+```
+]
+
+.tiny2[
+
+```
+             Df Sum Sq Mean Sq F value Pr(&gt;F)    
+class         6   5683   947.2   83.39 &lt;2e-16 ***
+Residuals   227   2578    11.4                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+]
+
+---
 class: inverse
 
 #### Exercise - Summarizing Data:
  * The *USArrests* dataset provides data on the number of arrests per 100,000 residents for violent crimes (assault, murder, and rape) in each of the 50 US states in 1973.
+
+--
+
+ * First assign that data to an object called "crime"
+.tiny[
+
+```r
+crime &lt;- USArrests
+```
+]
 
 --
 
@@ -1777,7 +1887,7 @@ class: inverse
   
   3. Print the statistics for Pennsylvania.
   
-  4. Add a column of data with the average arrests for violent crime in each state.
+  4. Was there a linear relationship between murders and assaults?
     
 --
 
@@ -1793,7 +1903,7 @@ class: inverse
 .tiny[
 
 ```r
-mean(USArrests$Assault)
+mean(crime$Assault)
 ```
 
 ```
@@ -1806,7 +1916,7 @@ mean(USArrests$Assault)
 .tiny[
 
 ```r
-mean(USArrests[,2])
+mean(crime[,2])
 ```
 
 ```
@@ -1819,7 +1929,7 @@ mean(USArrests[,2])
 .tiny[
 
 ```r
-sum(USArrests$Assault)/length(USArrests$Assault)
+sum(crime$Assault)/length(crime$Assault)
 ```
 
 ```
@@ -1837,7 +1947,7 @@ sum(USArrests$Assault)/length(USArrests$Assault)
 .tiny[
 
 ```r
-max(USArrests$Assault)
+max(crime$Assault)
 ```
 
 ```
@@ -1850,7 +1960,7 @@ max(USArrests$Assault)
 .tiny[
 
 ```r
-x &lt;- sort(USArrests$Assault, decreasing=TRUE)
+x &lt;- sort(crime$Assault, decreasing=TRUE)
 x[1]
 ```
 
@@ -1864,7 +1974,7 @@ x[1]
 .tiny[
 
 ```r
-x &lt;- sort(USArrests$Assault)
+x &lt;- sort(crime$Assault)
 x[50]
 ```
 
@@ -1883,7 +1993,7 @@ x[50]
 .tiny[
 
 ```r
-USArrests["Pennsylvania",]
+crime["Pennsylvania",]
 ```
 
 ```
@@ -1897,7 +2007,7 @@ Pennsylvania    6.3     106       72 14.9
 .tiny[
 
 ```r
-USArrests[38,]
+crime[38,]
 ```
 
 ```
@@ -1909,29 +2019,42 @@ Pennsylvania    6.3     106       72 14.9
 ---
 #### Review - Summarizing Data:
 
- * Add a column of data with the average arrests for violent crime in each state.
+ * Was there a linear relationship between murders and assaults?
 
 --
 
 .tiny[
 
 ```r
-USArrests$Average &lt;- rowMeans(USArrests)
+# Apply a simple linear model
+mod &lt;- lm(Murder~Assault, data=crime)
+summary(mod)
 ```
 ]
 
-.tiny[
+.tiny2[
 
 ```
-           Murder Assault UrbanPop Rape Average
-Alabama      13.2     236       58 21.2  82.100
-Alaska       10.0     263       48 44.5  91.375
-Arizona       8.1     294       80 31.0 103.275
-Arkansas      8.8     190       50 19.5  67.075
-California    9.0     276       91 40.6 104.150
+
+Call:
+lm(formula = Murder ~ Assault, data = crime)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.8528 -1.7456 -0.3979  1.3044  7.9256 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.631683   0.854776   0.739    0.464    
+Assault     0.041909   0.004507   9.298  2.6e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.629 on 48 degrees of freedom
+Multiple R-squared:  0.643,	Adjusted R-squared:  0.6356 
+F-statistic: 86.45 on 1 and 48 DF,  p-value: 2.596e-12
 ```
 ]
-
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1962,6 +2085,19 @@ Exploring and Summarizing Data in R
 ---
 #### Topic 5: Data and Data Wrangling
 Exploring and Summarizing Data in R
+
+ * Let's load a core Tidyverse packages:
+
+
+
+.tiny[
+
+```r
+install.packages("dplyr"); library(dplyr)
+```
+]
+
+--
 
  * Working with the pipe operator (%&gt;%) - **magrittr**
  
@@ -2146,7 +2282,11 @@ df %&gt;% filter(year==1999) %&gt;%
   manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
 1   volkswagen jetta   1.9 1999   4 manual(m5)   f  33  44  d compact 38.5
 ```
+]
 
+--
+
+.tiny[
 
 ```r
 df %&gt;% filter(year==2008) %&gt;% 
