@@ -1766,6 +1766,28 @@ df$avg  &lt;- rowMeans(df[,8:9], na.rm=TRUE)
 #### Topic 5: Data and Data Wrangling
 
 Analyzing Data in R
+ 
+ * Helpful functions for analyzing data in R:
+ 
+.tiny[
+
+```r
+lm(x)           # Apply a linear model
+
+glm(x)          # Apply a generalized linear model
+  
+t.test(x)       # Perform a t-test for difference between means
+  
+aov(x)          # Analysis of variance test
+  
+prop.test(x)    # Test for a difference between proportions
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
 
  * How does highway mileage change with engine displacement?
  
@@ -1776,7 +1798,7 @@ Analyzing Data in R
 with(df, plot(x=displ, y=hwy))
 ```
 ]
-&lt;center&gt;&lt;img src="./images/Rplot.jpeg" alt="RStudio" height=300/&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="./images/Rplot1.jpeg" alt="RStudio" height=300/&gt;&lt;/center&gt;
 
 ---
 #### Topic 5: Data and Data Wrangling
