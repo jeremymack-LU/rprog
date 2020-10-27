@@ -55,19 +55,19 @@ class: center, middle, inverse, title-slide
 
 The presentation is split into seven topics:
 
- * [**Topic 1:**](<https://jeremymack-lu.github.io/rprog/#4>) What is R? Why use it?
+ * [**Topic 1:**](<https://jeremymack-lu.github.io/rprog/#8>) What is R? Why use it?
  
- * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#10>) What is RStudio? Why use it?
+ * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#20>) What is RStudio? Why use it?
  
- * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#16>) Getting started with R and RStudio
+ * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#32>) Getting started with R and RStudio
  
- * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#29>) Objects and Functions
+ * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#58>) Objects and Functions
  
- * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#56>) Data and Data Wrangling
+ * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#98>) Data and Data Wrangling
  
- * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#91>) Plotting
+ * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#178>) Plotting
  
- * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#112>) Other things to do with R
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#201>) Other things to do with R
 
 ---
 class: center, middle, inverse
