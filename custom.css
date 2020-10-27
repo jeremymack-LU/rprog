@@ -125,3 +125,7 @@ th, td { padding: 5px; }
 .tiny4 .remark-code { /*Change made here*/
   font-size: 75% !important;
 }
+
+.tiny5 .remark-code { /*Change made here*/
+  font-size: 45% !important;
+}

@@ -20,7 +20,7 @@ class: center, middle, inverse, title-slide
 ## Programming in R: a brief introduction
 #### Jeremy Mack
 #### Lehigh University - Digital Scholarship Team
-<img src="./images/rlang.png" alt="RStudio" height=150/> <img src="./images/rstudio5.png" alt="RStudio" height=150/> <img src="./images/tidyverse5.png" alt="RStudio" height=150/>
+<img src="./images/rlang.png" alt="RStudio" height=150/> &nbsp; <img src="./images/rstudio5.png" alt="RStudio" height=150/> &nbsp; <img src="./images/tidyverse5.png" alt="RStudio" height=150/>
 <br/><br/>
 
 ---
@@ -28,16 +28,26 @@ class: center, middle, inverse, title-slide
 ### About this presentation
 
  * This course is a **brief introduction** into R.
+
+--
  
  * It is targeted at people that have little to no experience
    progamming.
+
+--
    
  * It could be useful for people who learned R some time ago and
    forgot it, or who are not familiar with modern R programming
    (`tidyverse`).
-   
+
+--
+
  * It focuses on a bit of history, an introduction to the R 
    environment, and some hands experience with **data wrangling**.
+
+--
+
+* Slides are available on [Lehigh's Research Computing site](https://researchcomputing.lehigh.edu/training), [Wordpress](https://wordpress.lehigh.edu/jsm4/data-visualization/programming-in-r/), and Github ([slides](https://jeremymack-lu.github.io/rprog/) and [raw code](https://github.com/jeremymack-LU/rprog))
    
 ---
 
@@ -45,19 +55,19 @@ class: center, middle, inverse, title-slide
 
 The presentation is split into seven topics:
 
- * **Topic 1:** What is R? Why use it?
+ * [**Topic 1:**](<https://jeremymack-lu.github.io/rprog/#4>) What is R? Why use it?
  
- * **Topic 2:** What is RStudio? Why use it?
+ * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#10>) What is RStudio? Why use it?
  
- * **Topic 3:** Getting started with R and RStudio
+ * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#16>) Getting started with R and RStudio
  
- * **Topic 4:** Programming in R
+ * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#29>) Objects and Functions
  
- * **Topic 5:** Data and data wrangling
+ * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#56>) Data and Data Wrangling
  
- * **Topic 6:** Plotting
+ * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#91>) Plotting
  
- * **Topic 7:** Other things to do with R
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#112>) Other things to do with R
 
 ---
 class: center, middle, inverse
@@ -78,7 +88,7 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-- R is a *programming language* [(one of many)](<https://www.tiobe.com/tiobe-index/>) and an *environment* for statistical computing.
+- R is a **programming language** ([one of many](<https://www.tiobe.com/tiobe-index/>)) and an **environment** for statistical computing.
 {{content}}
 ]
 
@@ -101,7 +111,7 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-- R is a *programming language* [(one of many)](<https://www.tiobe.com/tiobe-index/>) and an *environment* for statistical computing.
+- R is a **programming language** ([one of many](<https://www.tiobe.com/tiobe-index/>)) and an **environment** for statistical computing.
    
 - Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
 
@@ -134,7 +144,7 @@ class: center, middle, inverse
 {{content}}
 --
 
-- *Very* active development community
+- **Very active development community**
     + CRAN: The Comprehensive R Archive Network
     + User contributed packages <br/> (> 15,000)
     {{content}}
@@ -147,11 +157,15 @@ class: center, middle, inverse
 
 #### Topic 1: What is R? Why use it?
 
-
 <img src="./images/reproducibility.png" alt="R logo" height=265</> <img src="./images/reproducibility2.png" alt="R logo" height=265</>
-<br/><br/>
---
+##### - 2019 report by The National Academies of Sciences, Engineering, and Medicine
+
+---
+
+#### Topic 1: What is R? Why use it?
+
 <img src="./images/reproducibility3.png" alt="R logo" height=265</> &nbsp; &nbsp; &nbsp; <img src="./images/reproducibility4b.png" alt="R logo" height=265</>
+##### - 2018 series featured in Nature
 
 ---
 class: center, middle, inverse
@@ -172,13 +186,13 @@ class: center, middle, inverse
 ]
 
 .pull-right[
-* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
+* RStudio is a **company** that develops **free and open tools** for R, and enterprise-ready professional products.
 {{content}}
 ]
 
 --
 
-* *Integrated Development Environment* (IDE), or a front end platform
+* **Integrated Development Environment** (IDE), or a front end platform
 to run R.
 {{content}}
 
@@ -191,9 +205,9 @@ to run R.
 ]
 
 .pull-right[
-* RStudio is a company that develops free and open tools for R, and enterprise-ready professional products.
+* RStudio is a **company** that develops **free and open tools** for R, and enterprise-ready professional products.
 
-* *Integrated Development Environment* (IDE), or a front end platform
+* **Integrated Development Environment** (IDE), or a front end platform
 to run R.
 ]
 
@@ -214,12 +228,12 @@ to run R.
 
 --
 
-* It can reduce the learning curve of R, by creating organization.
+* It can reduce the learning curve of R, by creating **organization**.
 {{content}}
 
 --
 
-* Integrates nicely with other R functions:
+* Integrates nicely with other R features/applications:
     + Version control
     + R Markdown
     + ShinyApps
@@ -241,7 +255,7 @@ How do R and RStudio work together? Consider a car analogy.
 ]
 
 .pull-right[
-
+<img src="./images/car_engine.jpg" alt="R logo" width=400</>
 ]
 
 ---
@@ -251,13 +265,13 @@ class: inverse
 
 --
 
-* **R** is a programming language built for statistical computing.
+* **R** is a programming language built for statistical computing ("Engine").
 
  + It's open source and it's free.
 
 --
 
-* **RStudio** is an integrated development envrionment that makes working with R easier.
+* **RStudio** is an integrated development envrionment that makes working with R easier ("Frame").
 
  + It's developed by a company, but it's also free.
 
@@ -316,22 +330,33 @@ First, let's explore RStudio.
 ---
 
 #### Topic 3: Getting started with R and RStudio
+<style>
+  pre {
+    background-color: lightyellow;
+    white-space: pre-wrap;
+    line-height: 100%;
+  }
+</style>
 
 Next, let's explore R - the engine under the hood.
 
 In true computer science fashion, let's first try typing:
 
+.tiny[
 ```{r eval=FALSE}
 print("Hello world!")
 ```
+]
 
 What happend?
 
 --
 
+.tiny[
 ```{r echo=FALSE, comment=NA}
 print("Hello world!")
 ```
+]
 
 ---
 
@@ -352,26 +377,33 @@ Now, let's try three things...
 
 Try capitalizing `Print(...)`:
  
+.tiny[
 ```{r eval=FALSE}
 Print("Hello world!")
 ```
+]
 
 Try putting a space between `print` and `("Hello world!")`:
 
+.tiny[
 ```{r eval=FALSE}
 print ("Hello world!")
 ```
+]
 
 Try just entering `"Hello world!"`:
 
+.tiny[
 ```{r eval=FALSE}
 "Hello world!"
 ```
+]
 
 What happened?
 
 --
  
+.tiny[
 ```{r echo=FALSE, error=TRUE, comment=NA}
 Print("Hello world!")
 ```
@@ -383,6 +415,7 @@ print ("Hello world!")
 ```{r echo=FALSE, comment=NA}
 "Hello world!"
 ```
+]
 
 ---
 
@@ -402,37 +435,53 @@ Three things you just learned:
 
 You can also use R as a calculator. Let's try the following:
 
+.tiny[
 ```{r eval=FALSE}
 2 + 2
 ```
+]
 --
+.tiny[
 ```{r echo=FALSE, comment=NA}
 2 + 2
 ```
+]
 --
+.tiny[
 ```{r eval=FALSE}
 4 * 2
 ```
+]
 --
+.tiny[
 ```{r echo=FALSE, comment=NA}
 4 * 2
 ```
+]
 --
+.tiny[
 ```{r eval=FALSE}
 8 / 3
 ```
+]
 --
+.tiny[
 ```{r echo=FALSE, comment=NA}
 8 / 3
 ```
+]
 --
+.tiny[
 ```{r eval=FALSE}
 exp(log(8)-log(3))
 ```
+]
 --
+.tiny[
 ```{r echo=FALSE, comment=NA}
 exp(log(8)-log(3))
 ```
+]
 
 ---
 #### Topic 3: Getting started with R and RStudio
@@ -443,16 +492,21 @@ we'll use the **assignment operator**, `<-`
 
 Here's an example:
 
+.tiny[
 ```{r}
 x <- log(8)
 y <- log(3)
 ```
+]
+
 --
 Now we can redo our last calculation using the assignments:
 
+.tiny[
 ```{r comment=NA}
 exp(x-y)
 ```
+]
 
 ---
 #### Topic 3: Getting started with R and RStudio
@@ -464,9 +518,11 @@ To do so, we'll use the **concatenation operator**, `c(...)`
 
 Here's an example:
 
+.tiny[
 ```{r}
 n <- c(2, 3, 5, 8, 13, 21, 34, 55)
 ```
+]
 
 --
 
@@ -474,9 +530,11 @@ We can now apply opertions across the entire vector.
 
 For example:
 
+.tiny[
 ```{r comment=NA}
 n * 2
 ```
+]
 
 ---
 #### Topic 3: Getting started with R and RStudio
@@ -488,11 +546,13 @@ In addition to **character values** (which we saw when we called `print("Hello w
 
 For example, we can check which numbers in our "n" vector are double digit:
 
+.tiny[
 ```{r comment=NA}
 n
 is_double_digit <- n > 9
 is_double_digit
 ```
+]
 
 ---
 class: inverse
@@ -504,7 +564,7 @@ class: inverse
 
 * R is a calculator.
 
-* R can be used to store objects that can be compared to other objects, or used with other functions.
+* R can be used to store objects (**assignments**) that can be compared to other objects, or used with other functions.
 
 ---
 class: center, middle, inverse
@@ -529,17 +589,21 @@ R revolves around two things: **objects** and **functions**. Almost everything i
 
 For example, we can define a simple object called "n":
 
+.tiny[
 ```{r}
 n <- c(2, 3, 5, 8, 13, 21, 34, 55)
 ```
+]
 
 --
 
 We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the mean function:
 
+.tiny[
 ```{r comment=NA}
 mean(n)
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -570,11 +634,13 @@ Objects in R:
 Objects in R - data types:
 * Numeric - a number; default data type in R
  
+.tiny[
 ```{r comment=NA}
 x <- 10.5               # Define object x
 x                       # Print x
 class(x)                # Print the class name of x
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -582,28 +648,37 @@ class(x)                # Print the class name of x
 Objects in R - data types:
 * Integer - whole numbers; a number that is not a fraction
 
+.tiny[
 ```{r comment=NA}
 x <- 10                 # Define object x
 x                       # Print x
 class(x)                # Print the class name of x
 ```
+]
+
 ---
 #### Topic 4: Objects and Functions
 
 Objects in R - data types:
 * Integer - whole numbers; a number that is not a fraction
 
+.tiny[
 ```{r comment=NA}
 x <- as.integer(10)     # Convert to integer
 x                       # Print x
 class(x)                # Print the class name of x
 ```
+]
+
 --
+
+.tiny[
 ```{r comment=NA}
 x <- 10L                # Declare as integer by appending with "L"
 x                       # Print x
 class(x)                # Print the class name of x
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -612,11 +687,13 @@ Objects in R - data types:
 * Complex - any number that can be written as a + bi, where *i* is the imaginary unit and a and b
 are real numbers.
 
+.tiny[
 ```{r, comment=NA}
-x <- 1 + 2i             # create a complex number x
-x                       # print the value of x 
+x <- 1 + 2i             # Create a complex number x
+x                       # Print the value of x 
 class(x)                # Print the class name of x
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -624,12 +701,14 @@ class(x)                # Print the class name of x
 Objects in R - data types:
 * Logical - created via comparison(s) between variables.
 
+.tiny[
 ```{r, comment=NA}
-x <- 1; y <- 2          # create sample values x and y
-z <- x > y              # is x larger than y? 
-z                       # print the logical value 
+x <- 1; y <- 2          # Create sample values x and y
+z <- x > y              # Is x larger than y? 
+z                       # Print the logical value 
 class(z)                # Print the class name of z
 ```
+]
 
 ---
 #### Topic 4: Objects and Functions
@@ -637,17 +716,57 @@ class(z)                # Print the class name of z
 Objects in R - data types:
 * Character - used to represent string values in R.
 
+.tiny[
 ```{r, comment=NA}
 x <- as.character(3.14) # Convert to character
-x                       # print the character string 
+x                       # Print the character string 
 class(x)                # Print the class name of x
 ```
+]
+
 --
+
+.tiny[
 ```{r comment=NA}
 x <- "3.14"             # Can declare as character with " "
 x                       # Print x
 class(x)                # Print the class name of x
 ```
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R:
+* Objects come in many different shapes and sizes - like a number, a dataset, a summary statistic, or the results of a statistical test.
+
+* Objects have different **attributes** - properties that explain what an object represents and how it should be interpreted.
+
+* Objects are essentially *data* that have a particular **type** and **structure**.
+
+* There are five basic **types** in R:
+ 1. Numeric
+ 2. Integer
+ 3. Complex
+ 4. Logical
+ 5. Character
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R:
+* Objects come in many different shapes and sizes - like a number, a dataset, a summary statistic, or the results of a statistical test.
+
+* Objects have different **attributes** - properties that explain what an object represents and how it should be interpreted.
+
+* Objects are essentially *data* that have a particular **type** and **structure**.
+
+* There are four basic **structures** in R:
+ 1. Scalar
+ 2. Vector
+ 3. Matrix
+ 4. Data frame
+
 ---
 #### Topic 4: Objects and Functions
 
@@ -695,7 +814,7 @@ Objects in R - data structure:
 ![R objects](./images/objects2.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Scalar objects:**
 ```{r comment=NA}
 x <- 10.5 
@@ -730,7 +849,7 @@ Objects in R - data structure:
 ![R objects](./images/objects3.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Vector objects:**
 ```{r comment=NA}
 n <- c(2,3,5,8,13,21,34,55) 
@@ -749,7 +868,7 @@ Objects in R - data structure:
 ![R objects](./images/objects3.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Vector objects:**
 ```{r comment=NA}
 n <- c(2,3,5,8,13,21,34,"55") 
@@ -786,7 +905,7 @@ Objects in R - data structure:
 ![R objects](./images/objects4.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Matrix objects:**
 ```{r comment=NA}
 x <- 1:3
@@ -824,7 +943,7 @@ Objects in R - data structure:
 ![R objects](./images/objects4.png)
 ]
 
-.pull-right[
+.tiny4.pull-right[
 **Data frame objects:**
 ```{r, comment=NA}
 survey <- data.frame(
@@ -843,9 +962,18 @@ class: inverse
 #### Review - Objects:
 * Define objects > Apply functions > Repeat!
 
-* Objects are defined by data, which there are five main types.
+* Objects are defined by data. There are five main types of data:
+   1. Numeric
+   2. Integer
+   3. Complex
+   4. Logical
+   5. Character
 
 * Objects come in different sizes and shapes, from a single, scalar, object, to a data frame that contains multiple vectors of different data types.
+   1. Scalar - single value
+   2. Vector - string of values, same data type
+   3. Matrix - multiple strings, same data type
+   4. Data frame - multiple strings, different data types
 
 ---
 #### Topic 4: Objects and Functions
@@ -885,7 +1013,7 @@ Packages in R:
 
 --
 
-* When you download and install R for the first time, you are installing the **base R** - only functions written by the original authors of the R language.
+* When you download and install R for the first time, you are installing the [base R](<https://rstudio.com/resources/cheatsheets/>) - only functions written by the original authors of the R language.
 
 --
 
@@ -896,12 +1024,15 @@ Packages in R:
 
 Packages in R:
 
-* How de we get packages loaded into R?
+* How de we get packages loaded into R? Install and load.
 
  + Programmatically
+.tiny[
 ```{r comment=NA, eval=FALSE}
- install.packages("ggplot2")
+install.packages("ggplot2"); library("ggplot2")
 ```
+]
+
 --
  + RStudio Explorer window
  
@@ -919,7 +1050,9 @@ class: inverse
 
 * There is a large community of users that develop packages for R.
 
-* Packages can be loaded with install.packages(...), or in the Explorer window in RStudio.
+* Packages can loaded programmatically by first installing with install.packages("...") and then loading with library(...).
+
+* Packages can also be installed and loaded in the Explorer window in RStudio.
 
 ---
 class: center, middle, inverse
@@ -934,6 +1067,11 @@ class: center, middle, inverse
 ---
 #### Topic 5: Data and Data Wrangling
 
+<center><img src="./images/data_science.png" alt="RStudio" height=300/></center>
+
+---
+#### Topic 5: Data and Data Wrangling
+
 Basic steps to working with data in R:
 
 --
@@ -943,45 +1081,29 @@ Basic steps to working with data in R:
 --
 
   + What is my working directory?
+.tiny[
 ```{r, comment=NA}
-   getwd()         # Prints current working directory
+getwd()                  # Prints current working directory
 ```
+]
 
----
-#### Topic 5: Data and Data Wrangling
+--
 
-Basic steps to working with data in R:
-
- * Check and/or set a working directory.
- 
   + How do I set my working directory?
+.tiny[
 ```{r, comment=NA, eval=FALSE}
-   setwd("h:/R")   # Sets path to working directory
-   getwd()         # Prints current working directory
+setwd("h:/R_workshop")   # Sets path to working directory
+getwd()                  # Prints current working directory
 ```
 
 ```
-   [1] "h:/R"
+[1] "h:/R/R_workshop"
 ```
+]
 
----
-#### Topic 5: Data and Data Wrangling
+--
 
-Basic steps to working with data in R:
-
- * Check and/or set a working directory.
- 
-  + How do I set my working directory?
-```{r, comment=NA, eval=FALSE}
-   setwd("h:/R")   # Sets path to working directory
-   getwd()         # Prints current working directory
-```
-
-```
-   [1] "h:/R"
-```
-
-  + Can also set working directory in RStudio
+  + Can also set working directory in RStudio:
    
      1. Session > Set Working Directory > Choose Directory...
      
@@ -993,37 +1115,26 @@ Basic steps to working with data in R:
 Basic steps to working with data in R:
 
  * Check and/or set a working directory.
+ 
+--
 
  * Load data.
 
 --
  
   + Programmatically:
+.tiny[
 ```{r, comment=NA, eval=FALSE}
-   read.table()   # base R
-   read.csv()     # base R
-   read.delim()   # base R
-   read_xlsx()    # Available with readxl package
+read.table()   # base R
+read.csv()     # base R
+read.delim()   # base R
+read_xlsx()    # Available with readxl package
 ```
+]
 
----
-#### Topic 5: Data and Data Wrangling
+--
 
-Basic steps to working with data in R:
-
- * Check and/or set a working directory.
-
- * Load data.
- 
-  + Programmatically:
-```{r, comment=NA, eval=FALSE}
-   read.table()   # base R
-   read.csv()     # base R
-   read.delim()   # base R
-   read_xlsx()    # Available with readxl package
-```
-   
-   + Can also load data in RStudio
+  + Can also load data in RStudio:
    
      1. File > Import Dataset
      
@@ -1049,7 +1160,7 @@ Exploring Data in R
  
 --
  
- * We'll use a dataset from the web to practice saving to and loading from a working directory.
+ * R comes with **pre-loaded datasets**, but let's use a dataset from the web to practice saving to and loading from a working directory.
  
 --
 
@@ -1071,44 +1182,29 @@ Exploring Data in R
 --
 
  * Next, we'll set our working directory and download our dataset:
+
+.tiny[
 ```{r, comment=NA, eval=FALSE}
-   # Set working directory
-   setwd("h:/R")
-   
-   # Set url link for data download
-   url <- "https://wordpress.lehigh.edu/jsm4/files/2020/02/mpg.txt"
-   
-   # Download file to working directory
-   download.file(url, "mpg.txt")
+# Set working directory
+setwd("h:/R")
+
+# Set url link for data download
+url <- "https://wordpress.lehigh.edu/jsm4/files/2020/02/mpg.txt"
+
+# Download file to working directory
+download.file(url, "mpg.txt")
 ```
-   
+]
+
 --
 
  * Now, let's load our data:
+
+.tiny[
 ```{r, comment=NA}
-   df <- read.table("mpg.txt", header=TRUE, sep=",")
+df <- read.table("mpg.txt", header=TRUE, sep=",")
 ```
-   
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring Data in R
-
- * Let's check to make sure our data loaded correctly:
-```{r, comment=NA}
-   head(df)
-```
-   
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring Data in R
-
- * Next, we'll check our data structure:
-```{r, comment=NA}
-   str(df)
-```
-
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1117,69 +1213,99 @@ Exploring Data in R
  
  * Helpful functions for exploring data in R:
  
+.tiny[
 ```{r comment=NA, eval=FALSE}
-  View(df)      # View the dataset in a spreadsheet
+View(df)      # View the dataset in a spreadsheet
+
+str(df)       # Print the structure of the data frame
   
-  head(df)      # Print the first few rows
+head(df)      # Print the first few rows
   
-  tail(df)      # Print the last few rows
+tail(df)      # Print the last few rows
   
-  nrow(df)      # Print the number of rows
+nrow(df)      # Print the number of rows
   
-  ncol(df)      # Print the number of columns
+ncol(df)      # Print the number of columns
   
-  dim(df)       # Print the dimensions (rows x columns)
+dim(df)       # Print the dimensions (rows x columns)
   
-  rownames(df)  # Print row names
+rownames(df)  # Print row names
   
-  colnames(df)  # Print column names
+colnames(df)  # Print column names
 ```
-
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring Data in R
-
-  * Selecting specific data in R:
-  
-   + R reads data as row x column, using brackets [ ]
-  
-```{r comment=NA}
-  df[1,1]  # Print value in row 1, column 1
-  df[6,10] # Print value in row 6, column 10
-```
-
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring Data in R
-
-  * Selecting specific data in R:
-  
-   + What if we wanted to print just row 1?
-   
-```{r comment=NA}
-  df[1,]
-```
+]
  
 ---
 #### Topic 5: Data and Data Wrangling
 
 Exploring Data in R
 
+.tiny[  * Let's check to make sure our data loaded correctly:
+```{r, comment=NA}
+head(df)
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+.tiny[ * Next, we'll check our data structure:
+```{r, comment=NA}
+str(df)
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+.tiny[  * Selecting specific data in R:
+  
+   + R reads data as row x column, using brackets [r,c]
+  
+```{r comment=NA}
+df[1,1]  # Print value in row 1, column 1
+df[6,10] # Print value in row 6, column 10
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
+.tiny[  * Selecting specific data in R:
+  
+   + What if we wanted to print just row 1?
+   
+```{r comment=NA}
+df[1,]  # Print the first row 
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Exploring Data in R
+
   * Selecting specific data in R:
   
    + What if we wanted to print just column 1?
    
+.tiny[
 ```{r comment=NA, eval=FALSE}
-  df[,1]   # Print column 1 (as a vector)
+df[,1]   # Print column 1 by number (as a vector)
 ```
-
-   
+]
+.tiny[   
 ```{r comment=NA, echo=FALSE}
-  x <- df[,1]
-  x[1:98]
+x <- df[,1]
+x[1:98]
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1190,14 +1316,39 @@ Exploring Data in R
   
    + What if we wanted to print just column 1?
 
+.tiny[
 ```{r comment=NA, eval=FALSE}
-  df$manufacturer  # Print hwy column (as a vector)
+df$manufacturer  # Print column 1 by name (as a vector)
 ```
+]
 
+.tiny[
 ```{r comment=NA, echo=FALSE}
-  y <- df$manufacturer
-  y[1:98]
+y <- df$manufacturer
+y[1:98]
 ```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Summarizing Data in R
+ 
+ * Helpful functions for summarizing data in R:
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+mean(x)        # Calculate and return the average of the input values
+
+max(x)         # Return the maximum value of the input values
+  
+min(x)         # Return the minimum value of the input values
+  
+sd(x)          # Calculate and return the standard deviation of the input values
+  
+length(x)      # Print the set length of the input values
+```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1206,23 +1357,31 @@ Summarizing Data in R
 
  * Helpful functions for summarizing data in R:
  
-  + What if we wanted to summarize the mpg data in mtcars dataset?
+  + What if we wanted to summarize the highway mpg data in our dataset?
  
+.tiny[
 ```{r comment=NA}
 mean(df$hwy)  # Average value for hwy
 ```
+]
 --
+.tiny[
 ```{r comment=NA}
 max(df$hwy)   # Maximum value for hwy
 ```
+]
 --
+.tiny[
 ```{r comment=NA}
 min(df$hwy)   # Minimum value for hwy
 ```
+]
 --
+.tiny[
 ```{r comment=NA}
 sd(df$hwy)    # Standard deviation for hwy
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1233,43 +1392,161 @@ Summarizing Data in R
  
   + What happens if there are missing data?
 
+.tiny[
 ```{r comment=NA}
-df2 <- df
+df2      <- df
 df2[1,9] <- NA
 df2[1,]
 ```
+]
 --
+.tiny[
 ```{r comment=NA}
 mean(df2$hwy)  # Average value for mpg
 ```
+]
 --
+.tiny[
 ```{r comment=NA}
 # Need to pay attention to additional arguments
 mean(df2$hwy, na.rm=TRUE)
 ```
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
 
-Adding Data in R
+Summarizing Data in R
 
  * What if we wanted to add a new variable (i.e., column)?
  
+.tiny[
 ```{r comment=NA}
-# Let's add a new column of with row sum
+# Let's add a new column of the average mpg
 df$avg  <- rowMeans(df[,8:9], na.rm=TRUE)
 ```
+]
 
+.tiny[
 ```{r comment=NA, echo=FALSE}
 # Let's add a new column of with row sum
-df[1,]
+df[1:5,]
 ```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+ 
+ * Helpful functions for analyzing data in R:
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+lm(x)           # Apply a linear model
+
+glm(x)          # Apply a generalized linear model
+  
+t.test(x)       # Perform a t-test for difference between means
+  
+aov(x)          # Analysis of variance test
+  
+prop.test(x)    # Test for a difference between proportions
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * How does highway mileage change with engine displacement?
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+# Quick plot of the data
+with(df, plot(x=displ, y=hwy))
+```
+]
+<center><img src="./images/Rplot1.jpeg" alt="RStudio" height=300/></center>
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * How does highway mileage change with engine displacement?
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+# Apply a simple linear model
+mod <- lm(hwy~displ, data=df)
+summary(mod)
+```
+]
+
+.tiny2[
+```{r comment=NA, echo=FALSE}
+# Apply a simple linear model
+mod <- lm(hwy~displ, data=df)
+summary(mod)
+```
+]
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * Does highway mileage significantly differ between car classes?
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+# Quick plot of the data
+with(df, plot(x=class, y=hwy))
+```
+]
+<center><img src="./images/Rplot2.jpeg" alt="RStudio" height=300/></center>
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Analyzing Data in R
+
+ * Does highway mileage significantly differ between car classes?
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+# Apply a simple linear model with an ANOVA test
+mod2 <- lm(hwy~class, data=df)
+aov2 <- aov(mod2)
+summary(aov2)
+```
+]
+
+.tiny2[
+```{r comment=NA, echo=FALSE}
+# Apply a simple linear model with an ANOVA test
+mod2 <- lm(hwy~class, data=df)
+aov2 <- aov(mod2)
+summary(aov2)
+```
+]
 
 ---
 class: inverse
 
 #### Exercise - Summarizing Data:
  * The *USArrests* dataset provides data on the number of arrests per 100,000 residents for violent crimes (assault, murder, and rape) in each of the 50 US states in 1973.
+
+--
+
+ * First assign that data to an object called "crime"
+.tiny[
+```{r comment=NA}
+crime <- USArrests
+```
+]
 
 --
 
@@ -1280,7 +1557,7 @@ class: inverse
   
   3. Print the statistics for Pennsylvania.
   
-  4. Add a column of data with the average arrests for violent crime in each state.
+  4. Was there a linear relationship between murders and assaults?
     
 --
 
@@ -1293,9 +1570,27 @@ class: inverse
 
 --
 
+.tiny[
 ```{r, comment=NA}
-mean(USArrests$Assault)
+mean(crime$Assault)
 ```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+mean(crime[,2])
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+sum(crime$Assault)/length(crime$Assault)
+```
+]
 
 ---
 #### Review - Summarizing Data:
@@ -1304,9 +1599,29 @@ mean(USArrests$Assault)
 
 --
  
+.tiny[
 ```{r, comment=NA}
-max(USArrests$Assault)
+max(crime$Assault)
 ```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+x <- sort(crime$Assault, decreasing=TRUE)
+x[1]
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+x <- sort(crime$Assault)
+x[50]
+```
+]
 
 ---
 #### Review - Summarizing Data:
@@ -1315,25 +1630,55 @@ max(USArrests$Assault)
 
 --
 
+.tiny[
 ```{r, comment=NA}
-USArrests["Pennsylvania",]
+crime["Pennsylvania",]
 ```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+crime[38,]
+```
+]
 
 ---
 #### Review - Summarizing Data:
 
- * Add a column of data with the average arrests for violent crime in each state.
+ * Was there a linear relationship between murders and assaults?
 
 --
 
-```{r, comment=NA}
-USArrests$Average <- rowMeans(USArrests)
+.tiny[
+```{r comment=NA, eval=FALSE}
+# Quick plot of the data
+with(crime, plot(x=Assault, y=Murder))
 ```
+]
+<center><img src="./images/Rplot3.jpeg" alt="RStudio" height=300/></center>
 
+---
+#### Review - Summarizing Data:
+
+ * Was there a linear relationship between murders and assaults?
+
+.tiny[
+```{r comment=NA, eval=FALSE}
+# Apply a simple linear model
+mod <- lm(Murder~Assault, data=crime)
+summary(mod)
+```
+]
+
+.tiny2[
 ```{r comment=NA, echo=FALSE}
-USArrests[1:5,]
+# Apply a simple linear model
+mod <- lm(Murder~Assault, data=crime)
+summary(mod)
 ```
-
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1365,6 +1710,20 @@ Exploring and Summarizing Data in R
 #### Topic 5: Data and Data Wrangling
 Exploring and Summarizing Data in R
 
+ * Let's load a core Tidyverse packages:
+
+```{r comment=NA, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+```
+
+.tiny[
+```{r comment=NA, eval=FALSE}
+install.packages("dplyr"); library(dplyr)
+```
+]
+
+--
+
  * Working with the pipe operator (%>%) - **magrittr**
  
 --
@@ -1385,7 +1744,7 @@ Exploring and Summarizing Data in R
  
   + Nesting approach:
   
-.pull-left[
+.tiny.pull-left[
 ```{r comment=NA, echo=FALSE, message=FALSE, include=FALSE}
 library(dplyr)
 library(ggplot2)
@@ -1405,7 +1764,7 @@ arrange(
 ```
 ]
 
-.pull-right[
+.tiny.pull-right[
 ```{r comment=NA, message=FALSE, echo=FALSE}
 arrange(
    summarize(
@@ -1428,7 +1787,7 @@ Exploring and Summarizing Data in R
  
   + Multiple objects approach:
   
-.pull-left[
+.tiny.pull-left[
 ```{r comment=NA, echo=FALSE, message=FALSE}
 library(dplyr)
 library(ggplot2)
@@ -1444,7 +1803,7 @@ print(d)
 ```
 ]
 
-.pull-right[
+.tiny.pull-right[
 ```{r comment=NA, message=FALSE, echo=FALSE}
 a <- filter(df, year==2008)
 b <- group_by(a, cyl)
@@ -1462,7 +1821,7 @@ Exploring and Summarizing Data in R
  
   + Piping approach:
   
-.pull-left[
+.tiny.pull-left[
 ```{r comment=NA, echo=FALSE, message=FALSE}
 library(dplyr)
 library(ggplot2)
@@ -1477,7 +1836,7 @@ df %>%
 ```
 ]
 
-.pull-right[
+.tiny.pull-right[
 ```{r comment=NA, message=FALSE, echo=FALSE}
 df %>%
    filter(year==2008) %>%
@@ -1489,21 +1848,28 @@ df %>%
 
 ---
 #### Topic 5: Data and Data Wrangling
-Exploring and Summarizing Data in R
 
- * Helpful functions - **dplyr**
+Exploring and Summarizing Data in R
  
-  + *filter()* picks cases based on their values.
+ * Helpful functions - **Tidyverse**:
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+filter(x)      # picks cases based on their values.
+
+select(x)      # picks variables based on their names
   
-  + *select()* picks variables based on their names.
+arrange(x)     # changes the ordering of rows
   
-  + *arrange()* changes the ordering of rows.
+group_by(x)    # allows operations by groups
   
-  + *group_by()* allows operations by groups.
+mutate(x)      # adds new variables to a dataset
   
-  + *mutate()* adds new variables to a dataset.
+summarise(x)   # reduces multiple values down to a summary value
   
-  + *summarise()* reduces multiple values down to a summary value.
+add_row(x)     # add a row of data to a data frame
+```
+]
   
 ---
 class: inverse
@@ -1529,16 +1895,52 @@ class: inverse
 
 --
 
-```{r comment=NA}
+.tiny[
+```{r comment=NA, eval=FALSE}
 df %>% filter(year==1999) %>% 
    arrange(desc(hwy)) %>% 
    head(1)
+```
 
+```{r comment=NA, echo=FALSE}
+df %>% filter(year==1999) %>% 
+   arrange(desc(hwy)) %>% 
+   head(1)
+```
+]
+
+--
+
+.tiny[
+```{r comment=NA, eval=FALSE}
 df %>% filter(year==2008) %>% 
    arrange(desc(hwy)) %>% 
    head(1)
 ```
 
+```{r comment=NA, echo=FALSE}
+df %>% filter(year==2008) %>% 
+   arrange(desc(hwy)) %>% 
+   head(1)
+```
+]
+
+---
+#### Exercise - Summarizing Data:
+
+ * What manufacturer had the highest highway mpg in 1999? Was it the same one in 2008?
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+df %>% group_by(year) %>%
+   filter(hwy == max(hwy))
+```
+
+```{r comment=NA, echo=FALSE}
+df %>% group_by(year) %>%
+   filter(hwy == max(hwy))
+```
+]
 
 ---
 #### Exercise - Summarizing Data:
@@ -1547,13 +1949,15 @@ df %>% filter(year==2008) %>%
 
 --
 
-```{r comment=NA}
+.tiny[
+```{r comment=NA, warning=FALSE, message=FALSE}
 df %>%
    group_by(cyl,year) %>%
    summarize(Avg_hwy=mean(hwy, na.rm=TRUE),
              Avg_cty=mean(cty, na.rm=TRUE)) %>%
    mutate(Diff=Avg_hwy-Avg_cty)
 ```
+]
 
 
 ---
@@ -1622,28 +2026,72 @@ Visualizing data in R
    2. Load data.
    
    3. ~~Explore data!~~ Visualize data!
- 
+
 ---
 #### Topic 6: Plotting
+Visualizing data in R
+.pull-left2[
+* Tidyverse - **ggplot2**
+]
 
+.pull-right2[
+<center><img src="./images/ggplot2a.png" alt="RStudio" height=500/></center>]
+
+---
+#### Topic 6: Plotting
 Visualizing data in R
 
- * Before start plotting, let's get to know **ggplot2**.
+.pull-left2[
+* Tidyverse - **ggplot2**
+
+* Layered approach to building graphics
+]
+
+.pull-right2[
+<center><img src="./images/ggplot2_1.png" alt="RStudio" width=500/></center>]
+
+---
+#### Topic 6: Plotting
+Visualizing data in R
+
+.pull-left2[
+* Tidyverse - **ggplot2**
+
+* Layered approach to building graphics
+ + Required arguments
  
---
+ + Sensible defaults
+]
+
+.pull-right2[
+<center><img src="./images/ggplot2_2.png" alt="RStudio" width=500/></center>
+<center><img src="./images/ggplot.png" alt="RStudio" width=500/></center>
+]
+
+---
+#### Topic 6: Plotting
+Visualizing data in R
+
+.pull-left2[
+* Tidyverse - **ggplot2**
+
+* Layered approach to building graphics
+ + Required arguments
  
- * Follows a basic template:
+ + Sensible defaults
+ 
+* Basic template has three functions:
+  + **ggplot** - creates a blank canvas
   
-<img src="./images/ggplot.png" alt="ggplot" </>
+  + **geom** - adds a layer
+  
+  + **aes** - visual properties of an object
+]
 
---
-
- * *ggplot()* function - creates a "blank canvas". The first argument is your dataset.
- 
---
-
- * *geom()* function - adds a layer. For example, *geom_point* creates a scatterplot. 
-  + There are many geom functions!
+.pull-right2[
+<center><img src="./images/ggplot2_2.png" alt="RStudio" width=500/></center>
+<center><img src="./images/ggplot.png" alt="RStudio" width=500/></center>
+]
 
 ---
 #### Topic 6: Plotting
@@ -1651,13 +2099,16 @@ Visualizing data in R
 Visualizing data in R
 
  * Let's try the first function by itself. What happened?
-```{r comment=NA, echo=FALSE}
-  library(ggplot2)
+
+```{r comment=NA, echo=FALSE, warning=FALSE}
+library(ggplot2)
 ```
 
+.tiny[
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df)
+ggplot(data=df)
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -1672,15 +2123,19 @@ Visualizing data in R
 Visualizing data in R
 
  * Let's try the first function by itself. What happened?
+
+.tiny[
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df)
+ggplot(data=df)
 ```
 
- * Now lets add some layers, with the second function.
+ * Now lets add some layers and aestechics, with the second and third functions.
+
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ,y=hwy))
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy))
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -1695,21 +2150,26 @@ Visualizing data in R
 Visualizing data in R
 
  * Let's try the first function by itself. What happened?
+
+.tiny[
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df)
+ggplot(data=df)
 ```
 
- * Now lets add some layers, with the second function.
+ * Now lets add some layers and aestechics, with the second and third functions.
+
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ,y=hwy))
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy))
 ```
 
  * Now lets add an additional **aesthetic**.
+
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy, color=class))
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy, color=class))
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -1724,11 +2184,14 @@ Visualizing data in R
 Visualizing data in R
 
  * We can also add additional layers [geoms](<https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf>).
+
+.tiny[
 ```{r comment=NA, eval=FALSE}
- ggplot(data=df) +
- geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
- geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -1742,11 +2205,33 @@ Visualizing data in R
 
 Visualizing data in R
 
+ * We can also add additional layers [geoms](<https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf>).
+ 
+.tiny[
+```{r comment=NA, eval=FALSE}
+ggplot(data=df) +
+geom_point(mapping=aes(x=displ, y=hwy, color=class)) +
+geom_smooth(mapping=aes(x=displ, y=hwy), method="lm")
+```
+]
+
+.pull-right2[
+<center><img src="./images/ggplot2_1.png" alt="RStudio" width=500/></center>
+]
+
+---
+#### Topic 6: Plotting
+
+Visualizing data in R
+
  * Now, let's clean the plot up a bit.
+
+.tiny[
 ```{r comment=NA, eval=FALSE}
  ggplot(mpg, aes(x=displ, y=hwy)) +
   theme(plot.background=element_blank(),
         panel.border=element_blank(),
+        panel.background=element_blank(),
         axis.ticks=element_line(size=0.25),
         axis.text=element_text(size = 7),
         axis.line=element_line(size=0.25),
@@ -1762,6 +2247,7 @@ Visualizing data in R
          y="Highway miles per gallon",
          color="Vehicle class")
 ```
+]
 
 ---
 #### Topic 6: Plotting
@@ -1783,9 +2269,9 @@ class: inverse
 #### Review - Plotting:
 * Data can look quantitatively the same, but qualitatively different.
 
-* **ggplot2** package in R uses a multi-function approach to plotting.
+* **ggplot2** package in R uses a layered approach to plotting.
 
-* More on visualizing data in a few weeks...
+* More on visualizing data next week...
 
 ---
 class: center, middle, inverse
@@ -1801,6 +2287,22 @@ class: center, middle, inverse
 
 #### Topic 7: Other things to do with R
 
-* [R Markdown documents](<https://rmarkdown.rstudio.com>)
+.right-column2[
+<center><img src="./images/rmarkdown.png" height=200 alt="RStudio" </center>
+<br/><br/>
+<center><img src="./images/shiny.png" height=200 alt="RStudio" </center>
+]
 
-* [Shiny Apps](<https://shiny.cc.lehigh.edu/jsm4/climate/>)
+.left-column2[
+* [R Markdown documents](<https://rmarkdown.rstudio.com>)
+ - Documents
+ - Websites
+ - Books
+<br/><br/>
+<br/><br/>
+<br/><br/>
+* [Shiny Apps](<https://jeremymack.shinyapps.io/covid19/>)
+ - Web applications
+ - Websites
+ - Dashboards 
+]
