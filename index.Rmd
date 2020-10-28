@@ -1023,7 +1023,7 @@ Packages in R:
 
 --
 
-* When you download and install R for the first time, you are installing the [base R](<https://rstudio.com/resources/cheatsheets/>) - only functions written by the original authors of the R language.
+* When you download and install R for the first time, you are installing the [base R](<https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html>) - only functions written by the original authors of the R language.
 
 --
 
