@@ -67,17 +67,17 @@ The presentation is split into seven topics:
 
  * [**Topic 1:**](<https://jeremymack-lu.github.io/rprog/#9>) What is R? Why use it?
  
- * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#21>) What is RStudio? Why use it?
+ * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#23>) What is RStudio? Why use it?
  
- * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#33>) Getting started with R and RStudio
+ * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#35>) Getting started with R and RStudio
  
- * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#59>) Objects and Functions
+ * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#61>) Objects and Functions
  
- * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#99>) Data and Data Wrangling
+ * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#101>) Data and Data Wrangling
  
- * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#179>) Plotting
+ * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#182>) Plotting
  
- * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#202>) Other things to do with R
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#205>) Other things to do with R
 
 ---
 class: center, middle, inverse
@@ -1102,16 +1102,18 @@ Basic steps to working with data in R:
 
 Basic steps to working with data in R:
 
---
-
  * Check and/or set a working directory.
 
 --
 
   + What is my working directory?
 .tiny[
-```{r, comment=NA}
+```{r, comment=NA, eval=FALSE}
 getwd()                  # Prints current working directory
+```
+
+```
+[1] "h:/R_workshop"
 ```
 ]
 
@@ -1143,8 +1145,6 @@ getwd()                  # Prints current working directory
 Basic steps to working with data in R:
 
  * Check and/or set a working directory.
- 
---
 
  * Load data.
 
