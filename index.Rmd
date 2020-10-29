@@ -164,18 +164,24 @@ class: center, middle, inverse
 - **Reproducibility**
 
 ---
-
 #### Topic 1: What is R? Why use it?
 
 <img src="./images/reproducibility.png" alt="R logo" height=265</> <img src="./images/reproducibility2.png" alt="R logo" height=265</>
 ##### - 2019 report by The National Academies of Sciences, Engineering, and Medicine
 
 ---
-
 #### Topic 1: What is R? Why use it?
 
 <img src="./images/reproducibility3.png" alt="R logo" height=265</> &nbsp; &nbsp; &nbsp; <img src="./images/reproducibility4b.png" alt="R logo" height=265</>
 ##### - 2018 series featured in Nature
+
+--
+
+######  - "There's nothing more reproducible than code. And unfortunately, there are few things LESS reproducible than pointing and clicking, then trying to tell someone how you did it."
+
+--
+
+######  - "If you want to do ONE THING to make your work more reproducible as a scientist, don't be daunted, but the thing you should do is learn how to code."
 
 ---
 class: center, middle, inverse
