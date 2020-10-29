@@ -1095,7 +1095,7 @@ Basic steps to working with data in R:
 
  * Load data.
  
- * Explore data!
+ * Wrangle data (Explore, Summarize, and Analyze)!
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1113,7 +1113,7 @@ getwd()                  # Prints current working directory
 ```
 
 ```
-[1] "h:/R_workshop"
+[1] "h:/"
 ```
 ]
 
@@ -1122,12 +1122,12 @@ getwd()                  # Prints current working directory
   + How do I set my working directory?
 .tiny[
 ```{r, comment=NA, eval=FALSE}
-setwd("h:/R_workshop")   # Sets path to working directory
+setwd("h:/R")   # Sets path to working directory
 getwd()                  # Prints current working directory
 ```
 
 ```
-[1] "h:/R_workshop"
+[1] "h:/R"
 ```
 ]
 
@@ -1177,7 +1177,7 @@ Basic steps to working with data in R:
 
  * Load data.
  
- * Explore data!
+ * Wrangle data (Explore, Summarize, and Analyze)!
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -1198,7 +1198,7 @@ Exploring Data in R
    
    2. Load data.
    
-   3. Explore data!
+   3. Wrangle data (Explore, Summarize, and Analyze)!
  
 ---
 #### Topic 5: Data and Data Wrangling
@@ -2038,7 +2038,7 @@ Visualizing data in R
    
    2. Load data.
    
-   3. Explore data!
+   3. Wrangle data (Explore, Summarize, and Analyze)!
    
 ---
 #### Topic 6: Plotting
@@ -2053,7 +2053,7 @@ Visualizing data in R
    
    2. Load data.
    
-   3. ~~Explore data!~~ Visualize data!
+   3. ~~Wrangle data (Explore, Summarize, and Analyze)!~~ Visualize data!
 
 ---
 #### Topic 6: Plotting
@@ -2334,3 +2334,9 @@ class: center, middle, inverse
  - Websites
  - Dashboards 
 ]
+
+---
+class: center, middle, inverse, title-slide
+
+## Questions?
+<img src="./images/contact.png" alt="RStudio" height=400/>
