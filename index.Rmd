@@ -1109,7 +1109,7 @@ Basic steps to working with data in R:
   + What is my working directory?
 .tiny[
 ```{r, comment=NA, eval=FALSE}
-getwd()                  # Prints current working directory
+getwd()         # Prints current working directory
 ```
 
 ```
@@ -1123,7 +1123,7 @@ getwd()                  # Prints current working directory
 .tiny[
 ```{r, comment=NA, eval=FALSE}
 setwd("h:/R")   # Sets path to working directory
-getwd()                  # Prints current working directory
+getwd()         # Prints current working directory
 ```
 
 ```
