@@ -23,6 +23,7 @@ a, a > code {
   width: 47%;
   height: 92%;
   float: left;
+  padding-top: 0;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
   color: #000;
@@ -78,6 +79,14 @@ th, td { padding: 5px; }
   float: right;
   width: 39%;
 }
+.pull-left4 {
+  float: left;
+  width: 65%;
+}
+.pull-right4 {
+  float: right;
+  width: 29%;
+}
 .left-column2 {
   width: 55%;
   float: left;
@@ -128,4 +137,8 @@ th, td { padding: 5px; }
 
 .tiny5 .remark-code { /*Change made here*/
   font-size: 45% !important;
+}
+
+.tiny6 .remark-code { /*Change made here*/
+  font-size: 60% !important;
 }
