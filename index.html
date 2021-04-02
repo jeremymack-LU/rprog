@@ -78,24 +78,24 @@ class: center, middle, inverse, title-slide
 
 The presentation is split into seven topics:
 
- * [**Topic 1:**](&lt;https://jeremymack-lu.github.io/rprog/#9&gt;) What is R? Why use it?
+ * [**Topic 1:**](&lt;https://jeremymack-lu.github.io/rprog/#10&gt;) What is R? Why use it?
  
- * [**Topic 2:**](&lt;https://jeremymack-lu.github.io/rprog/#23&gt;) What is RStudio? Why use it?
+ * [**Topic 2:**](&lt;https://jeremymack-lu.github.io/rprog/#24&gt;) What is RStudio? Why use it?
  
- * [**Topic 3:**](&lt;https://jeremymack-lu.github.io/rprog/#35&gt;) Getting started with R and RStudio
+ * [**Topic 3:**](&lt;https://jeremymack-lu.github.io/rprog/#36&gt;) Getting started with R and RStudio
  
  * [**Topic 4:**](&lt;https://jeremymack-lu.github.io/rprog/#61&gt;) Objects and Functions
  
- * [**Topic 5:**](&lt;https://jeremymack-lu.github.io/rprog/#101&gt;) Data and Data Wrangling
+ * [**Topic 5:**](&lt;https://jeremymack-lu.github.io/rprog/#113&gt;) Data and Data Wrangling
  
- * [**Topic 6:**](&lt;https://jeremymack-lu.github.io/rprog/#182&gt;) Tidyverse
+ * [**Topic 6:**](&lt;https://jeremymack-lu.github.io/rprog/#167&gt;) Tidyverse
  
- * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#205&gt;) Other things to do with R
+ * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#200&gt;) Other things to do with R
 
 ---
 #### Programming in R
 
-&lt;center&gt;&lt;img src="./images/r_rollercoaster.png" alt="RStudio" height=350/&gt;&lt;/center&gt;
+[&lt;center&gt;&lt;img src="./images/r_rollercoaster.png" alt="RStudio" height=350/&gt;&lt;/center&gt;](https://github.com/allisonhorst/stats-illustrations)
 
 ---
 class: center, middle, inverse
@@ -141,7 +141,7 @@ class: center, middle, inverse
 .pull-right[
 - R is a **programming language** ([one of many](&lt;https://www.tiobe.com/tiobe-index/&gt;)) and an **environment** for statistical computing.
    
-- Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
+- Developed by Ross Ihaka and Robert Gentleman 28 years ago; it is now developed by a core team supported by the R Foundation.
 
 - Dialect of the S language (S-Plus)
 ]
@@ -174,7 +174,7 @@ class: center, middle, inverse
 
 - **Very active development community**
     + CRAN: The Comprehensive R Archive Network
-    + User contributed packages &lt;br/&gt; (&gt; 16,000)
+    + User contributed packages &lt;br/&gt; (&gt; 17,000)
     {{content}}
 
 --
@@ -564,6 +564,8 @@ exp(x-y)
 ```
 ]
 
+ *Shortcut in RStudio: Option + - (Mac OS), Alt + - (Windows OS)
+
 ---
 #### Topic 3: Getting started with R and RStudio
 #### Concatenation
@@ -639,6 +641,17 @@ class: inverse
 * R is a calculator.
 
 * R can be used to store objects (**assignments**) that can be used with other functions, or compared to other objects.
+
+---
+class: center, middle, inverse
+
+#### Topic 4: Objects and Functions
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
 
 ---
 #### Topic 4: Objects and Functions
@@ -943,7 +956,7 @@ There are four types of data structures:
 
 * Matrix
 
-* Data frame
+* Data frame (and Tibbles)
 ]
 
 ---
@@ -1059,11 +1072,11 @@ Objects in R - data structure:
 
 ```r
 n &lt;- c(2,3,5,8,13,21,34,"55") 
-n[1:6]
+n
 ```
 
 ```
-[1] "2"  "3"  "5"  "8"  "13" "21"
+[1] "2"  "3"  "5"  "8"  "13" "21" "34" "55"
 ```
 
 ```r
@@ -1464,7 +1477,7 @@ How do we get packages loaded into R?
 install.packages("ggplot2")    # Quotes are necessary
 install.packages("dplyr")
 library("ggplot2")             # Quotes are optional
-library("dplyr")
+library(dplyr)
 
 # More efficient way
 install.packages("pacman")     # Install pacman package
@@ -1593,7 +1606,7 @@ getwd()         # Prints current working directory
 
 * "Home" directory of the project becomes the current working directory.
 
-* Enhances reproducibility.
+* Projects can **enhance reproducibility** if paths within scripts are kept relative and not absolute.
 ]
 
 ]
@@ -1604,7 +1617,7 @@ getwd()         # Prints current working directory
 
 Basic steps to working with data in R:
 
- * Check and/or set a working directory.
+ * ~~Check and/or set a working directory.~~ Set up an RStudio project.
 
  * Load data.
 
@@ -1642,7 +1655,7 @@ read_xls()    # Reads .xls files
 
 Basic steps to working with data in R:
 
- * Check and/or set a working directory.
+ * ~~Check and/or set a working directory.~~ Set up an RStudio project.
 
  * Load data.
  
@@ -2281,7 +2294,7 @@ crime &lt;- USArrests
   
   4. Was there a linear relationship between murders and assaults?
   
-<div class="countdown" id="timer_6065d908" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_606730b9" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2308,7 +2321,7 @@ crime &lt;- USArrests
   
   4. Was there a linear relationship between murders and assaults?
   
-<div class="countdown" id="timer_6065d6b5" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_60672feb" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2920,7 +2933,7 @@ class: inverse
   
   2. Based on number of cylinders, calculate the average highway and city mpg, in both 1999 and 2008, as well as the difference bewteen highway and city mpg.
   
-<div class="countdown" id="timer_6065d755" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_60673149" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2936,7 +2949,7 @@ class: inverse
   
   2. Based on number of cylinders, calculate the average highway and city mpg, in both 1999 and 2008, as well as the difference bewteen highway and city mpg.
   
-<div class="countdown" id="timer_6065d6c9" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_6067302d" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2954,9 +2967,10 @@ class: inverse
 
 
 ```r
-mpg %&gt;% filter(year==1999) %&gt;% 
-   arrange(desc(hwy)) %&gt;% 
-   head(1)
+mpg %&gt;% 
+  filter(year==1999) %&gt;% 
+  arrange(desc(hwy)) %&gt;%
+  head(1)
 ```
 
 
@@ -2973,9 +2987,10 @@ mpg %&gt;% filter(year==1999) %&gt;%
 .tiny6[
 
 ```r
-mpg %&gt;% filter(year==2008) %&gt;% 
-   arrange(desc(hwy)) %&gt;% 
-   head(1)
+mpg %&gt;% 
+  filter(year==2008) %&gt;% 
+  arrange(desc(hwy)) %&gt;% 
+  head(1)
 ```
 
 
@@ -2995,8 +3010,9 @@ mpg %&gt;% filter(year==2008) %&gt;%
 .tiny6[
 
 ```r
-mpg %&gt;% group_by(year) %&gt;%
-   filter(hwy == max(hwy))
+mpg %&gt;% 
+  group_by(year) %&gt;%
+  filter(hwy == max(hwy))
 ```
 
 
@@ -3064,7 +3080,7 @@ class: inverse
  .pull-left4[
 1. [R for Data Science](https://r4ds.had.co.nz/)
  
-2. [RStudio cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
  ]
 
 .pull-right4[

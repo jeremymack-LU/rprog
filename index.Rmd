@@ -87,24 +87,24 @@ class: center, middle, inverse, title-slide
 
 The presentation is split into seven topics:
 
- * [**Topic 1:**](<https://jeremymack-lu.github.io/rprog/#9>) What is R? Why use it?
+ * [**Topic 1:**](<https://jeremymack-lu.github.io/rprog/#10>) What is R? Why use it?
  
- * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#23>) What is RStudio? Why use it?
+ * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#24>) What is RStudio? Why use it?
  
- * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#35>) Getting started with R and RStudio
+ * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#36>) Getting started with R and RStudio
  
  * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#61>) Objects and Functions
  
- * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#101>) Data and Data Wrangling
+ * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#113>) Data and Data Wrangling
  
- * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#182>) Tidyverse
+ * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#167>) Tidyverse
  
- * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#205>) Other things to do with R
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#200>) Other things to do with R
 
 ---
 #### Programming in R
 
-<center><img src="./images/r_rollercoaster.png" alt="RStudio" height=350/></center>
+[<center><img src="./images/r_rollercoaster.png" alt="RStudio" height=350/></center>](https://github.com/allisonhorst/stats-illustrations)
 
 ---
 class: center, middle, inverse
@@ -150,7 +150,7 @@ class: center, middle, inverse
 .pull-right[
 - R is a **programming language** ([one of many](<https://www.tiobe.com/tiobe-index/>)) and an **environment** for statistical computing.
    
-- Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
+- Developed by Ross Ihaka and Robert Gentleman `r lubridate::year(Sys.Date())-1993` years ago; it is now developed by a core team supported by the R Foundation.
 
 - Dialect of the S language (S-Plus)
 ]
@@ -183,7 +183,7 @@ class: center, middle, inverse
 
 - **Very active development community**
     + CRAN: The Comprehensive R Archive Network
-    + User contributed packages <br/> (> 16,000)
+    + User contributed packages <br/> (> 17,000)
     {{content}}
 
 --
@@ -551,6 +551,8 @@ exp(x-y)
 ```
 ]
 
+ *Shortcut in RStudio: Option + - (Mac OS), Alt + - (Windows OS)
+
 ---
 #### Topic 3: Getting started with R and RStudio
 #### Concatenation
@@ -608,6 +610,17 @@ class: inverse
 * R is a calculator.
 
 * R can be used to store objects (**assignments**) that can be used with other functions, or compared to other objects.
+
+---
+class: center, middle, inverse
+
+#### Topic 4: Objects and Functions
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
 
 ---
 #### Topic 4: Objects and Functions
@@ -810,7 +823,7 @@ There are four types of data structures:
 
 * Matrix
 
-* Data frame
+* Data frame (and Tibbles)
 ]
 
 ---
@@ -901,7 +914,7 @@ Objects in R - data structure:
 **Vector objects:**
 ```{r comment=NA}
 n <- c(2,3,5,8,13,21,34,"55") 
-n[1:6]
+n
 str(n)
 ```
 
@@ -1201,7 +1214,7 @@ How do we get packages loaded into R?
 install.packages("ggplot2")    # Quotes are necessary
 install.packages("dplyr")
 library("ggplot2")             # Quotes are optional
-library("dplyr")
+library(dplyr)
 
 # More efficient way
 install.packages("pacman")     # Install pacman package
@@ -1328,7 +1341,7 @@ getwd()         # Prints current working directory
 
 * "Home" directory of the project becomes the current working directory.
 
-* Enhances reproducibility.
+* Projects can **enhance reproducibility** if paths within scripts are kept relative and not absolute.
 ]
 
 ]
@@ -1339,7 +1352,7 @@ getwd()         # Prints current working directory
 
 Basic steps to working with data in R:
 
- * Check and/or set a working directory.
+ * ~~Check and/or set a working directory.~~ Set up an RStudio project.
 
  * Load data.
 
@@ -1376,7 +1389,7 @@ read_xls()    # Reads .xls files
 
 Basic steps to working with data in R:
 
- * Check and/or set a working directory.
+ * ~~Check and/or set a working directory.~~ Set up an RStudio project.
 
  * Load data.
  
@@ -2413,15 +2426,17 @@ mpg <- read_csv("mpg.csv")
 ```
 
 ```{r comment=NA, eval=FALSE}
-mpg %>% filter(year==1999) %>% 
-   arrange(desc(hwy)) %>% 
-   head(1)
+mpg %>% 
+  filter(year==1999) %>% 
+  arrange(desc(hwy)) %>%
+  head(1)
 ```
 
 ```{r comment=NA, echo=FALSE}
-mpg %>% filter(year==1999) %>% 
-   arrange(desc(hwy)) %>% 
-   head(1)
+mpg %>% 
+  filter(year==1999) %>% 
+  arrange(desc(hwy)) %>% 
+  head(1)
 ```
 ]
 
@@ -2429,15 +2444,17 @@ mpg %>% filter(year==1999) %>%
 
 .tiny6[
 ```{r comment=NA, eval=FALSE}
-mpg %>% filter(year==2008) %>% 
-   arrange(desc(hwy)) %>% 
-   head(1)
+mpg %>% 
+  filter(year==2008) %>% 
+  arrange(desc(hwy)) %>% 
+  head(1)
 ```
 
 ```{r comment=NA, echo=FALSE}
-mpg %>% filter(year==2008) %>% 
-   arrange(desc(hwy)) %>% 
-   head(1)
+mpg %>% 
+  filter(year==2008) %>% 
+  arrange(desc(hwy)) %>% 
+  head(1)
 ```
 ]
 
@@ -2448,13 +2465,15 @@ mpg %>% filter(year==2008) %>%
  
 .tiny6[
 ```{r comment=NA, eval=FALSE}
-mpg %>% group_by(year) %>%
-   filter(hwy == max(hwy))
+mpg %>% 
+  group_by(year) %>%
+  filter(hwy == max(hwy))
 ```
 
 ```{r comment=NA, echo=FALSE}
-mpg %>% group_by(year) %>%
-   filter(hwy == max(hwy))
+mpg %>% 
+  group_by(year) %>%
+  filter(hwy == max(hwy))
 ```
 ]
 
@@ -2496,7 +2515,7 @@ class: inverse
  .pull-left4[
 1. [R for Data Science](https://r4ds.had.co.nz/)
  
-2. [RStudio cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
  ]
 
 .pull-right4[
