@@ -91,15 +91,15 @@ The presentation is split into seven topics:
  
  * [**Topic 2:**](<https://jeremymack-lu.github.io/rprog/#24>) What is RStudio? Why use it?
  
- * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#36>) Getting started with R and RStudio
+ * [**Topic 3:**](<https://jeremymack-lu.github.io/rprog/#34>) Getting started with R and RStudio
  
- * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#61>) Objects and Functions
+ * [**Topic 4:**](<https://jeremymack-lu.github.io/rprog/#60>) Objects and Functions
  
- * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#113>) Data and Data Wrangling
+ * [**Topic 5:**](<https://jeremymack-lu.github.io/rprog/#117>) Data and Data Wrangling
  
  * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#167>) Tidyverse
  
- * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#200>) Extras - RStudio projects, Other things to do in R, and Resources
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#197>) Extras - RStudio projects, Other things to do in R, and Resources
 
 ---
 #### Programming in R
@@ -2542,8 +2542,8 @@ class: inverse
 ---
 class: center, middle, inverse
 
-#### Topic 7: Extras - RStudio Rrojects, Other things
-#### to do in R, and Resources
+#### Topic 7: Extras - RStudio Rrojects,
+#### Other things to do in R, and Resources
 <br/><br/>
 <br/><br/>
 <br/><br/>
