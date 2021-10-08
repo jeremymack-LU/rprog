@@ -79,7 +79,7 @@ class: center, middle, inverse, title-slide
 
 --
 
-* Slides are available on [Lehigh's Research Computing site](https://confluence.cc.lehigh.edu/display/hpc/Seminars), [Wordpress](https://wordpress.lehigh.edu/jsm4/data-visualization/programming-in-r/), and Github ([slides](https://jeremymack-lu.github.io/rprog/) and [raw code](https://github.com/jeremymack-LU/rprog))
+* Slides are available on [Lehigh's Research Computing site](https://confluence.cc.lehigh.edu/display/hpc/Seminars) and Github ([slides](https://jeremymack-lu.github.io/rprog/) and [raw code](https://github.com/jeremymack-LU/rprog))
    
 ---
 
@@ -99,7 +99,7 @@ The presentation is split into seven topics:
  
  * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#167>) Tidyverse
  
- * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#200>) Other things to do with R
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#200>) Extras - RStudio projects, Other things to do in R, and Resources
 
 ---
 #### Programming in R
@@ -131,7 +131,7 @@ class: center, middle, inverse
 
 --
 
-- Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
+- Developed by Ross Ihaka and Robert Gentleman `r lubridate::year(Sys.Date())-1993` years ago; now maintained by a core team supported by the R Foundation.
 {{content}}
 
 --
@@ -150,7 +150,7 @@ class: center, middle, inverse
 .pull-right[
 - R is a **programming language** ([one of many](<https://www.tiobe.com/tiobe-index/>)) and an **environment** for statistical computing.
    
-- Developed by Ross Ihaka and Robert Gentleman `r lubridate::year(Sys.Date())-1993` years ago; it is now developed by a core team supported by the R Foundation.
+- Developed by Ross Ihaka and Robert Gentleman `r lubridate::year(Sys.Date())-1993` years ago; now maintained by a core team supported by the R Foundation.
 
 - Dialect of the S language (S-Plus)
 ]
@@ -183,7 +183,7 @@ class: center, middle, inverse
 
 - **Very active development community**
     + CRAN: The Comprehensive R Archive Network
-    + User contributed packages <br/> (> 17,000)
+    + User contributed packages <br/> (> 18,000)
     {{content}}
 
 --
@@ -291,7 +291,7 @@ How do R and RStudio work together? Consider a car analogy.
 --
 
 .pull-left[
-**RStudio - the frame**
+**RStudio - the body**
  - RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
 
 **R - the engine**
@@ -307,15 +307,11 @@ class: inverse
 
 #### Review - R and RStudio:
 
---
-
 * **R** is a programming language built for statistical computing ("Engine").
 
  + It's open source and it's free.
 
---
-
-* **RStudio** is an integrated development envrionment that makes working with R easier ("Frame").
+* **RStudio** is an integrated development envrionment that makes working with R easier ("Body").
 
  + It's developed by a company, but it's also free.
 
@@ -664,13 +660,15 @@ Objects in R:
 
 * There are five basic **types** (classes) of data in R:
  1. Logical
- 2. Double*
- 3. Integer*
+ 2. Double
+ 3. Integer
  4. Complex
  5. Character
+ {{content}}
+--
+ 6. Factors - special case of Integer with Character labels
+ {{content}}
  
- *Collectively referred to as Numeric
-
 ---
 #### Topic 4: Objects and Functions
 
@@ -682,7 +680,14 @@ Objects in R - data types:
 x <- 1; y <- 2          # Create sample values x and y
 z <- x > y              # Is x larger than y? 
 z                       # Print the logical value 
-typeof(z)               # Print the class name of z
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+typeof(z)               # Print the data type of z
 ```
 ]
  
@@ -696,7 +701,14 @@ Objects in R - data types:
 ```{r comment=NA}
 x <- 10.5               # Define object x
 x                       # Print x
-typeof(x)               # Print the class name of x
+```
+]
+
+--
+
+.tiny[
+```{r comment=NA}
+typeof(x)               # Print the data type of x
 ```
 ]
 
@@ -710,7 +722,14 @@ Objects in R - data types:
 ```{r comment=NA}
 x <- 10                 # Define object x
 x                       # Print x
-typeof(x)               # Print the class name of x
+```
+]
+
+--
+
+.tiny[
+```{r comment=NA}
+typeof(x)               # Print the data type of x
 ```
 ]
 
@@ -722,9 +741,16 @@ Objects in R - data types:
 
 .tiny[
 ```{r comment=NA}
-x <- as.integer(10)     # Convert to integer
+x <- as.integer(10)     # Declare as integer
 x                       # Print x
-typeof(x)               # Print the class name of x
+```
+]
+
+--
+
+.tiny[
+```{r comment=NA}
+typeof(x)               # Print the data type of x
 ```
 ]
 
@@ -734,7 +760,7 @@ typeof(x)               # Print the class name of x
 ```{r comment=NA}
 x <- 10L                # Declare as integer by appending with "L"
 x                       # Print x
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 ]
 
@@ -749,7 +775,14 @@ are real numbers.
 ```{r, comment=NA}
 x <- 1 + 2i             # Create a complex number x
 x                       # Print the value of x 
-typeof(x)               # Print the class name of x
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+typeof(x)               # Print the data type of x
 ```
 ]
 
@@ -761,9 +794,16 @@ Objects in R - data types:
 
 .tiny[
 ```{r, comment=NA}
-x <- as.character(3.14) # Convert to character
+x <- as.character(3.14) # Declare as character
 x                       # Print the character string 
-typeof(x)               # Print the class name of x
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+typeof(x)               # Print the data type of x
 ```
 ]
 
@@ -771,9 +811,39 @@ typeof(x)               # Print the class name of x
 
 .tiny[
 ```{r comment=NA}
-x <- "3.14"             # Can declare as character with " "
+x <- "3.14"             # Declare as character with " "
 x                       # Print x
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
+```
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Factor - fixed set of possible values (categorical variables); stored as integers
+
+.tiny[
+```{r, comment=NA}
+x <- c("A","B","C","D") # Create a vector of factor levels
+x <- as.factor(x)       # Declare as factor
+x                       # Print the value of x 
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+typeof(x)               # Print the data type of x
+```
+]
+
+--
+
+.tiny[
+```{r, comment=NA}
+str(x)                  # Print the structure of x
 ```
 ]
 
@@ -791,6 +861,7 @@ Objects in R:
  3. Integer
  4. Complex
  5. Character
+ 6. Factors - special case of Integer with Character labels
 
 ---
 #### Topic 4: Objects and Functions
@@ -1028,7 +1099,7 @@ Objects in R - data structure:
 **Data frame objects:**
 ```{r, comment=NA}
 survey <- data.frame(
-"index" = c(1,2,3,4,5),
+"id"  = c(1,2,3,4,5),
 "sex" = c("m","m","m","f","f"),
 "age" = c(99,46,23,54,23))
 class(survey)
@@ -1079,8 +1150,9 @@ library(tibble)
 
 
 ```{r, comment=NA}
+pacman::p_load(tibble)
 survey <- tibble(
-"index" = c(1,2,3,4,5),
+"id"  = c(1,2,3,4,5),
 "sex" = c("m","m","m","f","f"),
 "age" = c(99,46,23,54,23))
 class(survey)
@@ -1090,16 +1162,19 @@ str(survey)
 ]
 
 ---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+<center><img src="./images/tidydata_1.jpg" alt="RStudio" height=350/></center>
+
+---
 class: inverse
 
 #### Review - Objects:
 * Define objects > Apply functions > Repeat!
 
---
-
 * Objects are data that have a type and structure. 
-
---
 
 * There are five basic types of data:
    1. Logical
@@ -1107,8 +1182,7 @@ class: inverse
    3. Integer
    4. Complex
    5. Character
-
---
+   6. Factors - special case of Integer with Character labels
 
 * There are four basic structures:
    1. Scalar
@@ -1234,18 +1308,18 @@ class: inverse
 #### Review - Functions (and Packages):
 * Define objects > Apply functions > Repeat!
 
---
-
 * Functions are used to work with objects in R and are loaded via packages.
 
---
+* Standard functions are a part of **base R**, which loads automatically when R is opened.
 
-* Standard functions are a part of **base R**, which loads automatically when R is opened. There is also a large community of users that develop packages for R (17,400+ and counting!).
+* There is also a **large community** of users that develop packages for R (18,300+ and counting!).
 
---
+* Packages can be loaded both programmatically and with the RStudio explorer window.
 
-* Packages can be loaded both programmatically and with the RStuio explorer window.
-
+* Two step process:
+  1. Install package
+  
+  2. Load package into library
 ---
 class: center, middle, inverse
 
@@ -1283,17 +1357,6 @@ Basic steps to working with data in R:
 
 Basic steps to working with data in R:
 
- * ~~Check and/or set a working directory.~~ Set up an RStudio project.
-
- * Load data.
- 
- * Wrangle data (Explore, Summarize, and Analyze)!
-
----
-#### Topic 5: Data and Data Wrangling
-
-Basic steps to working with data in R:
-
  * Check and/or set a working directory.
 
 .panelset[
@@ -1313,12 +1376,12 @@ getwd()         # Prints current working directory
 
 .tiny6[
 ```{r, comment=NA, eval=FALSE}
-setwd("h:/R")   # Sets path to working directory
+setwd("h:/Lehigh")   # Sets path to working directory
 getwd()         # Prints current working directory
 ```
 
 ```
-[1] "h:/R"
+[1] "h:/Lehigh"
 ```
 ]
 ]
@@ -1328,23 +1391,6 @@ getwd()         # Prints current working directory
 <center><img src="./images/explorer2.png" alt="R timeline" height=300 </></center>
 
 ]
-
-.panel[.panel-name[RStudio Projects]
-
-.pull-right2[
-<center><img src="./images/cracked_setwd.png" alt="R timeline" height=125 </></center>
-<center><img src="./images/rproject.png" alt="R timeline" width=200 </></center>
-]
-
-.pull-left2[
-* **Projects** keep all files associated with a project together.
-
-* "Home" directory of the project becomes the current working directory.
-
-* Projects can **enhance reproducibility** if paths within scripts are kept relative and not absolute.
-]
-
-]
 ]
 
 ---
@@ -1352,7 +1398,16 @@ getwd()         # Prints current working directory
 
 Basic steps to working with data in R:
 
- * ~~Check and/or set a working directory.~~ Set up an RStudio project.
+ * Check and/or set a working directory.
+
+ * Load data.
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
 
  * Load data.
 
@@ -1389,7 +1444,7 @@ read_xls()    # Reads .xls files
 
 Basic steps to working with data in R:
 
- * ~~Check and/or set a working directory.~~ Set up an RStudio project.
+ * Check and/or set a working directory.
 
  * Load data.
  
@@ -1416,7 +1471,7 @@ url <- "https://raw.githubusercontent.com/jeremymack-LU/rprog/master/mpg.csv"
 # Download file to working directory
 download.file(url, "data/mpg.csv")
 
-# Read table into R
+# Read data into R
 mpg <- read.csv("data/mpg.csv")
 ```
 
@@ -1555,47 +1610,22 @@ y[1:105]
 
 Exploring data in R
 
-* What if we read the data in as a tibble?
-
-.panelset[
-
-.panel[.panel-name[Data frame]
+  * Selecting specific data in R:
+  
+   + What if we wanted to print just column 1?
 
 .tiny6[
-```{r, comment=NA, eval=FALSE}
-# Read table into R as a data frame
-mpg <- read.csv("data/mpg.csv"); str(mpg)
+```{r comment=NA, eval=FALSE}
+mpg[1]  # Print column 1 by name (as a data frame)
 ```
-
-```{r, comment=NA, echo=FALSE}
-str(mpg)
-```
-]]
-
-.panel[.panel-name[Tibble]
+]
 
 .tiny6[
-```{r, comment=NA, eval=FALSE}
-# Read table into R as a tibble
-mpg2 <- read_csv("data/mpg.csv"); glimpse(mpg2)
+```{r comment=NA, echo=FALSE}
+y <- mpg[1]
+head(y,17)
 ```
-
-```{r, include=FALSE}
-mpg2 <- read_csv("mpg.csv")
-```
-
-```{r, comment=NA, echo=FALSE}
-# Read table into R
-tibble::glimpse(mpg2)
-```
-]]]
-
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring data in R
-
-<center><img src="./images/tidydata_1.jpg" alt="RStudio" height=350/></center>
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -2004,19 +2034,17 @@ class: inverse
 
 #### Review - Data and Data Wrangling:
 
- * Data can be read into R both programmatically and with the RStudio IDE.
+ * Working directories can be set both programmatically and with the RStudio IDE.
 
---
-
- * RStudio projects provide structure to data projects that enhances reproducibility.
-
---
+ * Similarly, data can be read into R programmatically and with the RStudio IDE.
 
  * R identifies data by row (observation) then column (variable).
 
---
+ * Pay attention to function arguments - missing values can cause problems!
 
- * Pay attendtion to function arguments - missing values can cause problems!
+ * Remember the concept of Tidy Data:
+ 
+ <center><img src="./images/tidydata_1.jpg" alt="RStudio" height=300/></center>
 
 ---
 class: center, middle, inverse
@@ -2032,17 +2060,13 @@ class: center, middle, inverse
 ---
 #### Topic 6: Tidyverse
 
- * So far, we've mostly used base R commands and functions to wrangle data.
-  
---
-
- * [Tidyverse](<https://www.tidyverse.org)
+ * Collection of R packages for data science
  
-  + Collection of R packages for data science
-  
-  + Underlying design philosophy, grammar, and data structures
-  
-  + Supported by RStudio
+ * Underlying design philosophy, grammar, and data structures
+ 
+ * [Supported by RStudio](<https://www.tidyverse.org)
+
+<br/><br/>
 
 .right[
 <img src="./images/tidyverse.png" alt="Tidyverse" height=300 </> &nbsp; <img src="./images/tidyverse2.png" alt="Tidyverse" height=300 </>
@@ -2066,19 +2090,26 @@ class: center, middle, inverse
 ---
 #### Topic 6: Tidyverse
 
- * Let's load the core Tidyverse packages:
-
+ * Tidyverse packages can be installed and loaded individually:
 ```{r comment=NA, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 ```
 
 .tiny6[
 ```{r comment=NA, eval=FALSE}
+# Install and load dplyr package (classic, two-step way)
+install.packages("dplyr"); library(dplyr)
+```
+]
+
+--
+ 
+ * Or, in bulk, with the **tidyverse** package:
+
+.tiny6[
+```{r comment=NA, eval=FALSE}
 # Install and load tidyverse packages (classic, two-step way)
 install.packages("tidyverse"); library(tidyverse)
-
-# Install and load tidyverse packages (pacman package)
-pacman::p_load(tidyverse)
 
 # List tidyverse packages
 tidyverse_packages(include_self=FALSE)
@@ -2092,30 +2123,35 @@ tidyverse_packages(include_self=FALSE)
 ---
 #### Topic 6: Tidyverse
 
- * Core packages - **dplyr**, forcats, **ggplot2**, purrr, readr, tibble, tidyr, stringr
+ * Core packages - dplyr, forcats, ggplot2, purrr, readr, tibble, tidyr, stringr
 
 --
 
 .pull-left4[
  * **dplyr** package
  
-  + Introduces consistent set of functions (verbs) used for data wrangling.
+  + Introduces consistent set of functions (verbs)
+  
+  + Applied across all Tidyverse packages
      ]
 
 .pull-right4[
+<br/>
 <center><img src="./images/dplyr.png" alt="RStudio" height=150/></center>
 ]
 
 ---
 #### Topic 6: Tidyverse
 
- * Helpful functions - **Tidyverse**:
+ * Helpful functions - **dplyr**:
  
 .tiny6.pull-left2[
 ```{r comment=NA, eval=FALSE}
 filter(x)      # picks cases based on their values
 
-select(x)      # picks variables based on their names
+select(x)      # picks columns based on their names
+
+slice(x)       # picks rows by position
   
 arrange(x)     # changes the ordering of rows
   
@@ -2124,6 +2160,8 @@ group_by(x)    # allows operations by groups
 mutate(x)      # adds new variables to a dataset
   
 summarise(x)   # summarise multiple values
+
+count(x)       # counts number of rows in a group
   
 add_row(x)     # add a row of data to a data frame
 ```
@@ -2140,17 +2178,17 @@ add_row(x)     # add a row of data to a data frame
 
 Summarizing data in R
 
- * What if we wanted to summarize the highway mpg data in our dataset?
+ * What if we wanted to summarize the data frame we created earlier?
 
 .tiny6.pull-left[
 ```{r comment=NA}
-# base R approach:
-hwy.avg <- mean(mpg$hwy)
-hwy.max <- max(mpg$hwy)
-hwy.min <- min(mpg$hwy)
-hwy.sd  <- sd(mpg$hwy)
-do.call("cbind",
-        list(hwy.avg,hwy.max,hwy.min,hwy.sd))
+# Survey data frame:
+survey <- data.frame(
+    "id"  = c(1,2,3,4,5),
+    "sex" = c("m","m","m","f","f"),
+    "age" = c(99,46,23,54,23))
+
+print(survey)
 ```
 
 ]
@@ -2159,74 +2197,47 @@ do.call("cbind",
 
 .tiny6.pull-right[
 ```{r comment=NA}
-# tidyverse approach:
-summarize(mpg,
-          avg=mean(hwy),
-          max=max(hwy),
-          min=min(hwy),
-          sd=sd(hwy))
+# Summarise the age variable
+summarize(survey,        # dataset
+          n=length(age), # number of ages
+          avg=mean(age), # average age
+          max=max(age),  # maximum age
+          min=min(age),  # minimum age
+          sd=sd(age))    # standard deviation
 ```
-
-]
-
----
-#### Topic 6: Tidyverse
-
-Summarizing data in R
-
- * What if we wanted to add a new variable (i.e., column)?
-
-.tiny6[
-```{r comment=NA, include=FALSE}
-mpg <- read.csv("mpg.csv")
-```
-
-```{r comment=NA}
-# base R approach:
-mpg$avg <- (mpg$cty+mpg$hwy)/2
-```
-
-```{r comment=NA, echo=FALSE}
-mpg[1:3,]
-```
+{{content}}
 ]
 
 --
 
-.tiny6[
-```{r comment=NA, include=FALSE}
-mpg <- read_csv("mpg.csv")
-```
-
 ```{r comment=NA}
-# tidyverse approach:
-mpg <- mutate(mpg, avg=(cty+hwy)/2)
+# Count the number of each sex
+count(survey, # dataset
+      sex)    # variable to count   
 ```
-
-```{r comment=NA, echo=FALSE}
-mpg[1:3,]
-```
-]
 
 ---
-
 #### Topic 6: Tidyverse
 
- * Core packages - **dplyr**, forcats, **ggplot2**, purrr, readr, tibble, tidyr, stringr
+ * Core packages - dplyr, forcats, ggplot2, purrr, readr, tibble, tidyr, stringr
 
 .pull-left4[
  * **dplyr** package
  
-  + Introduces consistent set of functions (verbs) used for data wrangling.
-  <br/><br/>
-  <br/>
- 
-  + Imports pipe operator (%>%) from **magrittr** package.
+  + Introduces consistent set of functions (verbs)
   
-     + Forwards an object, into a function.
-     ]
+  + Applied across all Tidyverse packages
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  
+  + Imports pipe operator (%>%) from **magrittr** package
+  
+      + Forwards an object, into a function
+]
 
 .pull-right4[
+<br/>
 <center><img src="./images/dplyr.png" alt="RStudio" height=150/></center>
 <br/><br/>
 <center><img src="./images/magrittr.jpg" alt="RStudio" height=170/></center>
@@ -2237,45 +2248,69 @@ mpg[1:3,]
 
 Summarizing data in R
 
- * What if we wanted to add a new variable (i.e., column)?
+ * What if we wanted to summarize the data frame we created earlier?
 
-.tiny6[
+.tiny6.pull-left[
 ```{r comment=NA}
-# tidyverse approach:
-mpg <- mutate(mpg, avg=(cty+hwy)/2)
-
-# tidyverse approach with piping:
-mpg <- mpg %>% mutate(diff=cty-hwy)
+# Survey data frame:
+survey <- data.frame(
+    "id"  = c(1,2,3,4,5),
+    "sex" = c("m","m","m","f","f"),
+    "age" = c(99,46,23,54,23))
+print(survey)
 ```
+
 ]
 
-.tiny6[
-```{r comment=NA, echo=FALSE}
-head(data.frame(mpg),5)
+.tiny6.pull-right[
+```{r comment=NA}
+# Summarise the age variable
+summarize(survey,        # dataset
+          n=length(age), # number of ages
+          avg=mean(age), # average age
+          max=max(age),  # maximum age
+          min=min(age),  # minimum age
+          sd=sd(age))    # standard deviation
 ```
+{{content}}
 ]
+
+--
+
+```{r comment=NA}
+# Summarise the age variable (piping approach)
+survey %>% summarize(n=length(age),
+                     avg=mean(age),
+                     max=max(age),
+                     min=min(age),
+                     sd=sd(age)) 
+```
+{{content}}
 
 ---
-
 #### Topic 6: Tidyverse
 
- * Core packages - **dplyr**, forcats, **ggplot2**, purrr, readr, tibble, tidyr, stringr
+ * Core packages - dplyr, forcats, ggplot2, purrr, readr, tibble, tidyr, stringr
 
 .pull-left4[
  * **dplyr** package
  
-  + Introduces consistent set of functions (verbs) used for data wrangling.
+  + Introduces consistent set of functions (verbs)
+  
+  + Applied across all Tidyverse packages
   <br/><br/>
-  <br/>
- 
-  + Imports pipe operator (%>%) from **magrittr** package.
+  <br/><br/>
+  <br/><br/>
   
-     + Forwards an object, into a function.
+  + Imports pipe operator (%>%) from **magrittr** package
   
-     + Perform multiple functions, without nesting, or creating multiple objects.
-     ]
+      + Forwards an object, into a function
+      
+      + Perform multiple functions, without nesting, or creating multiple objects
+]
 
 .pull-right4[
+<br/>
 <center><img src="./images/dplyr.png" alt="RStudio" height=150/></center>
 <br/><br/>
 <center><img src="./images/magrittr.jpg" alt="RStudio" height=170/></center>
@@ -2283,7 +2318,7 @@ head(data.frame(mpg),5)
 
 ---
 #### Topic 6: Tidyverse
-  
+
  * For example, in our *mpg* dataset, let's say we're interested in the average highway mpg in cars in 2008, based on their number of cylinders.
  
   + Multiple objects approach:
@@ -2500,41 +2535,65 @@ class: inverse
 #### Review - Tidyverse:
 * Collection of R packages for data science, supported by RStudio.
 
---
-
 * Core Tidyverse packages are loaded via ```library(tidyverse)```
 
---
-
 * Provides a consistent language (functions) and grammar (arguments) that integrates nicely with a piping workflow.
-
---
-
-* References for R and working with the Tidyverse:
-
- .pull-left4[
-1. [R for Data Science](https://r4ds.had.co.nz/)
- 
-2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
- ]
-
-.pull-right4[
-<img src="./images/tidyverse2.png" alt="Tidyverse" height=300 </>
-]
 
 ---
 class: center, middle, inverse
 
-#### Topic 7: Other things to do with R
+#### Topic 7: Extras - RStudio Rrojects, Other things
+#### to do in R, and Resources
 <br/><br/>
 <br/><br/>
 <br/><br/>
 <br/><br/>
 <br/><br/>
 <br/><br/>
----
 
-#### Topic 7: Other things to do with R
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+  
+Basic steps to working with data in R:
+  
+ * Check and/or set a working directory.
+
+ * Load data.
+
+ * Wrangle data (Explore, Summarize, and Analyze)!
+ 
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+
+Basic steps to working with data in R:
+
+ * ~~Check and/or set a working directory.~~ Set up an RStudio Rroject.
+
+ * Load data.
+ 
+ * Wrangle data (Explore, Summarize, and Analyze)!
+
+---
+#### Topic 7: Extras - RStudio Rrojects, Other things to do in R, and Resources
+
+R Studio projects:
+
+.pull-right2[
+<center><img src="./images/cracked_setwd.png" alt="R timeline" height=125 </></center>
+<center><img src="./images/rproject.png" alt="R timeline" width=200 </></center>
+]
+
+.pull-left2[
+* **Projects** keep all files associated with a project together.
+
+* "Home" directory of the project becomes the current working directory.
+
+* Projects can **enhance reproducibility** if paths within scripts are kept relative and not absolute.
+]
+
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+Other things to do in R:
 
 .right-column2[
 <center><img src="./images/rmarkdown.png" height=200 alt="RStudio" </center>
@@ -2554,6 +2613,21 @@ class: center, middle, inverse
  - Web applications
  - Websites
  - Dashboards 
+]
+
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+  
+Resources:
+  
+.pull-left4[
+1. [R for Data Science](https://r4ds.had.co.nz/)
+
+2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+  ]
+
+.pull-right4[
+  <img src="./images/tidyverse2.png" alt="Tidyverse" height=300 </>
 ]
 
 ---

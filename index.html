@@ -4,6 +4,7 @@
     <title>Programming in R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jeremy Mack" />
+    <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
     <link href="site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="site_libs/panelset-0.2.6/panelset.js"></script>
     <link href="site_libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
@@ -70,7 +71,7 @@ class: center, middle, inverse, title-slide
 
 --
 
-* Slides are available on [Lehigh's Research Computing site](https://confluence.cc.lehigh.edu/display/hpc/Seminars), [Wordpress](https://wordpress.lehigh.edu/jsm4/data-visualization/programming-in-r/), and Github ([slides](https://jeremymack-lu.github.io/rprog/) and [raw code](https://github.com/jeremymack-LU/rprog))
+* Slides are available on [Lehigh's Research Computing site](https://confluence.cc.lehigh.edu/display/hpc/Seminars) and Github ([slides](https://jeremymack-lu.github.io/rprog/) and [raw code](https://github.com/jeremymack-LU/rprog))
    
 ---
 
@@ -90,7 +91,7 @@ The presentation is split into seven topics:
  
  * [**Topic 6:**](&lt;https://jeremymack-lu.github.io/rprog/#167&gt;) Tidyverse
  
- * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#200&gt;) Other things to do with R
+ * [**Topic 7:**](&lt;https://jeremymack-lu.github.io/rprog/#200&gt;) Extras - RStudio projects, Other things to do in R, and Resources
 
 ---
 #### Programming in R
@@ -122,7 +123,7 @@ class: center, middle, inverse
 
 --
 
-- Developed by Ross Ihaka and Robert Gentleman 27 years ago; it is now developed by a core team supported by the R Foundation.
+- Developed by Ross Ihaka and Robert Gentleman 28 years ago; now maintained by a core team supported by the R Foundation.
 {{content}}
 
 --
@@ -141,7 +142,7 @@ class: center, middle, inverse
 .pull-right[
 - R is a **programming language** ([one of many](&lt;https://www.tiobe.com/tiobe-index/&gt;)) and an **environment** for statistical computing.
    
-- Developed by Ross Ihaka and Robert Gentleman 28 years ago; it is now developed by a core team supported by the R Foundation.
+- Developed by Ross Ihaka and Robert Gentleman 28 years ago; now maintained by a core team supported by the R Foundation.
 
 - Dialect of the S language (S-Plus)
 ]
@@ -174,7 +175,7 @@ class: center, middle, inverse
 
 - **Very active development community**
     + CRAN: The Comprehensive R Archive Network
-    + User contributed packages &lt;br/&gt; (&gt; 17,000)
+    + User contributed packages &lt;br/&gt; (&gt; 18,000)
     {{content}}
 
 --
@@ -282,7 +283,7 @@ How do R and RStudio work together? Consider a car analogy.
 --
 
 .pull-left[
-**RStudio - the frame**
+**RStudio - the body**
  - RStudio provides a frame that keeps things organized and finishings that make it visualling appealing.
 
 **R - the engine**
@@ -298,15 +299,11 @@ class: inverse
 
 #### Review - R and RStudio:
 
---
-
 * **R** is a programming language built for statistical computing ("Engine").
 
  + It's open source and it's free.
 
---
-
-* **RStudio** is an integrated development envrionment that makes working with R easier ("Frame").
+* **RStudio** is an integrated development envrionment that makes working with R easier ("Body").
 
  + It's developed by a company, but it's also free.
 
@@ -701,13 +698,15 @@ Objects in R:
 
 * There are five basic **types** (classes) of data in R:
  1. Logical
- 2. Double*
- 3. Integer*
+ 2. Double
+ 3. Integer
  4. Complex
  5. Character
+ {{content}}
+--
+ 6. Factors - special case of Integer with Character labels
+ {{content}}
  
- *Collectively referred to as Numeric
-
 ---
 #### Topic 4: Objects and Functions
 
@@ -725,9 +724,14 @@ z                       # Print the logical value
 ```
 [1] FALSE
 ```
+]
+
+--
+
+.tiny[
 
 ```r
-typeof(z)               # Print the class name of z
+typeof(z)               # Print the data type of z
 ```
 
 ```
@@ -751,9 +755,14 @@ x                       # Print x
 ```
 [1] 10.5
 ```
+]
+
+--
+
+.tiny[
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
@@ -777,9 +786,14 @@ x                       # Print x
 ```
 [1] 10
 ```
+]
+
+--
+
+.tiny[
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
@@ -796,16 +810,21 @@ Objects in R - data types:
 .tiny[
 
 ```r
-x &lt;- as.integer(10)     # Convert to integer
+x &lt;- as.integer(10)     # Declare as integer
 x                       # Print x
 ```
 
 ```
 [1] 10
 ```
+]
+
+--
+
+.tiny[
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
@@ -827,7 +846,7 @@ x                       # Print x
 ```
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
@@ -852,9 +871,14 @@ x                       # Print the value of x
 ```
 [1] 1+2i
 ```
+]
+
+--
+
+.tiny[
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
@@ -871,16 +895,21 @@ Objects in R - data types:
 .tiny[
 
 ```r
-x &lt;- as.character(3.14) # Convert to character
+x &lt;- as.character(3.14) # Declare as character
 x                       # Print the character string 
 ```
 
 ```
 [1] "3.14"
 ```
+]
+
+--
+
+.tiny[
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
@@ -893,7 +922,7 @@ typeof(x)               # Print the class name of x
 .tiny[
 
 ```r
-x &lt;- "3.14"             # Can declare as character with " "
+x &lt;- "3.14"             # Declare as character with " "
 x                       # Print x
 ```
 
@@ -902,11 +931,57 @@ x                       # Print x
 ```
 
 ```r
-typeof(x)               # Print the class name of x
+typeof(x)               # Print the data type of x
 ```
 
 ```
 [1] "character"
+```
+]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data types:
+* Factor - fixed set of possible values (categorical variables); stored as integers
+
+.tiny[
+
+```r
+x &lt;- c("A","B","C","D") # Create a vector of factor levels
+x &lt;- as.factor(x)       # Declare as factor
+x                       # Print the value of x 
+```
+
+```
+[1] A B C D
+Levels: A B C D
+```
+]
+
+--
+
+.tiny[
+
+```r
+typeof(x)               # Print the data type of x
+```
+
+```
+[1] "integer"
+```
+]
+
+--
+
+.tiny[
+
+```r
+str(x)                  # Print the structure of x
+```
+
+```
+ Factor w/ 4 levels "A","B","C","D": 1 2 3 4
 ```
 ]
 
@@ -924,6 +999,7 @@ Objects in R:
  3. Integer
  4. Complex
  5. Character
+ 6. Factors - special case of Integer with Character labels
 
 ---
 #### Topic 4: Objects and Functions
@@ -1210,7 +1286,7 @@ class(m)
 ```
 
 ```
-[1] "matrix"
+[1] "matrix" "array" 
 ```
 
 ```r
@@ -1257,7 +1333,7 @@ Objects in R - data structure:
 
 ```r
 survey &lt;- data.frame(
-"index" = c(1,2,3,4,5),
+"id"  = c(1,2,3,4,5),
 "sex" = c("m","m","m","f","f"),
 "age" = c(99,46,23,54,23))
 class(survey)
@@ -1273,9 +1349,9 @@ str(survey)
 
 ```
 'data.frame':	5 obs. of  3 variables:
- $ index: num  1 2 3 4 5
- $ sex  : Factor w/ 2 levels "f","m": 2 2 2 1 1
- $ age  : num  99 46 23 54 23
+ $ id : num  1 2 3 4 5
+ $ sex: chr  "m" "m" "m" "f" ...
+ $ age: num  99 46 23 54 23
 ```
 
 ]
@@ -1321,8 +1397,9 @@ Objects in R - data structure:
 
 
 ```r
+pacman::p_load(tibble)
 survey &lt;- tibble(
-"index" = c(1,2,3,4,5),
+"id"  = c(1,2,3,4,5),
 "sex" = c("m","m","m","f","f"),
 "age" = c(99,46,23,54,23))
 class(survey)
@@ -1338,12 +1415,19 @@ str(survey)
 
 ```
 tibble [5 × 3] (S3: tbl_df/tbl/data.frame)
- $ index: num [1:5] 1 2 3 4 5
- $ sex  : chr [1:5] "m" "m" "m" "f" ...
- $ age  : num [1:5] 99 46 23 54 23
+ $ id : num [1:5] 1 2 3 4 5
+ $ sex: chr [1:5] "m" "m" "m" "f" ...
+ $ age: num [1:5] 99 46 23 54 23
 ```
 
 ]
+
+---
+#### Topic 4: Objects and Functions
+
+Objects in R - data structure:
+
+&lt;center&gt;&lt;img src="./images/tidydata_1.jpg" alt="RStudio" height=350/&gt;&lt;/center&gt;
 
 ---
 class: inverse
@@ -1351,11 +1435,7 @@ class: inverse
 #### Review - Objects:
 * Define objects &gt; Apply functions &gt; Repeat!
 
---
-
 * Objects are data that have a type and structure. 
-
---
 
 * There are five basic types of data:
    1. Logical
@@ -1363,8 +1443,7 @@ class: inverse
    3. Integer
    4. Complex
    5. Character
-
---
+   6. Factors - special case of Integer with Character labels
 
 * There are four basic structures:
    1. Scalar
@@ -1497,18 +1576,18 @@ class: inverse
 #### Review - Functions (and Packages):
 * Define objects &gt; Apply functions &gt; Repeat!
 
---
-
 * Functions are used to work with objects in R and are loaded via packages.
 
---
+* Standard functions are a part of **base R**, which loads automatically when R is opened.
 
-* Standard functions are a part of **base R**, which loads automatically when R is opened. There is also a large community of users that develop packages for R (17,400+ and counting!).
+* There is also a **large community** of users that develop packages for R (18,300+ and counting!).
 
---
+* Packages can be loaded both programmatically and with the RStudio explorer window.
 
-* Packages can be loaded both programmatically and with the RStuio explorer window.
-
+* Two step process:
+  1. Install package
+  
+  2. Load package into library
 ---
 class: center, middle, inverse
 
@@ -1546,17 +1625,6 @@ Basic steps to working with data in R:
 
 Basic steps to working with data in R:
 
- * ~~Check and/or set a working directory.~~ Set up an RStudio project.
-
- * Load data.
- 
- * Wrangle data (Explore, Summarize, and Analyze)!
-
----
-#### Topic 5: Data and Data Wrangling
-
-Basic steps to working with data in R:
-
  * Check and/or set a working directory.
 
 .panelset[
@@ -1578,12 +1646,12 @@ getwd()         # Prints current working directory
 .tiny6[
 
 ```r
-setwd("h:/R")   # Sets path to working directory
+setwd("h:/Lehigh")   # Sets path to working directory
 getwd()         # Prints current working directory
 ```
 
 ```
-[1] "h:/R"
+[1] "h:/Lehigh"
 ```
 ]
 ]
@@ -1593,23 +1661,6 @@ getwd()         # Prints current working directory
 &lt;center&gt;&lt;img src="./images/explorer2.png" alt="R timeline" height=300 &lt;/&gt;&lt;/center&gt;
 
 ]
-
-.panel[.panel-name[RStudio Projects]
-
-.pull-right2[
-&lt;center&gt;&lt;img src="./images/cracked_setwd.png" alt="R timeline" height=125 &lt;/&gt;&lt;/center&gt;
-&lt;center&gt;&lt;img src="./images/rproject.png" alt="R timeline" width=200 &lt;/&gt;&lt;/center&gt;
-]
-
-.pull-left2[
-* **Projects** keep all files associated with a project together.
-
-* "Home" directory of the project becomes the current working directory.
-
-* Projects can **enhance reproducibility** if paths within scripts are kept relative and not absolute.
-]
-
-]
 ]
 
 ---
@@ -1617,7 +1668,16 @@ getwd()         # Prints current working directory
 
 Basic steps to working with data in R:
 
- * ~~Check and/or set a working directory.~~ Set up an RStudio project.
+ * Check and/or set a working directory.
+
+ * Load data.
+
+---
+#### Topic 5: Data and Data Wrangling
+
+Basic steps to working with data in R:
+
+ * Check and/or set a working directory.
 
  * Load data.
 
@@ -1655,7 +1715,7 @@ read_xls()    # Reads .xls files
 
 Basic steps to working with data in R:
 
- * ~~Check and/or set a working directory.~~ Set up an RStudio project.
+ * Check and/or set a working directory.
 
  * Load data.
  
@@ -1681,7 +1741,7 @@ url &lt;- "https://raw.githubusercontent.com/jeremymack-LU/rprog/master/mpg.csv"
 # Download file to working directory
 download.file(url, "data/mpg.csv")
 
-# Read table into R
+# Read data into R
 mpg &lt;- read.csv("data/mpg.csv")
 ```
 
@@ -1758,17 +1818,17 @@ str(mpg)
 
 ```
 'data.frame':	234 obs. of  11 variables:
- $ manufacturer: Factor w/ 15 levels "audi","chevrolet",..: 1 1 1 1 1 1 1 1 1 1 ...
- $ model       : Factor w/ 38 levels "4runner 4wd",..: 2 2 2 2 2 2 2 3 3 3 ...
+ $ manufacturer: chr  "audi" "audi" "audi" "audi" ...
+ $ model       : chr  "a4" "a4" "a4" "a4" ...
  $ displ       : num  1.8 1.8 2 2 2.8 2.8 3.1 1.8 1.8 2 ...
  $ year        : int  1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 ...
  $ cyl         : int  4 4 4 4 6 6 6 4 4 4 ...
- $ trans       : Factor w/ 10 levels "auto(av)","auto(l3)",..: 4 9 10 1 4 9 1 9 4 10 ...
- $ drv         : Factor w/ 3 levels "4","f","r": 2 2 2 2 2 2 2 1 1 1 ...
+ $ trans       : chr  "auto(l5)" "manual(m5)" "manual(m6)" "auto(av)" ...
+ $ drv         : chr  "f" "f" "f" "f" ...
  $ cty         : int  18 21 20 21 16 18 18 18 16 20 ...
  $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...
- $ fl          : Factor w/ 5 levels "c","d","e","p",..: 4 4 4 4 4 4 4 4 4 4 ...
- $ class       : Factor w/ 7 levels "2seater","compact",..: 2 2 2 2 2 2 2 2 2 2 ...
+ $ fl          : chr  "p" "p" "p" "p" ...
+ $ class       : chr  "compact" "compact" "compact" "compact" ...
 ```
 ]
 
@@ -1787,8 +1847,7 @@ mpg[1,1]  # Print value in row 1, column 1
 ```
 
 ```
-[1] audi
-15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
+[1] "audi"
 ```
 
 ```r
@@ -1796,8 +1855,7 @@ mpg[6,10] # Print value in row 6, column 10
 ```
 
 ```
-[1] p
-Levels: c d e p r
+[1] "p"
 ```
 ]
 
@@ -1839,22 +1897,24 @@ mpg[,1]   # Print column 1 by number (as a vector)
 .tiny6[   
 
 ```
-  [1] audi      audi      audi      audi      audi      audi      audi     
-  [8] audi      audi      audi      audi      audi      audi      audi     
- [15] audi      audi      audi      audi      chevrolet chevrolet chevrolet
- [22] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
- [29] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
- [36] chevrolet chevrolet dodge     dodge     dodge     dodge     dodge    
- [43] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [50] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [57] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [64] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [71] dodge     dodge     dodge     dodge     ford      ford      ford     
- [78] ford      ford      ford      ford      ford      ford      ford     
- [85] ford      ford      ford      ford      ford      ford      ford     
- [92] ford      ford      ford      ford      ford      ford      ford     
- [99] ford      honda     honda     honda     honda     honda     honda    
-15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
+  [1] "audi"      "audi"      "audi"      "audi"      "audi"      "audi"     
+  [7] "audi"      "audi"      "audi"      "audi"      "audi"      "audi"     
+ [13] "audi"      "audi"      "audi"      "audi"      "audi"      "audi"     
+ [19] "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet"
+ [25] "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet"
+ [31] "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet"
+ [37] "chevrolet" "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [43] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [49] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [55] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [61] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [67] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [73] "dodge"     "dodge"     "ford"      "ford"      "ford"      "ford"     
+ [79] "ford"      "ford"      "ford"      "ford"      "ford"      "ford"     
+ [85] "ford"      "ford"      "ford"      "ford"      "ford"      "ford"     
+ [91] "ford"      "ford"      "ford"      "ford"      "ford"      "ford"     
+ [97] "ford"      "ford"      "ford"      "honda"     "honda"     "honda"    
+[103] "honda"     "honda"     "honda"    
 ```
 ]
 
@@ -1877,22 +1937,24 @@ mpg$manufacturer  # Print column 1 by name (as a vector)
 .tiny6[
 
 ```
-  [1] audi      audi      audi      audi      audi      audi      audi     
-  [8] audi      audi      audi      audi      audi      audi      audi     
- [15] audi      audi      audi      audi      chevrolet chevrolet chevrolet
- [22] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
- [29] chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet chevrolet
- [36] chevrolet chevrolet dodge     dodge     dodge     dodge     dodge    
- [43] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [50] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [57] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [64] dodge     dodge     dodge     dodge     dodge     dodge     dodge    
- [71] dodge     dodge     dodge     dodge     ford      ford      ford     
- [78] ford      ford      ford      ford      ford      ford      ford     
- [85] ford      ford      ford      ford      ford      ford      ford     
- [92] ford      ford      ford      ford      ford      ford      ford     
- [99] ford      honda     honda     honda     honda     honda     honda    
-15 Levels: audi chevrolet dodge ford honda hyundai jeep land rover ... volkswagen
+  [1] "audi"      "audi"      "audi"      "audi"      "audi"      "audi"     
+  [7] "audi"      "audi"      "audi"      "audi"      "audi"      "audi"     
+ [13] "audi"      "audi"      "audi"      "audi"      "audi"      "audi"     
+ [19] "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet"
+ [25] "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet"
+ [31] "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet" "chevrolet"
+ [37] "chevrolet" "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [43] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [49] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [55] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [61] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [67] "dodge"     "dodge"     "dodge"     "dodge"     "dodge"     "dodge"    
+ [73] "dodge"     "dodge"     "ford"      "ford"      "ford"      "ford"     
+ [79] "ford"      "ford"      "ford"      "ford"      "ford"      "ford"     
+ [85] "ford"      "ford"      "ford"      "ford"      "ford"      "ford"     
+ [91] "ford"      "ford"      "ford"      "ford"      "ford"      "ford"     
+ [97] "ford"      "ford"      "ford"      "honda"     "honda"     "honda"    
+[103] "honda"     "honda"     "honda"    
 ```
 ]
 
@@ -1901,71 +1963,40 @@ mpg$manufacturer  # Print column 1 by name (as a vector)
 
 Exploring data in R
 
-* What if we read the data in as a tibble?
-
-.panelset[
-
-.panel[.panel-name[Data frame]
+  * Selecting specific data in R:
+  
+   + What if we wanted to print just column 1?
 
 .tiny6[
 
 ```r
-# Read table into R as a data frame
-mpg &lt;- read.csv("data/mpg.csv"); str(mpg)
+mpg[1]  # Print column 1 by name (as a data frame)
 ```
-
-
-```
-'data.frame':	234 obs. of  11 variables:
- $ manufacturer: Factor w/ 15 levels "audi","chevrolet",..: 1 1 1 1 1 1 1 1 1 1 ...
- $ model       : Factor w/ 38 levels "4runner 4wd",..: 2 2 2 2 2 2 2 3 3 3 ...
- $ displ       : num  1.8 1.8 2 2 2.8 2.8 3.1 1.8 1.8 2 ...
- $ year        : int  1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 ...
- $ cyl         : int  4 4 4 4 6 6 6 4 4 4 ...
- $ trans       : Factor w/ 10 levels "auto(av)","auto(l3)",..: 4 9 10 1 4 9 1 9 4 10 ...
- $ drv         : Factor w/ 3 levels "4","f","r": 2 2 2 2 2 2 2 1 1 1 ...
- $ cty         : int  18 21 20 21 16 18 18 18 16 20 ...
- $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...
- $ fl          : Factor w/ 5 levels "c","d","e","p",..: 4 4 4 4 4 4 4 4 4 4 ...
- $ class       : Factor w/ 7 levels "2seater","compact",..: 2 2 2 2 2 2 2 2 2 2 ...
-```
-]]
-
-.panel[.panel-name[Tibble]
+]
 
 .tiny6[
 
-```r
-# Read table into R as a tibble
-mpg2 &lt;- read_csv("data/mpg.csv"); glimpse(mpg2)
 ```
-
-
-
-
+   manufacturer
+1          audi
+2          audi
+3          audi
+4          audi
+5          audi
+6          audi
+7          audi
+8          audi
+9          audi
+10         audi
+11         audi
+12         audi
+13         audi
+14         audi
+15         audi
+16         audi
+17         audi
 ```
-Rows: 234
-Columns: 11
-$ manufacturer &lt;chr&gt; "audi", "audi", "audi", "audi", "audi", "audi", "audi", …
-$ model        &lt;chr&gt; "a4", "a4", "a4", "a4", "a4", "a4", "a4", "a4 quattro", …
-$ displ        &lt;dbl&gt; 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0, 2.0, 2…
-$ year         &lt;dbl&gt; 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1999, 20…
-$ cyl          &lt;dbl&gt; 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 8,…
-$ trans        &lt;chr&gt; "auto(l5)", "manual(m5)", "manual(m6)", "auto(av)", "aut…
-$ drv          &lt;chr&gt; "f", "f", "f", "f", "f", "f", "f", "4", "4", "4", "4", "…
-$ cty          &lt;dbl&gt; 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 17, 17, …
-$ hwy          &lt;dbl&gt; 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 25, 25, …
-$ fl           &lt;chr&gt; "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "…
-$ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact", "…
-```
-]]]
-
----
-#### Topic 5: Data and Data Wrangling
-
-Exploring data in R
-
-&lt;center&gt;&lt;img src="./images/tidydata_1.jpg" alt="RStudio" height=350/&gt;&lt;/center&gt;
+]
 
 ---
 #### Topic 5: Data and Data Wrangling
@@ -2294,7 +2325,7 @@ crime &lt;- USArrests
   
   4. Was there a linear relationship between murders and assaults?
   
-<div class="countdown" id="timer_606730b9" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_61601498" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2321,7 +2352,7 @@ crime &lt;- USArrests
   
   4. Was there a linear relationship between murders and assaults?
   
-<div class="countdown" id="timer_60672feb" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_6160139a" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2509,19 +2540,17 @@ class: inverse
 
 #### Review - Data and Data Wrangling:
 
- * Data can be read into R both programmatically and with the RStudio IDE.
+ * Working directories can be set both programmatically and with the RStudio IDE.
 
---
-
- * RStudio projects provide structure to data projects that enhances reproducibility.
-
---
+ * Similarly, data can be read into R programmatically and with the RStudio IDE.
 
  * R identifies data by row (observation) then column (variable).
 
---
+ * Pay attention to function arguments - missing values can cause problems!
 
- * Pay attendtion to function arguments - missing values can cause problems!
+ * Remember the concept of Tidy Data:
+ 
+ &lt;center&gt;&lt;img src="./images/tidydata_1.jpg" alt="RStudio" height=300/&gt;&lt;/center&gt;
 
 ---
 class: center, middle, inverse
@@ -2537,17 +2566,13 @@ class: center, middle, inverse
 ---
 #### Topic 6: Tidyverse
 
- * So far, we've mostly used base R commands and functions to wrangle data.
-  
---
-
- * [Tidyverse](&lt;https://www.tidyverse.org)
+ * Collection of R packages for data science
  
-  + Collection of R packages for data science
-  
-  + Underlying design philosophy, grammar, and data structures
-  
-  + Supported by RStudio
+ * Underlying design philosophy, grammar, and data structures
+ 
+ * [Supported by RStudio](&lt;https://www.tidyverse.org)
+
+&lt;br/&gt;&lt;br/&gt;
 
 .right[
 &lt;img src="./images/tidyverse.png" alt="Tidyverse" height=300 &lt;/&gt; &amp;nbsp; &lt;img src="./images/tidyverse2.png" alt="Tidyverse" height=300 &lt;/&gt;
@@ -2571,9 +2596,20 @@ class: center, middle, inverse
 ---
 #### Topic 6: Tidyverse
 
- * Let's load the core Tidyverse packages:
+ * Tidyverse packages can be installed and loaded individually:
 
 
+.tiny6[
+
+```r
+# Install and load dplyr package (classic, two-step way)
+install.packages("dplyr"); library(dplyr)
+```
+]
+
+--
+ 
+ * Or, in bulk, with the **tidyverse** package:
 
 .tiny6[
 
@@ -2581,51 +2617,56 @@ class: center, middle, inverse
 # Install and load tidyverse packages (classic, two-step way)
 install.packages("tidyverse"); library(tidyverse)
 
-# Install and load tidyverse packages (pacman package)
-pacman::p_load(tidyverse)
-
 # List tidyverse packages
 tidyverse_packages(include_self=FALSE)
 ```
 
 
 ```
- [1] "broom"       "cli"         "crayon"      "dplyr"       "dbplyr"     
- [6] "forcats"     "ggplot2"     "haven"       "hms"         "httr"       
-[11] "jsonlite"    "lubridate"   "magrittr"    "modelr"      "purrr"      
-[16] "readr"       "readxl\n(&gt;=" "reprex"      "rlang"       "rstudioapi" 
-[21] "rvest"       "stringr"     "tibble"      "tidyr"       "xml2"       
+ [1] "broom"         "cli"           "crayon"        "dbplyr"       
+ [5] "dplyr"         "dtplyr"        "forcats"       "googledrive"  
+ [9] "googlesheets4" "ggplot2"       "haven"         "hms"          
+[13] "httr"          "jsonlite"      "lubridate"     "magrittr"     
+[17] "modelr"        "pillar"        "purrr"         "readr"        
+[21] "readxl"        "reprex"        "rlang"         "rstudioapi"   
+[25] "rvest"         "stringr"       "tibble"        "tidyr"        
+[29] "xml2"         
 ```
 ]
 
 ---
 #### Topic 6: Tidyverse
 
- * Core packages - **dplyr**, forcats, **ggplot2**, purrr, readr, tibble, tidyr, stringr
+ * Core packages - dplyr, forcats, ggplot2, purrr, readr, tibble, tidyr, stringr
 
 --
 
 .pull-left4[
  * **dplyr** package
  
-  + Introduces consistent set of functions (verbs) used for data wrangling.
+  + Introduces consistent set of functions (verbs)
+  
+  + Applied across all Tidyverse packages
      ]
 
 .pull-right4[
+&lt;br/&gt;
 &lt;center&gt;&lt;img src="./images/dplyr.png" alt="RStudio" height=150/&gt;&lt;/center&gt;
 ]
 
 ---
 #### Topic 6: Tidyverse
 
- * Helpful functions - **Tidyverse**:
+ * Helpful functions - **dplyr**:
  
 .tiny6.pull-left2[
 
 ```r
 filter(x)      # picks cases based on their values
 
-select(x)      # picks variables based on their names
+select(x)      # picks columns based on their names
+
+slice(x)       # picks rows by position
   
 arrange(x)     # changes the ordering of rows
   
@@ -2634,6 +2675,8 @@ group_by(x)    # allows operations by groups
 mutate(x)      # adds new variables to a dataset
   
 summarise(x)   # summarise multiple values
+
+count(x)       # counts number of rows in a group
   
 add_row(x)     # add a row of data to a data frame
 ```
@@ -2650,23 +2693,27 @@ add_row(x)     # add a row of data to a data frame
 
 Summarizing data in R
 
- * What if we wanted to summarize the highway mpg data in our dataset?
+ * What if we wanted to summarize the data frame we created earlier?
 
 .tiny6.pull-left[
 
 ```r
-# base R approach:
-hwy.avg &lt;- mean(mpg$hwy)
-hwy.max &lt;- max(mpg$hwy)
-hwy.min &lt;- min(mpg$hwy)
-hwy.sd  &lt;- sd(mpg$hwy)
-do.call("cbind",
-        list(hwy.avg,hwy.max,hwy.min,hwy.sd))
+# Survey data frame:
+survey &lt;- data.frame(
+    "id"  = c(1,2,3,4,5),
+    "sex" = c("m","m","m","f","f"),
+    "age" = c(99,46,23,54,23))
+
+print(survey)
 ```
 
 ```
-         [,1] [,2] [,3]     [,4]
-[1,] 23.44017   44   12 5.954643
+  id sex age
+1  1   m  99
+2  2   m  46
+3  3   m  23
+4  4   f  54
+5  5   f  23
 ```
 
 ]
@@ -2676,87 +2723,59 @@ do.call("cbind",
 .tiny6.pull-right[
 
 ```r
-# tidyverse approach:
-summarize(mpg,
-          avg=mean(hwy),
-          max=max(hwy),
-          min=min(hwy),
-          sd=sd(hwy))
+# Summarise the age variable
+summarize(survey,        # dataset
+          n=length(age), # number of ages
+          avg=mean(age), # average age
+          max=max(age),  # maximum age
+          min=min(age),  # minimum age
+          sd=sd(age))    # standard deviation
 ```
 
 ```
-       avg max min       sd
-1 23.44017  44  12 5.954643
+  n avg max min       sd
+1 5  49  99  23 31.16889
 ```
-
-]
-
----
-#### Topic 6: Tidyverse
-
-Summarizing data in R
-
- * What if we wanted to add a new variable (i.e., column)?
-
-.tiny6[
-
-
-
-```r
-# base R approach:
-mpg$avg &lt;- (mpg$cty+mpg$hwy)/2
-```
-
-
-```
-  manufacturer model displ year cyl      trans drv cty hwy fl   class  avg
-1         audi    a4   1.8 1999   4   auto(l5)   f  18  29  p compact 23.5
-2         audi    a4   1.8 1999   4 manual(m5)   f  21  29  p compact 25.0
-3         audi    a4   2.0 2008   4 manual(m6)   f  20  31  p compact 25.5
-```
+{{content}}
 ]
 
 --
 
-.tiny6[
-
-
 
 ```r
-# tidyverse approach:
-mpg &lt;- mutate(mpg, avg=(cty+hwy)/2)
+# Count the number of each sex
+count(survey, # dataset
+      sex)    # variable to count   
 ```
 
-
 ```
-# A tibble: 3 x 12
-  manufacturer model displ  year   cyl trans drv     cty   hwy fl    class   avg
-  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;
-1 audi         a4      1.8  1999     4 auto… f        18    29 p     comp…  23.5
-2 audi         a4      1.8  1999     4 manu… f        21    29 p     comp…  25  
-3 audi         a4      2    2008     4 manu… f        20    31 p     comp…  25.5
+  sex n
+1   f 2
+2   m 3
 ```
-]
 
 ---
-
 #### Topic 6: Tidyverse
 
- * Core packages - **dplyr**, forcats, **ggplot2**, purrr, readr, tibble, tidyr, stringr
+ * Core packages - dplyr, forcats, ggplot2, purrr, readr, tibble, tidyr, stringr
 
 .pull-left4[
  * **dplyr** package
  
-  + Introduces consistent set of functions (verbs) used for data wrangling.
-  &lt;br/&gt;&lt;br/&gt;
-  &lt;br/&gt;
- 
-  + Imports pipe operator (%&gt;%) from **magrittr** package.
+  + Introduces consistent set of functions (verbs)
   
-     + Forwards an object, into a function.
-     ]
+  + Applied across all Tidyverse packages
+  &lt;br/&gt;&lt;br/&gt;
+  &lt;br/&gt;&lt;br/&gt;
+  &lt;br/&gt;&lt;br/&gt;
+  
+  + Imports pipe operator (%&gt;%) from **magrittr** package
+  
+      + Forwards an object, into a function
+]
 
 .pull-right4[
+&lt;br/&gt;
 &lt;center&gt;&lt;img src="./images/dplyr.png" alt="RStudio" height=150/&gt;&lt;/center&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;center&gt;&lt;img src="./images/magrittr.jpg" alt="RStudio" height=170/&gt;&lt;/center&gt;
@@ -2767,52 +2786,91 @@ mpg &lt;- mutate(mpg, avg=(cty+hwy)/2)
 
 Summarizing data in R
 
- * What if we wanted to add a new variable (i.e., column)?
+ * What if we wanted to summarize the data frame we created earlier?
 
-.tiny6[
+.tiny6.pull-left[
 
 ```r
-# tidyverse approach:
-mpg &lt;- mutate(mpg, avg=(cty+hwy)/2)
-
-# tidyverse approach with piping:
-mpg &lt;- mpg %&gt;% mutate(diff=cty-hwy)
+# Survey data frame:
+survey &lt;- data.frame(
+    "id"  = c(1,2,3,4,5),
+    "sex" = c("m","m","m","f","f"),
+    "age" = c(99,46,23,54,23))
+print(survey)
 ```
+
+```
+  id sex age
+1  1   m  99
+2  2   m  46
+3  3   m  23
+4  4   f  54
+5  5   f  23
+```
+
 ]
 
-.tiny6[
+.tiny6.pull-right[
+
+```r
+# Summarise the age variable
+summarize(survey,        # dataset
+          n=length(age), # number of ages
+          avg=mean(age), # average age
+          max=max(age),  # maximum age
+          min=min(age),  # minimum age
+          sd=sd(age))    # standard deviation
+```
 
 ```
-  manufacturer model displ year cyl      trans drv cty hwy fl   class  avg diff
-1         audi    a4   1.8 1999   4   auto(l5)   f  18  29  p compact 23.5  -11
-2         audi    a4   1.8 1999   4 manual(m5)   f  21  29  p compact 25.0   -8
-3         audi    a4   2.0 2008   4 manual(m6)   f  20  31  p compact 25.5  -11
-4         audi    a4   2.0 2008   4   auto(av)   f  21  30  p compact 25.5   -9
-5         audi    a4   2.8 1999   6   auto(l5)   f  16  26  p compact 21.0  -10
+  n avg max min       sd
+1 5  49  99  23 31.16889
 ```
+{{content}}
 ]
+
+--
+
+
+```r
+# Summarise the age variable (piping approach)
+survey %&gt;% summarize(n=length(age),
+                     avg=mean(age),
+                     max=max(age),
+                     min=min(age),
+                     sd=sd(age)) 
+```
+
+```
+  n avg max min       sd
+1 5  49  99  23 31.16889
+```
+{{content}}
 
 ---
-
 #### Topic 6: Tidyverse
 
- * Core packages - **dplyr**, forcats, **ggplot2**, purrr, readr, tibble, tidyr, stringr
+ * Core packages - dplyr, forcats, ggplot2, purrr, readr, tibble, tidyr, stringr
 
 .pull-left4[
  * **dplyr** package
  
-  + Introduces consistent set of functions (verbs) used for data wrangling.
+  + Introduces consistent set of functions (verbs)
+  
+  + Applied across all Tidyverse packages
   &lt;br/&gt;&lt;br/&gt;
-  &lt;br/&gt;
- 
-  + Imports pipe operator (%&gt;%) from **magrittr** package.
+  &lt;br/&gt;&lt;br/&gt;
+  &lt;br/&gt;&lt;br/&gt;
   
-     + Forwards an object, into a function.
+  + Imports pipe operator (%&gt;%) from **magrittr** package
   
-     + Perform multiple functions, without nesting, or creating multiple objects.
-     ]
+      + Forwards an object, into a function
+      
+      + Perform multiple functions, without nesting, or creating multiple objects
+]
 
 .pull-right4[
+&lt;br/&gt;
 &lt;center&gt;&lt;img src="./images/dplyr.png" alt="RStudio" height=150/&gt;&lt;/center&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;center&gt;&lt;img src="./images/magrittr.jpg" alt="RStudio" height=170/&gt;&lt;/center&gt;
@@ -2820,7 +2878,7 @@ mpg &lt;- mpg %&gt;% mutate(diff=cty-hwy)
 
 ---
 #### Topic 6: Tidyverse
-  
+
  * For example, in our *mpg* dataset, let's say we're interested in the average highway mpg in cars in 2008, based on their number of cylinders.
  
   + Multiple objects approach:
@@ -2842,7 +2900,7 @@ print(d)
 ```
 # A tibble: 4 x 2
     cyl   Avg
-  &lt;dbl&gt; &lt;dbl&gt;
+  &lt;int&gt; &lt;dbl&gt;
 1     4  29.3
 2     5  28.8
 3     6  23.5
@@ -2878,7 +2936,7 @@ arrange(
 ```
 # A tibble: 4 x 2
     cyl   Avg
-  &lt;dbl&gt; &lt;dbl&gt;
+  &lt;int&gt; &lt;dbl&gt;
 1     4  29.3
 2     5  28.8
 3     6  23.5
@@ -2911,7 +2969,7 @@ mpg %&gt;%
 ```
 # A tibble: 4 x 2
     cyl   Avg
-  &lt;dbl&gt; &lt;dbl&gt;
+  &lt;int&gt; &lt;dbl&gt;
 1     4  29.3
 2     5  28.8
 3     6  23.5
@@ -2933,7 +2991,7 @@ class: inverse
   
   2. Based on number of cylinders, calculate the average highway and city mpg, in both 1999 and 2008, as well as the difference bewteen highway and city mpg.
   
-<div class="countdown" id="timer_60673149" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_616016f3" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2949,7 +3007,7 @@ class: inverse
   
   2. Based on number of cylinders, calculate the average highway and city mpg, in both 1999 and 2008, as well as the difference bewteen highway and city mpg.
   
-<div class="countdown" id="timer_6067302d" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
+<div class="countdown" id="timer_61601715" style="right:0;bottom:0.5;font-size:48px;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -3065,41 +3123,65 @@ class: inverse
 #### Review - Tidyverse:
 * Collection of R packages for data science, supported by RStudio.
 
---
-
 * Core Tidyverse packages are loaded via ```library(tidyverse)```
 
---
-
 * Provides a consistent language (functions) and grammar (arguments) that integrates nicely with a piping workflow.
-
---
-
-* References for R and working with the Tidyverse:
-
- .pull-left4[
-1. [R for Data Science](https://r4ds.had.co.nz/)
- 
-2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
- ]
-
-.pull-right4[
-&lt;img src="./images/tidyverse2.png" alt="Tidyverse" height=300 &lt;/&gt;
-]
 
 ---
 class: center, middle, inverse
 
-#### Topic 7: Other things to do with R
+#### Topic 7: Extras - RStudio Rrojects, Other things
+#### to do in R, and Resources
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
----
 
-#### Topic 7: Other things to do with R
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+  
+Basic steps to working with data in R:
+  
+ * Check and/or set a working directory.
+
+ * Load data.
+
+ * Wrangle data (Explore, Summarize, and Analyze)!
+ 
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+
+Basic steps to working with data in R:
+
+ * ~~Check and/or set a working directory.~~ Set up an RStudio Rroject.
+
+ * Load data.
+ 
+ * Wrangle data (Explore, Summarize, and Analyze)!
+
+---
+#### Topic 7: Extras - RStudio Rrojects, Other things to do in R, and Resources
+
+R Studio projects:
+
+.pull-right2[
+&lt;center&gt;&lt;img src="./images/cracked_setwd.png" alt="R timeline" height=125 &lt;/&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="./images/rproject.png" alt="R timeline" width=200 &lt;/&gt;&lt;/center&gt;
+]
+
+.pull-left2[
+* **Projects** keep all files associated with a project together.
+
+* "Home" directory of the project becomes the current working directory.
+
+* Projects can **enhance reproducibility** if paths within scripts are kept relative and not absolute.
+]
+
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+Other things to do in R:
 
 .right-column2[
 &lt;center&gt;&lt;img src="./images/rmarkdown.png" height=200 alt="RStudio" &lt;/center&gt;
@@ -3119,6 +3201,21 @@ class: center, middle, inverse
  - Web applications
  - Websites
  - Dashboards 
+]
+
+---
+#### Topic 7: Extras - RStudio Projects, Other things to do in R, and Resources
+  
+Resources:
+  
+.pull-left4[
+1. [R for Data Science](https://r4ds.had.co.nz/)
+
+2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+  ]
+
+.pull-right4[
+  &lt;img src="./images/tidyverse2.png" alt="Tidyverse" height=300 &lt;/&gt;
 ]
 
 ---
@@ -3174,6 +3271,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -3191,17 +3314,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
