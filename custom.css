@@ -103,6 +103,14 @@ th, td { padding: 5px; }
   float: right;
   width: 92%;
 }
+.pull-right5 {
+  float: right;
+  width: 85%;
+}
+.pull-right6 {
+  float: right;
+  width: 55%;
+}
 .left-column3 {
   width: 47%;
   float: left;
