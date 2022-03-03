@@ -99,7 +99,7 @@ The presentation is split into seven topics:
  
  * [**Topic 6:**](<https://jeremymack-lu.github.io/rprog/#100>) Data and Data Wrangling
  
- * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#165>) Extras - RStudio projects, Other things to do in R, and Resources
+ * [**Topic 7:**](<https://jeremymack-lu.github.io/rprog/#163>) Extras - RStudio projects, Other things to do in R, and Resources
 
 ---
 #### Programming in R
@@ -660,7 +660,7 @@ avg.n
 ---
 #### Topic 4: Objects in R
 
-Six basic **types** (classes) of data in R:
+* Six basic **types** (classes) of data in R:
 
 .panelset[
 
@@ -830,7 +830,7 @@ str(x)                        # Print the structure of x
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects.png)
@@ -849,7 +849,7 @@ Four basic **structures** of data in R:
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects2.png)
@@ -866,7 +866,7 @@ Four basic **structures** of data in R:
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects2.png)
@@ -885,7 +885,7 @@ str(x)
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects3.png)
@@ -902,7 +902,7 @@ Four basic **structures** of data in R:
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects3.png)
@@ -921,7 +921,7 @@ str(n)
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects3.png)
@@ -940,7 +940,7 @@ str(n)
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects4.png)
@@ -958,7 +958,7 @@ Four basic **structures** of data in R:
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects4.png)
@@ -979,7 +979,7 @@ str(m)
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects4.png)
@@ -997,7 +997,7 @@ Four basic **structures** of data in R:
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects4.png)
@@ -1019,7 +1019,7 @@ str(survey)
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects4.png)
@@ -1044,7 +1044,7 @@ Four basic **structures** of data in R:
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 .pull-left[
 ![R objects](./images/objects4.png)
@@ -1072,7 +1072,7 @@ str(survey)
 ---
 #### Topic 4: Objects in R
 
-Four basic **structures** of data in R:
+* Four basic **structures** of data in R:
 
 <center><img src="./images/tidydata_1.jpg" alt="RStudio" height=350/></center>
 
@@ -1890,16 +1890,12 @@ class: inverse
 #### Exercise - Summarizing Data:
  * The *USArrests* dataset provides data on the number of arrests per 100,000 residents for violent crimes (assault, murder, and rape) in each of the 50 US states in 1973.
 
---
-
  * First assign that data to an object called "crime"
 .tiny[
 ```{r comment=NA}
 crime <- USArrests
 ```
 ]
-
---
 
  * Using that data, try the following:
   1. Calculate average number of arrests for assault.
@@ -1933,8 +1929,6 @@ crime <- USArrests
   3. Print the statistics for Pennsylvania.
   
   4. Was there a linear relationship between murders and assaults?
-  
-`r countdown::countdown(minutes = 5, font_size = "48px", bottom=0.5)`
 
  * How did you do?
 
@@ -2530,10 +2524,13 @@ Resources:
 1. [R for Data Science](https://r4ds.had.co.nz/)
 
 2. [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+3. [Twitter for R Programmers](https://www.t4rstats.com/follow-some-folks.html)
   ]
 
 .pull-right4[
-  <img src="./images/tidyverse2.png" alt="Tidyverse" height=300 </>
+  <img src="./images/tidyverse2.png" alt="Tidyverse" height=250 </>
+  <img src="./images/rtwitter_blank.png" alt="Tidyverse" </>
 ]
 
 ---
