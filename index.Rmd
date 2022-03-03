@@ -2509,7 +2509,7 @@ Other things to do in R:
 <br/><br/>
 <br/><br/>
 <br/><br/>
-* [Shiny Apps](<https://jeremymack.shinyapps.io/delawareriver/>)
+* [Shiny Apps](<https://jeremymack.shinyapps.io/purpleair/>)
  - Web applications
  - Websites
  - Dashboards 
